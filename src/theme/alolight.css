@@ -73,6 +73,10 @@ section {
     li {
         margin: .5rem 0;
     }
+
+    strong {
+        color: #000;
+    }
 }
 
 pre {
@@ -128,54 +132,6 @@ section:has(steps) {
 steps {
   display: block;
   position: relative;
-}
-step {
-  display: block;
-}
-step:not(:first-child) {
-  display: none;
-}
-step[data-marpit-fragment] {
-  display: none;
-}
-steps:has(> step[data-bespoke-marp-fragment=active]) > step:first-child {
-  display: none;
-}
-step[data-bespoke-marp-fragment=inactive] {
-  visibility: visible !important;
-  display: none !important;
-}
-step[data-bespoke-marp-fragment=active] {
-  display: block !important;
-  visibility: visible !important;
-}
-step[data-bespoke-marp-fragment=active]:has(~ step[data-bespoke-marp-fragment=active]) {
-  display: none !important;
-}
-
-/* Step indicator */
-section:has(steps) {
-  position: relative;
-}
-.step-indicator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.85em;
-  font-weight: 400;
-  padding: 0.3rem 0.8rem;
-  background: #fe704d22;
-  color: #fe704d;
-  border-radius: 0 0 0 0.5rem;
-  z-index: 100;
-  letter-spacing: 0.05em;
-  pointer-events: none;
-}
-
-/* Web component <steps> / <step> */
-steps {
-    display: block;
-    position: relative;
 }
 step {
   display: block;
