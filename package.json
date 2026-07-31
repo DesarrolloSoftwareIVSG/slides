@@ -1,0 +1,20 @@
+{
+  "name": "multimedios-slides",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "marp -I ./src -s -w --bespoke.progress=true --bespoke.osc=false --html=true",
+    "build": "marp -I ./src -o ./dist --bespoke.progress=true --bespoke.osc=false --html=true && cpx \"src/assets/**/*\" dist/assets",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.2",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "gh-pages": "^6.3.0"
+  }
+}
