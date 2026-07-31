@@ -25,7 +25,7 @@ pnpm deploy   # publica ./dist en la rama gh-pages
 
 `alo.css` (oscuro, el que usan **todos** los mazos) y `alolight.css` (claro, variante sin usar por ahora). Marp CLI los registra automáticamente porque `-I ./src` escanea el directorio de entrada en busca de CSS con la cabecera `/* @theme <nombre> */`; por eso `theme: alo` en el front matter funciona sin archivo de configuración de Marp (no existe `.marprc`).
 
-Cambiar `alo.css` afecta a los 17 mazos a la vez. Si tocas algo en `alo.css`, replica el cambio en `alolight.css` para que las dos variantes no se desincronicen.
+Cambiar `alo.css` afecta a los 18 mazos a la vez. Si tocas algo en `alo.css`, replica el cambio en `alolight.css` para que las dos variantes no se desincronicen.
 
 ### Elementos personalizados definidos por el tema
 
@@ -35,6 +35,30 @@ El tema estiliza etiquetas HTML inventadas (no son Web Components reales, solo C
 - `<split-slide>` — grid de dos columnas, ajustable con las variables inline `--left`, `--right`, `--font-size`.
 - `<spoiler>` — texto oculto hasta el hover.
 - `.grid` — grid auto-fit de tarjetas.
+
+#### Líneas en blanco alrededor de las etiquetas inventadas
+
+`<steps>`, `<step>` y `<split-slide>` **no** están en la lista de etiquetas de bloque de markdown-it (a diferencia de `<div>`), así que **no pueden interrumpir un párrafo o una lista**. Si un `</step>` va pegado a la última línea de una lista o un párrafo, markdown-it lo trata como texto en línea, se lo traga dentro del `<li>` y el revelado progresivo se rompe en silencio (el indicador muestra `1 / 1` y todos los pasos se ven a la vez).
+
+Regla: deja una **línea en blanco antes y después** de cada `<steps>`, `<step>`, `</step>`, `</steps>` y `</split-slide>` cuando el vecino sea contenido Markdown (lista, párrafo, imagen, blockquote):
+
+```markdown
+<steps>
+<step>
+
+- Primer punto
+- Último punto del paso        ⬅ línea en blanco obligatoria antes de </step>
+
+</step>
+<step>
+
+![w:850 contain](../assets/diagrama.png)
+
+</step>
+</steps>
+```
+
+No hace falta si el vecino ya es un bloque HTML (`</div>`) o un bloque de código cerrado con ``` — esos sí cierran el bloque por sí solos, que es por lo que los mazos con `<step>` de puro código funcionan sin la línea extra. Ante la duda, ponla siempre.
 
 ### Scripts de assets
 
