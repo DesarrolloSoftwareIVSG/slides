@@ -472,7 +472,7 @@ section {
   --cover: url(../assets/img_00033_.png);
 }
 </style>
-# 1.2.1 Back-end
+# Back-end
 ## Contenidos
 - Servidores estáticos y dinámicos
 - Componentes del back-end
@@ -649,7 +649,7 @@ section {
   --cover: url(../assets/img_00074_.png);
 }
 </style>
-# 1.2.2 Front-end
+# Front-end
 ## Contenidos
 - El cliente web: los navegadores
 - HTML, CSS y JavaScript
@@ -904,7 +904,7 @@ Web empaquetada como app **nativa** de escritorio o móvil
 
 ---
 
-## 1.3.2 Single-Page Applications (SPA)
+## Single-Page Applications (SPA)
 
 <split-slide style="--left: 50%; --right: 50%;">
 <div>
@@ -946,7 +946,7 @@ Web empaquetada como app **nativa** de escritorio o móvil
 
 ---
 
-## 1.3.3 Progressive Web Applications (PWA)
+## Progressive Web Applications (PWA)
 
 - Una **PWA** es una aplicación construida con tecnologías web que ofrece una experiencia **similar a la de una app nativa**
 
@@ -1067,7 +1067,7 @@ Se actualiza sola desde el servidor, sin pasar por una tienda
 
 ---
 
-## 1.3.4 Native Web Applications
+## Native Web Applications
 
 - Aplicaciones construidas con **tecnología web** pero **empaquetadas y distribuidas** como aplicaciones nativas
 
