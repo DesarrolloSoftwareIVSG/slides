@@ -7,7 +7,7 @@ paginate: true
 <!-- _class: cover -->
 <style scoped>
 section {
-  --cover: url(../assets/img_00070_.png);
+  --cover: url(../assets/img_00070_.avif);
 }
 </style>
 # Fundamentos de desarrollo Web
