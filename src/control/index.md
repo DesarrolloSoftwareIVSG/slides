@@ -143,6 +143,9 @@ pnpx vite --root src/ --port 1234
 </step>
 </steps>
 
+- Comparación [en npmx](https://npmx.dev/compare?packages=servor,live-server,vite)
+- Asegúrate de que el **live reload** funcione, a veces puede dar problemas
+
 ---
 ## Crear un proyecto con pnpm
 
