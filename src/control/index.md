@@ -112,20 +112,36 @@ touch {README.md,.gitignore}
 - Accesible desde [http://localhost:1234] (a veces 127.0.0.1 en vez de localhost)
 - Actualización al hacer cambios
 
+<steps>
+<step>
+
 ```bash
 # Opción 1: servor (✅ rápido, ✅ ligero, ✅ sin dependencias)
 pnpm add servor
 
 pnpx servor src/ index.html 1234 --reload
+```
+</step>
+<step>
 
+```bash
 # Opción 2: live-server (✅ rápido, ✅ ligero, ✅ sin dependencias)
 pnpm add live-server
-pnpx live-server src/ --port=1234
 
+pnpx live-server src/ --port=1234
+```
+</step>
+<step>
+
+```bash
 # Opción 3: vite 
 pnpm add vite
+
 pnpx vite --root src/ --port 1234
+
 ```
+</step>
+</steps>
 
 ---
 ## Crear un proyecto con pnpm
@@ -478,5 +494,8 @@ gh-pages -d src
 - [Node.js](https://nodejs.org/)
 
 ---
+
+<script src="../assets/steps.js"></script>
+<script src="../assets/image-modal.js"></script>
 
 

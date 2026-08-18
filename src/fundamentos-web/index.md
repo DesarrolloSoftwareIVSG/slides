@@ -1336,7 +1336,6 @@ Interactividad ligera sobre HTML del servidor, sin *bundle*
 </div>
 </split-slide>
 
-- 🧪 En este curso trabajaremos con [Astro](https://astro.build/) → mazo *Astro*
 
 ---
 
@@ -1480,7 +1479,7 @@ Islas, RSC y *zero-JS by default* (Astro)
 </div>
 </div>
 
-<!-- ---
+---
 
 ## Actividad final
 
@@ -1504,7 +1503,7 @@ Uno de front y uno de back. Justifiquen con **criterios**, no con modas
 </div>
 </div>
 
-- Preparen **3 minutos** de defensa oral de sus decisiones -->
+- Preparen **3 minutos** de defensa oral de sus decisiones
 
 ---
 
