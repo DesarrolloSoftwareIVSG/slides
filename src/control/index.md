@@ -125,7 +125,7 @@ pnpx servor src/ index.html 1234 --reload
 <step>
 
 ```bash
-# Opción 2: live-server (✅ rápido, ✅ ligero, ✅ sin dependencias)
+# Opción 2: live-server (popular)
 pnpm add live-server
 
 pnpx live-server src/ --port=1234
@@ -134,7 +134,7 @@ pnpx live-server src/ --port=1234
 <step>
 
 ```bash
-# Opción 3: vite 
+# Opción 3: vite (potente, hace muchas cosas extra, lo usaremos más adelante)
 pnpm add vite
 
 pnpx vite --root src/ --port 1234
