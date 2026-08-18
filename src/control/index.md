@@ -109,7 +109,7 @@ touch {README.md,.gitignore}
 ## Trabajar con un servidor local
 
 - Simular un entorno real en local
-- Accesible desde [http://localhost:1234] (a veces 127.0.0.1 en vez de localhost)
+- Accesible desde [http://localhost:1234] (a veces ``127.0.0.1`` en vez de ``localhost``)
 - Actualización al hacer cambios
 
 <steps>
@@ -150,7 +150,7 @@ pnpx vite --root src/ --port 1234
 ## Crear un proyecto con pnpm
 
 - El fichero package.json
-- El name en minúsculas, con guiones. Mismo nombre que la carpeta.
+- El ``name`` en minúsculas, con guiones. Mismo nombre que la carpeta.
 - Realmente, las dependencias que no participan en la web final, son de desarrollo.
 <div class="grid">
 
@@ -181,8 +181,8 @@ pnpm remove servor
 ---
 ## Trabajar con dependencias
 
-- Las dependencias se instalan en node_modules/
-- Versionado: ``4.0.2`` → SemVer → Major, minor, patch
+- Las dependencias se instalan en [node_modules/](../assets/node_modules.png)
+- Versionado: ``4.0.2`` → [SemVer](../assets/semversion.png) → Major, minor, patch
 - Actualizaciones con ``pnpx npm-check -u``
 - ``npm install -g npm-check``
 - ``npm-check -u``
@@ -218,7 +218,7 @@ echo "save-exact=true" >>.npmrc
 
 - Automatizar tareas comunes
 - Definir comandos personalizados
-- Añadelos en la propiedad scripts del package.json
+- Añadelos en la propiedad ``scripts`` del ``package.json``
 
 ```json
 {
