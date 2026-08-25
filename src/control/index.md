@@ -481,7 +481,7 @@ section {
 pnpm add -D gh-pages
 
 # Despliegue en la rama `gh-pages`
-gh-pages -d src
+pnpx gh-pages -d src
 
 # Buena idea: añadirlo en package.json (en scripts)
 {
@@ -495,8 +495,6 @@ gh-pages -d src
 - [GitHub CLI](https://cli.github.com/)
 - [GitHub Pages](https://pages.github.com/)
 - [Node.js](https://nodejs.org/)
-
----
 
 <script src="../assets/steps.js"></script>
 <script src="../assets/image-modal.js"></script>
