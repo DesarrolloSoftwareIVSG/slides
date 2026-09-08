@@ -958,8 +958,8 @@ Pedido::query()
 - Migraciones con tipos, índices, claves foráneas y política de borrado — **reversibles**
 - Modelos con relaciones, `$fillable`, `casts()` y `$hidden`
 - Fábricas y pobladores: **20+ registros**
-- Tres consultas: alcances, agregación y **procedimiento almacenado o vista**
-- **Conteo de consultas** antes y después de corregir N+1
+- Tres consultas: alcances, agregación.
+
 </div>
 <div>
 
@@ -1175,14 +1175,12 @@ class PedidoService
     {
         // Regla 1: no se confirma un pedido vacío
         if ($pedido->detalles()->doesntExist()) {
-            throw new ReglaNegocioException(
-                'No se puede confirmar un pedido sin detalle.');
+            throw new ReglaNegocioException('No se puede confirmar un pedido sin detalle.');
         }
 
         // Regla 2: no se reconfirma
         if ($pedido->estado === 'confirmado') {
-            throw new ReglaNegocioException(
-                'El pedido ya fue confirmado.');
+            throw new ReglaNegocioException('El pedido ya fue confirmado.');
         }
 
         return DB::transaction(function () use ($pedido) {
