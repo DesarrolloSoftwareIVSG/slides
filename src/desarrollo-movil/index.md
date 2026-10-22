@@ -17,7 +17,7 @@ section {
 - Diseño, herramientas y frameworks
 - Interfaz, navegación, datos y hardware
 
-> **Ionic 9** + **Capacitor 8** como stack principal <br>Ejemplos con **Angular** (standalone) <br>Curso *Desarrollo de Software IV* · II Ciclo 2026
+> **Ionic 9** + **Capacitor 8** como stack principal <br>Ejemplos con **Vue 3** (`<script setup>` + TypeScript) <br>Curso *Desarrollo de Software IV* · II Ciclo 2026
 
 ---
 
@@ -531,8 +531,8 @@ Tarea **autocontenida** que interrumpe el flujo: crear un registro, filtros, con
 ```
 
 ```ts
-// Forzar un modo global
-provideIonicAngular({ mode: 'md' })
+// main.ts — forzar un modo global
+createApp(App).use(IonicVue, { mode: 'md' })
 ```
 </div>
 <div>
@@ -713,7 +713,7 @@ section {
 - Angular **18–22**, React **18+** (React Router 6), Vue **3.5+** (Vue Router 5)
 - Requiere **Capacitor 7+**
 - iOS **16+**, Chrome/Edge **89+**, Safari **16+**
-- Imports *standalone* desde `@ionic/angular` (antes `@ionic/angular/standalone`)
+- En Vue: paquetes `@ionic/vue` y `@ionic/vue-router`
 - Se eliminó el *picker* legado; `ion-img` queda obsoleto (usar `<img loading="lazy">`)
 - Migración asistida:
 ```bash
@@ -756,8 +756,8 @@ npx @ionic/migrate
 
 ```text
 ┌────────────────────────────────────────┐
-│  App web (Angular + Ionic)             │
-│  pages · components · services         │
+│  App web (Vue + Ionic)                 │
+│  views · components · composables      │
 │                                        │
 │  import { Camera } from                │
 │         '@capacitor/camera';           │
@@ -793,8 +793,8 @@ npx @ionic/migrate
 <step>
 
 ```bash
-# 1. Crear la app: plantilla "tabs", Angular standalone, con Capacitor
-ionic start pedidos-app tabs --type=angular-standalone --capacitor
+# 1. Crear la app: plantilla "tabs", Vue + Vite, con Capacitor
+ionic start pedidos-app tabs --type=vue --capacitor
 
 cd pedidos-app
 ionic serve                       # http://localhost:8100
@@ -835,7 +835,7 @@ npx cap run android
   código web (src/)
         │  ionic build
         ▼
-  www/  (bundle estático)      ← webDir en capacitor.config.ts
+  dist/  (bundle de Vite)      ← webDir en capacitor.config.ts
         │  npx cap sync  =  copy + update
         ▼
   android/app/src/main/assets/public     ios/App/App/public
@@ -884,21 +884,23 @@ Actualiza dependencias nativas de los plugins
 pedidos-app/
 ├── android/             ← proyecto Android Studio
 ├── ios/                 ← proyecto Xcode
+├── public/
 ├── src/
-│   ├── app/
-│   │   ├── tabs/
-│   │   ├── pedidos/
-│   │   │   ├── pedidos.page.ts
-│   │   │   ├── pedidos.page.html
-│   │   │   └── pedidos.page.scss
-│   │   ├── services/
-│   │   ├── app.component.ts
-│   │   └── app.routes.ts
-│   ├── theme/variables.scss
-│   ├── environments/
+│   ├── views/
+│   │   ├── TabsPage.vue
+│   │   ├── PedidosPage.vue
+│   │   └── PedidoDetallePage.vue
+│   ├── components/
+│   ├── composables/     ← useAuth, usePedidos
+│   ├── services/        ← api.ts (fetch)
+│   ├── router/index.ts
+│   ├── theme/variables.css
+│   ├── App.vue
 │   └── main.ts
+├── .env                 ← VITE_API_URL
 ├── capacitor.config.ts
 ├── ionic.config.json
+├── vite.config.ts
 └── package.json
 ```
 </div>
@@ -911,7 +913,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'cr.ac.ucr.pedidos',
   appName: 'Pedidos',
-  webDir: 'www',
+  webDir: 'dist',
   plugins: {
     SplashScreen: { launchShowDuration: 1500 },
   },
@@ -927,30 +929,52 @@ export default config;
 
 ---
 
-## Arranque de la app — `main.ts`
+## Arranque de la app — `main.ts` y `App.vue`
+
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.85rem;">
+<div>
 
 ```ts
-import { bootstrapApplication } from '@angular/platform-browser';
-import { RouteReuseStrategy, provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
+// src/main.ts
+import { createApp } from 'vue';
+import { IonicVue } from '@ionic/vue';
+import App from './App.vue';
+import router from './router';
 
-import { AppComponent } from './app/app.component';
-import { routes } from './app/app.routes';
-import { authInterceptor } from './app/services/auth.interceptor';
+/* CSS obligatorio y utilidades de Ionic */
+import '@ionic/vue/css/core.css';
+import '@ionic/vue/css/normalize.css';
+import '@ionic/vue/css/structure.css';
+import '@ionic/vue/css/typography.css';
+import '@ionic/vue/css/padding.css';
+import '@ionic/vue/css/palettes/dark.system.css';
+import './theme/variables.css';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
-    provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(withInterceptors([authInterceptor])),
-  ],
-});
+const app = createApp(App).use(IonicVue).use(router);
+
+router.isReady().then(() => app.mount('#app'));
+```
+</div>
+<div>
+
+```vue
+<!-- src/App.vue -->
+<template>
+  <ion-app>
+    <ion-router-outlet />
+  </ion-app>
+</template>
+
+<script setup lang="ts">
+import { IonApp, IonRouterOutlet } from '@ionic/vue';
+</script>
 ```
 
-- `IonicRouteStrategy` **conserva** las páginas en la pila para que "atrás" sea instantáneo y mantenga el scroll
-- `provideIonicAngular()` reemplaza al `IonicModule`, obsoleto desde Ionic 9
+- `IonicVue` es un **plugin de Vue**: registra la configuración global (modo, animaciones…)
+- Se monta **cuando el router está listo** para que la primera página se pinte sin parpadeo
+- Cada componente de Ionic se **importa explícitamente**: solo se empaqueta lo que se usa
+</div>
+</split-slide>
 
 ---
 
@@ -975,45 +999,46 @@ section {
 <div>
 
 ```html
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Pedidos</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="refrescar()">
-        <ion-icon slot="icon-only" name="refresh" />
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<template>
+  <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-title>Pedidos</ion-title>
+        <ion-buttons slot="end">
+          <ion-button @click="refrescar">
+            <ion-icon slot="icon-only" :icon="refresh" />
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Pedidos</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- contenido con scroll -->
-</ion-content>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Pedidos</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <!-- contenido con scroll -->
+    </ion-content>
+  </ion-page>
+</template>
 ```
 </div>
 <div>
 
+```html
+<script setup lang="ts">
+import { IonPage, IonHeader, IonToolbar, IonTitle,
+  IonButtons, IonButton, IonIcon, IonContent } from '@ionic/vue';
+import { refresh } from 'ionicons/icons';
+</script>
+```
+
+- Toda vista enrutada se envuelve en **`<ion-page>`**: sin él no hay transiciones ni ciclo de vida
 - `ion-header` / `ion-footer` quedan **fijos**; solo `ion-content` hace scroll
 - `slot="start"` / `slot="end"` ubican botones en la barra
 - `collapse="condense"` produce el **título grande** de iOS que se encoge al hacer scroll
-- `ion-content` respeta automáticamente las **áreas seguras**
-
-```ts
-@Component({
-  selector: 'app-pedidos',
-  templateUrl: 'pedidos.page.html',
-  imports: [IonHeader, IonToolbar, IonTitle,
-            IonButtons, IonButton, IonIcon,
-            IonContent],
-})
-export class PedidosPage {}
-```
+- `ion-content` respeta las **áreas seguras**
 </div>
 </split-slide>
 
@@ -1065,59 +1090,59 @@ export class PedidosPage {}
 
 ```html
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="refrescar($event)">
+  <ion-refresher slot="fixed" @ionRefresh="refrescar">
     <ion-refresher-content />
   </ion-refresher>
 
-  <ion-list>
-    @for (p of pedidos(); track p.id) {
-      <ion-item-sliding>
-        <ion-item [routerLink]="['/pedidos', p.id]" detail>
-          <ion-label>
-            <h2>Pedido #{{ p.id }}</h2>
-            <p>{{ p.cliente }} · {{ p.total | currency:'CRC' }}</p>
-          </ion-label>
-          <ion-badge slot="end">{{ p.estado }}</ion-badge>
-        </ion-item>
-        <ion-item-options side="end">
-          <ion-item-option color="danger" (click)="cancelar(p)">
-            Cancelar
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    } @empty {
-      <p class="ion-padding">No hay pedidos todavía</p>
-    }
+  <ion-list v-if="pedidos.length">
+    <ion-item-sliding v-for="p in pedidos" :key="p.id">
+      <ion-item :router-link="`/tabs/pedidos/${p.id}`" detail>
+        <ion-label>
+          <h2>Pedido #{{ p.id }}</h2>
+          <p>{{ p.cliente }} · {{ colones.format(p.total) }}</p>
+        </ion-label>
+        <ion-badge slot="end">{{ p.estado }}</ion-badge>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" @click="cancelar(p)">
+          Cancelar
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
+
+  <p v-else class="ion-padding">No hay pedidos todavía</p>
 </ion-content>
 ```
 </div>
 <div>
 
-```ts
-export class PedidosPage {
-  private api = inject(PedidosService);
-  pedidos = signal<Pedido[]>([]);
+```html
+<script setup lang="ts">
+import { ref } from 'vue';
+import { onIonViewWillEnter,
+  type RefresherCustomEvent } from '@ionic/vue';
+import { pedidosApi, type Pedido } from '@/services/pedidos';
 
-  ionViewWillEnter() {
-    this.cargar();
-  }
+const pedidos = ref<Pedido[]>([]);
+const colones = new Intl.NumberFormat('es-CR',
+  { style: 'currency', currency: 'CRC' });
 
-  async refrescar(ev: RefresherCustomEvent) {
-    await this.cargar();
-    ev.target.complete();
-  }
-
-  private async cargar() {
-    this.pedidos.set(
-      await firstValueFrom(this.api.listar())
-    );
-  }
+async function cargar() {
+  pedidos.value = await pedidosApi.listar();
 }
+
+onIonViewWillEnter(cargar);
+
+async function refrescar(ev: RefresherCustomEvent) {
+  await cargar();
+  ev.target.complete();
+}
+</script>
 ```
 
 - `detail` agrega la flecha **›** en iOS
-- Deslizar el ítem revela acciones **sin ocupar espacio** en pantalla
+- Deslizar el ítem revela acciones **sin ocupar espacio**
 </div>
 </split-slide>
 
@@ -1125,40 +1150,54 @@ export class PedidosPage {
 
 ## Formularios
 
-<split-slide style="--left: 55%; --right: 45%; --font-size: 0.76rem;">
+<split-slide style="--left: 58%; --right: 42%; --font-size: 0.7rem;">
 <div>
 
 ```html
-<form [formGroup]="form" (ngSubmit)="guardar()">
-  <ion-list>
-    <ion-item>
-      <ion-input label="Cliente" labelPlacement="floating"
-                 formControlName="cliente"
-                 errorText="El cliente es obligatorio" />
-    </ion-item>
-    <ion-item>
-      <ion-input label="Teléfono" type="tel" inputmode="tel"
-                 labelPlacement="floating"
-                 formControlName="telefono" />
-    </ion-item>
-    <ion-item>
-      <ion-select label="Estado" formControlName="estado">
-        <ion-select-option value="pendiente">Pendiente</ion-select-option>
-        <ion-select-option value="pagado">Pagado</ion-select-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+<template>
+  <form @submit.prevent="guardar">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Cliente" label-placement="floating"
+          v-model="form.cliente"
+          :class="{ 'ion-invalid ion-touched': errores.cliente }"
+          :error-text="errores.cliente?.[0]" />
+      </ion-item>
+      <ion-item>
+        <ion-input label="Teléfono" type="tel" inputmode="tel"
+          label-placement="floating" v-model="form.telefono" />
+      </ion-item>
+      <ion-item>
+        <ion-select label="Estado" v-model="form.estado">
+          <ion-select-option value="pendiente">Pendiente</ion-select-option>
+          <ion-select-option value="pagado">Pagado</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" type="submit">Guardar</ion-button>
+  </form>
+</template>
 
-  <ion-button expand="block" type="submit"
-              [disabled]="form.invalid">Guardar</ion-button>
-</form>
+<script setup lang="ts">
+const form = reactive({ cliente: '', telefono: '', estado: 'pendiente' });
+const errores = ref<Record<string, string[]>>({});
+
+async function guardar() {
+  try {
+    await pedidosApi.crear(form);
+  } catch (e) {
+    if (e instanceof ErrorApi && e.status === 422) errores.value = e.cuerpo.errors;
+  }
+}
+</script>
 ```
 </div>
 <div>
 
+- `v-model` funciona directamente sobre `ion-input`, `ion-select`, `ion-toggle`…
 - `ion-input` integra **etiqueta**, mensaje de **error** y ayuda
 - `type` e `inputmode` deciden **qué teclado** abre el teléfono
-- Validación en el cliente para la **experiencia**; la API Laravel sigue siendo la **autoridad** (422)
+- Los errores **422** de Laravel (`errors.campo[]`) se pintan bajo cada campo: la API sigue siendo la **autoridad**
 
 <br>
 
@@ -1174,39 +1213,38 @@ export class PedidosPage {
 <div>
 
 ```ts
-export class PedidoDetallePage {
-  private alerts = inject(AlertController);
-  private toasts = inject(ToastController);
-  private loading = inject(LoadingController);
+import { alertController, toastController,
+  loadingController } from '@ionic/vue';
 
-  async cancelar(p: Pedido) {
-    const alert = await this.alerts.create({
-      header: '¿Cancelar pedido?',
-      message: `El pedido #${p.id} no se podrá recuperar`,
-      buttons: [
-        { text: 'No', role: 'cancel' },
-        { text: 'Sí, cancelar', role: 'destructive' },
-      ],
-    });
-    await alert.present();
-    const { role } = await alert.onDidDismiss();
-    if (role !== 'destructive') return;
+async function cancelar(p: Pedido) {
+  const alert = await alertController.create({
+    header: '¿Cancelar pedido?',
+    message: `El pedido #${p.id} no se podrá recuperar`,
+    buttons: [
+      { text: 'No', role: 'cancel' },
+      { text: 'Sí, cancelar', role: 'destructive' },
+    ],
+  });
+  await alert.present();
+  const { role } = await alert.onDidDismiss();
+  if (role !== 'destructive') return;
 
-    const spinner = await this.loading.create({ message: 'Cancelando…' });
-    await spinner.present();
-    try {
-      await firstValueFrom(this.api.cancelar(p.id));
-      (await this.toasts.create({ message: 'Pedido cancelado', duration: 2000 })).present();
-    } finally {
-      spinner.dismiss();
-    }
+  const spinner = await loadingController.create({ message: 'Cancelando…' });
+  await spinner.present();
+  try {
+    await pedidosApi.cancelar(p.id);
+    const toast = await toastController.create({
+      message: 'Pedido cancelado', duration: 2000 });
+    await toast.present();
+  } finally {
+    spinner.dismiss();
   }
 }
 ```
 </div>
 <div>
 
-- Los *controllers* crean overlays **desde código**; también existen como etiquetas (`<ion-modal [isOpen]="…">`)
+- Los *controllers* crean overlays **desde código**; también existen como etiquetas (`<ion-modal :is-open="abierto">`)
 - `role` permite saber **cómo** se cerró el diálogo
 - **Alert** → decisión que bloquea
 - **Toast** → aviso que no bloquea
@@ -1228,7 +1266,7 @@ export class PedidoDetallePage {
 
 ### 🎨 Colores con variables CSS
 ```css
-/* src/theme/variables.scss */
+/* src/theme/variables.css */
 :root {
   --ion-color-primary: #00c0f3;          /* celeste UCR */
   --ion-color-primary-contrast: #ffffff;
@@ -1245,9 +1283,9 @@ export class PedidoDetallePage {
 <div>
 
 ### 🌙 Modo oscuro
-```scss
-// global.scss — sigue la preferencia del sistema
-@import '@ionic/angular/css/palettes/dark.system.css';
+```ts
+// main.ts — sigue la preferencia del sistema
+import '@ionic/vue/css/palettes/dark.system.css';
 ```
 
 ### 📏 Áreas seguras
@@ -1279,39 +1317,41 @@ section {
 
 ---
 
-## Rutas en Ionic + Angular
+## Rutas en Ionic + Vue
 
 <split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
 <div>
 
 ```ts
-// app.routes.ts
-export const routes: Routes = [
-  { path: 'login',
-    loadComponent: () => import('./login/login.page')
-      .then(m => m.LoginPage) },
-  { path: '',
-    canActivate: [authGuard],
-    loadChildren: () => import('./tabs/tabs.routes')
-      .then(m => m.routes) },
-];
-```
+// src/router/index.ts
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+import TabsPage from '@/views/TabsPage.vue';
 
-```html
-<!-- app.component.html -->
-<ion-app>
-  <ion-router-outlet />
-</ion-app>
+const routes: RouteRecordRaw[] = [
+  { path: '/', redirect: '/tabs/pedidos' },
+  { path: '/login',
+    component: () => import('@/views/LoginPage.vue') },
+  { path: '/tabs/', component: TabsPage,
+    meta: { requiereSesion: true },
+    children: [ /* siguiente diapositiva */ ] },
+];
+
+export default createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
+});
 ```
 </div>
 <div>
 
-- Ionic usa el **router del framework** (Angular Router, React Router, Vue Router)
-- `ion-router-outlet` reemplaza a `<router-outlet>` y agrega:
+- Ionic usa **Vue Router**, pero `createRouter` se importa de **`@ionic/vue-router`**: así Ionic conoce la dirección de cada navegación
+- `ion-router-outlet` reemplaza a `<router-view>` y agrega:
   - **animaciones** de transición por plataforma
   - una **pila** de páginas que se conservan en memoria
-  - **deslizar para volver** (por defecto en modo `ios`, propiedad `swipeGesture` desde Ionic 9)
-- `loadComponent` carga cada página **bajo demanda** (*lazy loading*)
+  - **deslizar para volver** (modo `ios`; propiedad `swipeGesture` desde Ionic 9)
+- `() => import(…)` carga cada vista **bajo demanda**
+- Ionic 9 requiere **Vue 3.5+** y **Vue Router 5**
 </div>
 </split-slide>
 
@@ -1323,37 +1363,40 @@ export const routes: Routes = [
 <div>
 
 ```ts
-// tabs/tabs.routes.ts
-export const routes: Routes = [{
-  path: 'tabs', component: TabsPage,
-  children: [
-    { path: 'pedidos', loadComponent: () => import('../pedidos/pedidos.page').then(m => m.PedidosPage) },
-    { path: 'pedidos/:id', loadComponent: () => import('../pedidos/detalle.page').then(m => m.DetallePage) },
-    { path: 'perfil', loadComponent: () => import('../perfil/perfil.page').then(m => m.PerfilPage) },
-    { path: '', redirectTo: 'pedidos', pathMatch: 'full' },
-  ],
-}, { path: '', redirectTo: 'tabs/pedidos', pathMatch: 'full' }];
+// hijos de '/tabs/' en router/index.ts
+children: [
+  { path: '', redirect: '/tabs/pedidos' },
+  { path: 'pedidos', component: () => import('@/views/PedidosPage.vue') },
+  { path: 'pedidos/:id', props: true,
+    component: () => import('@/views/PedidoDetallePage.vue') },
+  { path: 'perfil', component: () => import('@/views/PerfilPage.vue') },
+],
 ```
 
 ```html
-<!-- tabs.page.html -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="pedidos">
-      <ion-icon name="receipt" /><ion-label>Pedidos</ion-label>
-    </ion-tab-button>
-    <ion-tab-button tab="perfil">
-      <ion-icon name="person" /><ion-label>Perfil</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+<!-- src/views/TabsPage.vue -->
+<template>
+  <ion-page>
+    <ion-tabs>
+      <ion-router-outlet />
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="pedidos" href="/tabs/pedidos">
+          <ion-icon :icon="receipt" /><ion-label>Pedidos</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="perfil" href="/tabs/perfil">
+          <ion-icon :icon="person" /><ion-label>Perfil</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-page>
+</template>
 ```
 </div>
 <div>
 
 - Cada pestaña mantiene **su propia pila**: si el usuario entra a un detalle en *Pedidos*, cambia a *Perfil* y regresa, sigue en el detalle
-- El atributo `tab` coincide con el **segmento de ruta** hijo
-- 🚩 No navegue **entre pestañas** con `routerLink` desde el contenido: use la barra de pestañas, o se mezclan las pilas
+- Las rutas de una pestaña comparten **prefijo** (`pedidos`, `pedidos/:id`) para que Ionic sepa a qué pila pertenecen
+- 🚩 No navegue **entre pestañas** con `router-link` desde el contenido: use la barra de pestañas, o se mezclan las pilas
 </div>
 </split-slide>
 
@@ -1366,43 +1409,44 @@ export const routes: Routes = [{
 
 ### Desde la plantilla
 ```html
-<ion-item [routerLink]="['/tabs/pedidos', p.id]">
-<ion-button routerLink="/login" routerDirection="root">
+<ion-item :router-link="`/tabs/pedidos/${p.id}`">
+<ion-button router-link="/login" router-direction="root">
 ```
 
 ### Desde código
 ```ts
-private nav = inject(NavController);
+import { useIonRouter } from '@ionic/vue';
+const ionRouter = useIonRouter();
 
-this.nav.navigateForward(['/tabs/pedidos', id]);
-this.nav.navigateBack('/tabs/pedidos');
-this.nav.navigateRoot('/login');  // limpia la pila
+ionRouter.push(`/tabs/pedidos/${id}`);         // avanzar
+ionRouter.back();                              // volver
+ionRouter.navigate('/login', 'root', 'replace'); // nueva raíz
 ```
 
 ### Botón atrás
 ```html
 <ion-buttons slot="start">
-  <ion-back-button defaultHref="/tabs/pedidos" />
+  <ion-back-button default-href="/tabs/pedidos" />
 </ion-buttons>
 ```
 </div>
 <div>
 
 ### Leer el parámetro
-```ts
-export class DetallePage {
-  private route = inject(ActivatedRoute);
-  pedido = signal<Pedido | null>(null);
+```html
+<script setup lang="ts">
+// la ruta tiene props: true → :id llega como prop
+const props = defineProps<{ id: string }>();
+const pedido = ref<Pedido | null>(null);
 
-  async ionViewWillEnter() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.pedido.set(await firstValueFrom(this.api.obtener(id)));
-  }
-}
+onIonViewWillEnter(async () => {
+  pedido.value = await pedidosApi.obtener(Number(props.id));
+});
+</script>
 ```
 
-- `routerDirection` / `NavController` le dicen a Ionic **qué animación** usar: avanzar, volver o reemplazar la raíz
-- `defaultHref` sirve cuando la app se abre **directo** en el detalle (enlace profundo) y no hay pila
+- `router-direction` y `useIonRouter` le dicen a Ionic **qué animación** usar: avanzar, volver o reemplazar la raíz
+- `default-href` sirve cuando la app se abre **directo** en el detalle (enlace profundo) y no hay pila
 </div>
 </split-slide>
 
@@ -1416,27 +1460,28 @@ export class DetallePage {
 ```text
   navegar hacia la página
          │
-   ngOnInit            ← solo la 1.ª vez
-   ionViewWillEnter    ← cada vez, antes de animar
-   ionViewDidEnter     ← cada vez, al terminar
+   onMounted             ← solo la 1.ª vez
+   onIonViewWillEnter    ← cada vez, antes de animar
+   onIonViewDidEnter     ← cada vez, al terminar
          │
   navegar a otra página (se queda en la pila)
          │
-   ionViewWillLeave
-   ionViewDidLeave
+   onIonViewWillLeave
+   onIonViewDidLeave
          │
   sale de la pila (atrás)
          │
-   ngOnDestroy
+   onUnmounted
 ```
 </div>
 <div>
 
-- Como `ion-router-outlet` **conserva** las páginas, `ngOnInit` **no** se vuelve a ejecutar al regresar
-- 🚩 Error frecuente: cargar datos en `ngOnInit` y que la lista **no se actualice** al volver de editar
-- ✅ Recargar datos en `ionViewWillEnter`
-- ✅ Iniciar animaciones pesadas o mapas en `ionViewDidEnter`
-- ✅ Pausar video, GPS o *timers* en `ionViewWillLeave`
+- Como `ion-router-outlet` **conserva** las páginas, `onMounted` **no** se vuelve a ejecutar al regresar
+- 🚩 Error frecuente: cargar datos en `onMounted` y que la lista **no se actualice** al volver de editar
+- ✅ Recargar datos en `onIonViewWillEnter`
+- ✅ Iniciar animaciones pesadas o mapas en `onIonViewDidEnter`
+- ✅ Pausar video, GPS o *timers* en `onIonViewWillLeave`
+- ⚠️ Solo funcionan en vistas envueltas en `<ion-page>`
 </div>
 </split-slide>
 
@@ -1449,15 +1494,14 @@ export class DetallePage {
 
 ### 🛡️ Proteger rutas
 ```ts
-// auth.guard.ts
-export const authGuard: CanActivateFn = async () => {
-  const auth = inject(AuthService);
-  const router = inject(Router);
-  await auth.cargarToken();
-  return auth.estaAutenticado()
-    ? true
-    : router.parseUrl('/login');
-};
+// src/router/index.ts
+router.beforeEach(async (to) => {
+  const { cargarToken, estaAutenticado } = useAuth();
+  await cargarToken();
+  if (to.meta.requiereSesion && !estaAutenticado.value) {
+    return '/login';
+  }
+});
 ```
 
 - El guard **no es seguridad**: solo evita mostrar pantallas inútiles. La API decide con **401/403**
@@ -1469,17 +1513,22 @@ export const authGuard: CanActivateFn = async () => {
 - Para personalizarlo (p. ej. confirmar antes de salir de un formulario):
 
 ```ts
-private platform = inject(Platform);
+import { useBackButton, useIonRouter } from '@ionic/vue';
+import { App } from '@capacitor/app';
 
-constructor() {
-  this.platform.backButton.subscribeWithPriority(10, () => {
-    if (this.form.dirty) this.confirmarSalida();
-    else this.nav.back();
-  });
-}
+const ionRouter = useIonRouter();
+
+// prioridad alta: se ejecuta primero
+useBackButton(10, (siguiente) => {
+  if (hayCambios.value) confirmarSalida();
+  else siguiente();
+});
+
+// prioridad -1: último recurso, en la raíz cierra la app
+useBackButton(-1, () => {
+  if (!ionRouter.canGoBack()) App.exitApp();
+});
 ```
-
-- En la página raíz, "atrás" **cierra** la app (`App.exitApp()`)
 </div>
 </split-slide>
 
@@ -1504,8 +1553,8 @@ section {
 
 | Tipo de dato | Ejemplo | Dónde guardarlo |
 |:--|:--|:--|
-| **Estado de pantalla** | Filtro activo, formulario a medias | Variables / *signals* del componente |
-| **Estado compartido** | Usuario actual, carrito | **Servicio** singleton (`providedIn: 'root'`) |
+| **Estado de pantalla** | Filtro activo, formulario a medias | `ref` / `reactive` del componente |
+| **Estado compartido** | Usuario actual, carrito | **Composable** con estado de módulo o **Pinia** |
 | **Preferencias pequeñas** | Tema, idioma, último usuario | `@capacitor/preferences` |
 | **Secretos** | Token de acceso | Almacenamiento **seguro** (Keychain / Keystore) |
 | **Datos estructurados locales** | Catálogo sin conexión, cola de envíos | **SQLite** (`@capacitor-community/sqlite`) |
@@ -1522,44 +1571,41 @@ section {
 <div>
 
 ```ts
-// services/pedidos.service.ts
-@Injectable({ providedIn: 'root' })
-export class PedidosService {
-  private http = inject(HttpClient);
-  private url = `${environment.apiUrl}/pedidos`;
+// src/services/pedidos.ts
+import { api } from './api';
 
-  listar(pagina = 1) {
-    return this.http
-      .get<Paginado<Pedido>>(this.url, { params: { page: pagina } })
-      .pipe(map(r => r.data));
-  }
-
-  obtener(id: number) {
-    return this.http.get<{ data: Pedido }>(`${this.url}/${id}`)
-      .pipe(map(r => r.data));
-  }
-
-  crear(pedido: NuevoPedido) {
-    return this.http.post<{ data: Pedido }>(this.url, pedido);
-  }
-
-  cancelar(id: number) {
-    return this.http.delete<void>(`${this.url}/${id}`);
-  }
+export interface Pedido {
+  id: number; cliente: string; total: number; estado: string;
 }
+export type NuevoPedido = Omit<Pedido, 'id' | 'total'>;
+
+export const pedidosApi = {
+  listar: (pagina = 1) =>
+    api<{ data: Pedido[] }>(`/pedidos?page=${pagina}`)
+      .then(r => r.data),
+
+  obtener: (id: number) =>
+    api<{ data: Pedido }>(`/pedidos/${id}`).then(r => r.data),
+
+  crear: (pedido: NuevoPedido) =>
+    api<{ data: Pedido }>('/pedidos', {
+      method: 'POST', body: JSON.stringify(pedido),
+    }).then(r => r.data),
+
+  cancelar: (id: number) =>
+    api<void>(`/pedidos/${id}`, { method: 'DELETE' }),
+};
 ```
 </div>
 <div>
 
 - La app **no conoce** la base de datos: solo el **contrato** de la API (el documento OpenAPI del tema anterior)
 - `.data` viene de los **API Resources** de Laravel
-- La página llama al servicio; el servicio habla HTTP. Misma **separación por capas** que en el back-end
+- La vista llama al módulo de servicio; el servicio habla HTTP. Misma **separación por capas** que en el back-end
 
-```ts
-// environment.ts
-export const environment = {
-  apiUrl: 'http://10.0.2.2:8000/api',
-};
+```bash
+# .env  (Vite expone solo las variables VITE_*)
+VITE_API_URL=http://10.0.2.2:8000/api
 ```
 
 - `10.0.2.2` es el `localhost` de la PC **visto desde el emulador** de Android
@@ -1574,50 +1620,82 @@ export const environment = {
 <div>
 
 ```ts
-// services/auth.service.ts
-@Injectable({ providedIn: 'root' })
-export class AuthService {
-  private http = inject(HttpClient);
-  token = signal<string | null>(null);
+// src/composables/useAuth.ts
+const token = ref<string | null>(null);   // compartido: fuera de la función
 
-  async login(email: string, password: string) {
-    const r = await firstValueFrom(
-      this.http.post<{ token: string }>(`${environment.apiUrl}/login`,
-        { email, password, device_name: 'app-movil' }));
-    this.token.set(r.token);
+export function useAuth() {
+  async function login(email: string, password: string) {
+    const r = await api<{ token: string }>('/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password, device_name: 'app-movil' }),
+    });
+    token.value = r.token;
     await almacenSeguro.set('token', r.token);
   }
-
-  async cargarToken() {
-    this.token.set(await almacenSeguro.get('token'));
+  async function cargarToken() {
+    token.value ??= await almacenSeguro.get('token');
   }
-
-  estaAutenticado() { return this.token() !== null; }
+  async function cerrarSesion() {
+    token.value = null;
+    await almacenSeguro.remove('token');
+  }
+  const estaAutenticado = computed(() => token.value !== null);
+  return { token, login, cargarToken, cerrarSesion, estaAutenticado };
 }
-```
-
-```ts
-// services/auth.interceptor.ts
-export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = inject(AuthService).token();
-  return next(token
-    ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
-    : req);
-};
 ```
 </div>
 <div>
 
-- El **interceptor** agrega `Authorization: Bearer …` a **todas** las peticiones
+- Un **composable** con el `ref` **fuera** de la función: todas las vistas comparten el mismo token (sin necesidad de Pinia)
 - `device_name` permite que Sanctum emita **un token por dispositivo** y revocarlo
-- Un **401** de la API → borrar el token y `navigateRoot('/login')`
-
-<br>
+- `cargarToken()` lo recupera al abrir la app: lo usa la guarda del router
 
 ### 🔐 `almacenSeguro`
 - `@capacitor/preferences` **no está cifrado**: no sirve para tokens
 - Use un plugin respaldado por **Keychain** (iOS) y **Keystore** (Android): plugins comunitarios de *secure storage* o **Identity Vault** (Ionic Enterprise)
-- Encapsúlelo en un servicio para poder cambiar de plugin sin tocar el resto
+- Encapsúlelo en un módulo para poder cambiar de plugin sin tocar el resto
+</div>
+</split-slide>
+
+---
+
+## Un único cliente HTTP: `api()`
+
+<split-slide style="--left: 60%; --right: 40%; --font-size: 0.8rem;">
+<div>
+
+```ts
+// src/services/api.ts
+export async function api<T>(ruta: string, op: RequestInit = {}): Promise<T> {
+  const { token, cerrarSesion } = useAuth();
+  const res = await fetch(`${import.meta.env.VITE_API_URL}${ruta}`, { ...op,
+    headers: { Accept: 'application/json',
+      ...(typeof op.body === 'string' && { 'Content-Type': 'application/json' }),
+      ...(token.value && { Authorization: `Bearer ${token.value}` }) } });
+  if (res.status === 401) { await cerrarSesion(); router.replace('/login'); }
+  if (!res.ok) throw new ErrorApi(res.status, await res.json());
+  return res.status === 204 ? (undefined as T) : res.json();
+}
+```
+</div>
+<div>
+
+```ts
+// src/services/errores.ts
+export class ErrorApi extends Error {
+  constructor(public status: number, public cuerpo: any) {
+    super(`HTTP ${status}`);
+  }
+}
+```
+</div>
+<div>
+
+- `api()` es el **único lugar** que conoce la URL base, los encabezados y el token: agrega `Authorization: Bearer …` a **todas** las peticiones
+- Hace el papel de un *interceptor*: sin dependencias, solo `fetch`
+- Un **401** de la API → borrar el token y volver al login
+- `ErrorApi` lleva el código y el cuerpo (p. ej. los errores **422**) hasta la vista
+- `Accept: application/json` hace que Laravel responda errores en **JSON** y no en HTML
 </div>
 </split-slide>
 
@@ -1881,32 +1959,35 @@ async function asegurarPermiso() {
 <div>
 
 ```ts
+<script setup lang="ts">
+import { ref } from 'vue';
 import { Camera } from '@capacitor/camera';
 
-export class ComprobantePage {
-  foto = signal<string | null>(null);
+const props = defineProps<{ id: string }>();
+const foto = ref<string | null>(null);
 
-  async tomarFoto() {
-    const r = await Camera.takePhoto({ quality: 80 });
-    this.foto.set(r.webPath);           // usable en <img src>
-  }
-
-  async elegirDeGaleria() {
-    const { results } = await Camera.chooseFromGallery({ quality: 80 });
-    this.foto.set(results[0]?.webPath ?? null);
-  }
-
-  async subir() {
-    const blob = await fetch(this.foto()!).then(r => r.blob());
-    const datos = new FormData();
-    datos.append('comprobante', blob, 'comprobante.jpg');
-    await firstValueFrom(this.http.post(`${api}/pedidos/${id}/comprobante`, datos));
-  }
+async function tomarFoto() {
+  const r = await Camera.takePhoto({ quality: 80 });
+  foto.value = r.webPath;            // usable en <img src>
 }
-```
 
-```html
-@if (foto(); as src) { <img [src]="src" alt="Comprobante" /> }
+async function elegirDeGaleria() {
+  const { results } = await Camera.chooseFromGallery({ quality: 80 });
+  foto.value = results[0]?.webPath ?? null;
+}
+
+async function subir() {
+  const blob = await fetch(foto.value!).then(r => r.blob());
+  const datos = new FormData();
+  datos.append('comprobante', blob, 'comprobante.jpg');
+  await api(`/pedidos/${props.id}/comprobante`,
+    { method: 'POST', body: datos });
+}
+</script>
+
+<template>
+  <img v-if="foto" :src="foto" alt="Comprobante" />
+</template>
 ```
 </div>
 <div>
@@ -1915,7 +1996,7 @@ export class ComprobantePage {
 - `getPhoto()` y `pickImages()` quedan **obsoletos**; el diálogo "Cámara o Galería" ya no lo pone el plugin: use un `ion-action-sheet`
 - El resultado trae `webPath` (para mostrar), `uri` (ruta nativa) y `thumbnail`
 - En el navegador funciona con `<input type="file">` como respaldo
-- La subida al servidor es un `multipart/form-data` normal que Laravel recibe con `$request->file('comprobante')`
+- La subida al servidor es un `multipart/form-data` normal que Laravel recibe con `$request->file('comprobante')` (por eso `api()` no fija `Content-Type` cuando el cuerpo es `FormData`)
 </div>
 </split-slide>
 
@@ -1936,18 +2017,20 @@ const pos = await Geolocation.getCurrentPosition({
 });
 const { latitude, longitude, accuracy } = pos.coords;
 
-// Seguimiento continuo
-const id = await Geolocation.watchPosition(
-  { enableHighAccuracy: true },
-  (pos, err) => {
-    if (pos) this.repartidor.set(pos.coords);
-  },
-);
+// Seguimiento continuo mientras la vista está activa
+let id: string | undefined;
+
+onIonViewDidEnter(async () => {
+  id = await Geolocation.watchPosition(
+    { enableHighAccuracy: true },
+    (pos, err) => { if (pos) repartidor.value = pos.coords; },
+  );
+});
 
 // ¡Siempre detenerlo!
-ionViewWillLeave() {
-  Geolocation.clearWatch({ id });
-}
+onIonViewWillLeave(() => {
+  if (id) Geolocation.clearWatch({ id });
+});
 ```
 </div>
 <div>
@@ -2023,9 +2106,11 @@ if (!Capacitor.isPluginAvailable('Camera')) {
 
 ```ts
 // Ionic también expone la plataforma
-const platform = inject(Platform);
-platform.is('android');
-platform.is('mobileweb');
+import { isPlatform } from '@ionic/vue';
+
+isPlatform('android');
+isPlatform('hybrid');     // corre dentro de Capacitor
+isPlatform('mobileweb');  // navegador de un teléfono
 ```
 </div>
 <div>
@@ -2067,38 +2152,9 @@ platform.is('mobileweb');
 
 ---
 
-## Actividad final
-
-<div class="grid">
-<div>
-
-### 1️⃣ Pila
-Dibujen las pantallas de su app y marquen cuáles son **pestañas**, cuáles **pila** y cuáles **modal**
-</div>
-<div>
-
-### 2️⃣ Datos
-Para cada dato que maneja la app, ¿dónde vive? Usen la tabla de **dónde viven los datos**
-</div>
-<div>
-
-### 3️⃣ Permisos
-¿Qué permisos pedirá la app, **en qué momento** y con qué texto de justificación?
-</div>
-<div>
-
-### 4️⃣ Sin red
-¿Qué ve el usuario si abre la app en modo avión? ¿Y si pierde la señal al guardar?
-</div>
-</div>
-
-- 💡 Si no pueden responder el punto 4, la app todavía no está lista para el mundo real
-
----
-
 ## Referencias
 
-- Ionic. [Documentación de Ionic Framework](https://ionicframework.com/docs) · [Componentes](https://ionicframework.com/docs/components) · [Migración a Ionic 9](https://ionicframework.com/docs/updating/9-0) · [Navegación en Angular](https://ionicframework.com/docs/angular/navigation) · [Ciclo de vida de páginas](https://ionicframework.com/docs/angular/lifecycle) · [Temas y colores](https://ionicframework.com/docs/theming/basics) · [`ionic start`](https://ionicframework.com/docs/cli/commands/start)
+- Ionic. [Documentación de Ionic Framework](https://ionicframework.com/docs) · [Componentes](https://ionicframework.com/docs/components) · [Migración a Ionic 9](https://ionicframework.com/docs/updating/9-0) · [Navegación en Vue](https://ionicframework.com/docs/vue/navigation) · [Ciclo de vida de páginas en Vue](https://ionicframework.com/docs/vue/lifecycle) · [Botón atrás del hardware](https://ionicframework.com/docs/developing/hardware-back-button) · [Temas y colores](https://ionicframework.com/docs/theming/basics) · [`ionic start`](https://ionicframework.com/docs/cli/commands/start)
 - Ionic. [Versiones de Ionic Framework (GitHub)](https://github.com/ionic-team/ionic-framework/releases)
 - Capacitor. [Documentación](https://capacitorjs.com/docs) · [Configuración del entorno](https://capacitorjs.com/docs/getting-started/environment-setup) · [Anuncio de Capacitor 8](https://ionic.io/blog/announcing-capacitor-8) · [Versiones (GitHub)](https://github.com/ionic-team/capacitor/releases)
 - Capacitor. APIs: [Camera](https://capacitorjs.com/docs/apis/camera) · [Geolocation](https://capacitorjs.com/docs/apis/geolocation) · [Preferences](https://capacitorjs.com/docs/apis/preferences) · [Network](https://capacitorjs.com/docs/apis/network) · [Filesystem](https://capacitorjs.com/docs/apis/filesystem) · [Push Notifications](https://capacitorjs.com/docs/apis/push-notifications) · [CapacitorHttp](https://capacitorjs.com/docs/apis/http) · [Almacenamiento](https://capacitorjs.com/docs/guides/storage)
