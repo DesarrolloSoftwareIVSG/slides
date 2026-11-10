@@ -1,0 +1,1354 @@
+<!DOCTYPE html><html lang="en-US"><head><title>Seguridad web y móvil</title><meta property="og:title" content="Seguridad web y móvil"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4O3J4OjVweDtyeTo1cHg7d2lkdGg6MjVweDtoZWlnaHQ6MjVweH08L3N0eWxlPjwvZGVmcz48cmVjdCB4PSIyMCIgeT0iMjAiIGNsYXNzPSJhIi8+PHJlY3QgeD0iNTUiIHk9IjIwIiBjbGFzcz0iYSIvPjxyZWN0IHg9IjIwIiB5PSI1NSIgY2xhc3M9ImEiLz48cmVjdCB4PSI1NSIgeT0iNTUiIGNsYXNzPSJhIi8+PC9zdmc+") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;interactivity:inert;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;interactivity:auto;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent{inset:0;position:absolute}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;view-transition-name:__bespoke_marp_transition_osc__;white-space:nowrap;will-change:transform;z-index:1}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*){margin-left:6px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*):where(:first-child){margin-left:0}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+:where(.bespoke-marp-parent){top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent){grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide){height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide).bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;interactivity:inert;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container :is(.bespoke-marp-presenter-info-page-area,.bespoke-marp-presenter-info-time,.bespoke-marp-presenter-info-timer){box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}body[data-bespoke-view=overview]{background:#161616;overflow:auto}body[data-bespoke-view=overview] [data-bespoke-marp-fragment=inactive]{visibility:visible}body[data-bespoke-view=overview] .bespoke-marp-overview-header{backdrop-filter:blur(4px);background:#222222d9;box-shadow:0 3px 10px #00000080;box-sizing:border-box;display:flex;height:48px;inset:0 0 auto;justify-content:flex-end;padding:10px;position:fixed;z-index:1}body[data-bespoke-view=overview] button.bespoke-marp-overview-close{height:28px;line-height:28px;transform:rotate(45deg);width:28px}body[data-bespoke-view=overview] .bespoke-marp-parent{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(0,240px));justify-content:space-around;padding:30px}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide{--bov-selected:#0000;--bov-focus:#161616;--bov-focus-outline:#0000;background-image:conic-gradient(#161616 0 0),conic-gradient(var(--bov-focus) 0 0),conic-gradient(var(--bov-focus-outline) 0 0),conic-gradient(var(--bov-selected) 0 0);background-position:5px 5px,3px 3px,2px 2px,0 0;background-repeat:no-repeat;background-size:calc(100% - 10px) calc(100% - 10px),calc(100% - 6px) calc(100% - 6px),calc(100% - 4px) calc(100% - 4px),100% 100%;content-visibility:visible;cursor:pointer;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));margin:-6px;padding:6px;interactivity:auto;opacity:1;outline:0;pointer-events:auto;scroll-margin-block:30px;width:100%;z-index:0}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide *,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active *{pointer-events:none;interactivity:inert}body[data-bespoke-view=overview] .bespoke-marp-parent :is(svg.bespoke-marp-slide:active,svg.bespoke-marp-slide:focus-visible,svg.bespoke-marp-slide:hover){--bov-focus-outline:#161616}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:focus-visible,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:hover{--bov-focus:#999}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:active{--bov-focus:#eee}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{--bov-selected:#0288d1}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent{padding-top:78px}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent svg.bespoke-marp-slide{scroll-margin-top:78px}.bespoke-marp-overview{background:#000000a6;inset:0;opacity:0;pointer-events:none;position:fixed;transition:opacity .1s ease;z-index:10}.bespoke-marp-overview iframe{background:#222;border:0;display:block;height:100%;left:0;position:absolute;top:0;width:100%}.bespoke-marp-overview[data-open="1"]{opacity:1;pointer-events:auto}}@media print{.bespoke-marp-overview,.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&display=swap');@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/monokai.css');div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :where(:is(h1, marp-h1)){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section section:where(:is(h1, marp-h1)){--marpit-root-font-size: 2em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > :where(section):not([\20 root]){font-family:"Outfit", sans-serif;font-weight:200;font-size:20px;padding:calc(var(--marpit-root-font-size, 1rem) * 2.5);background:#181818;color:#ccc}div#\:\$p > svg > foreignObject > :where(section):not([\20 root]){--marpit-root-font-size: 20px}div#\:\$p > svg > foreignObject > section spoiler{color:transparent;text-shadow:none}div#\:\$p > svg > foreignObject > section .bespoke-marp-parent{position:absolute;inset:0;overflow:hidden;aspect-ratio:16/9!important;align-self:center}div#\:\$p > svg > foreignObject > section.cover{background:linear-gradient(to bottom, black, transparent 40% 96%, black 100%), linear-gradient(to right, #000 3%, #000e 15%, #000c 20%, transparent 28%), var(--cover, url(cover.jpg));background-color:black;background-size:auto 765px;background-position:top right;background-repeat:no-repeat}div#\:\$p > svg > foreignObject > section.cover ul{padding-left:5px;list-style:none}div#\:\$p > svg > foreignObject > section.cover li{background:#000c;margin:calc(var(--marpit-root-font-size, 1rem) * 1) 0;padding:calc(var(--marpit-root-font-size, 1rem) * 1);box-shadow:3px 3px 0 #fe704d;max-width:max-content}div#\:\$p > svg > foreignObject > section.cover li:hover{background:#fe704d;cursor:pointer}div#\:\$p > svg > foreignObject > section.cover blockquote{position:absolute;bottom:calc(var(--marpit-root-font-size, 1rem) * 5);right:calc(var(--marpit-root-font-size, 1rem) * 5);padding:calc(var(--marpit-root-font-size, 1rem) * 1);background:#000c}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){color:#fe704d}div#\:\$p > svg > foreignObject > section li{margin:calc(var(--marpit-root-font-size, 1rem) * .5) 0}div#\:\$p > svg > foreignObject > section strong{color:white}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:#000;color:white;padding:calc(var(--marpit-root-font-size, 1rem) * 1);margin:0}div#\:\$p > svg > foreignObject > section code{color:gold;text-wrap:auto}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{color:white}div#\:\$p > svg > foreignObject > section a{color:#3179ed;text-decoration:none}div#\:\$p > svg > foreignObject > section svg[data-marpit-svg]{background:linear-gradient(126deg, indigo, deeppink)}div#\:\$p > svg > foreignObject > section .grid{display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:repeat(auto-fit, minmax(300px, 1fr))}div#\:\$p > svg > foreignObject > section:has(steps){position:relative}div#\:\$p > svg > foreignObject > section .step-indicator{position:absolute;top:0;right:0;font-size:0.85em;font-weight:400;padding:calc(var(--marpit-root-font-size, 1rem) * 0.3) calc(var(--marpit-root-font-size, 1rem) * 0.8);background:#fe704d22;color:#fe704d;border-radius:0 0 0 calc(var(--marpit-root-font-size, 1rem) * 0.5);z-index:100;letter-spacing:0.05em;pointer-events:none}div#\:\$p > svg > foreignObject > section section.step-indicator{--marpit-root-font-size: 0.85em}div#\:\$p > svg > foreignObject > section steps{display:block;position:relative}div#\:\$p > svg > foreignObject > section step{display:block}div#\:\$p > svg > foreignObject > section step:not(:first-child){display:none}div#\:\$p > svg > foreignObject > section step[data-marpit-fragment]{display:none}div#\:\$p > svg > foreignObject > section steps:has(> step[data-bespoke-marp-fragment=active])>step:first-child{display:none}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=inactive]{visibility:visible!important;display:none!important}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=active]{display:block!important;visibility:visible!important}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=active]:has(~ step[data-bespoke-marp-fragment=active]){display:none!important}div#\:\$p > svg > foreignObject > section split-slide{--left: 50%;--right: 50%;--font-size: calc(var(--marpit-root-font-size, 1rem) * 1);display:grid;grid-template-columns:var(--left) var(--right);gap:calc(var(--marpit-root-font-size, 1rem) * 1)}div#\:\$p > svg > foreignObject > section split-slide :is(pre, marp-pre){font-size:var(--font-size)}div#\:\$p > svg > foreignObject > section table{--width: 100%;width:var(--width);border-collapse:collapse}div#\:\$p > svg > foreignObject > section th, div#\:\$p > svg > foreignObject > section td{border:1px solid #ddd;padding:8px;text-align:center}div#\:\$p > svg > foreignObject > section a:is([href$=".png"],[href$=".jpg"],[href$=".jpeg"],[href$=".webp"],[href$=".gif"])::before{content:"";display:inline-block;vertical-align:middle;margin-right:calc(var(--marpit-root-font-size, 1rem) * 0.2);width:24px;height:24px;background-size:contain;background-repeat:no-repeat;background-position:center;background-image:url(../assets/icon-img.png)}div#\:\$p > svg > foreignObject > section[data-marpit-scope-IJgoxsyj]{--cover: url(../assets/img_00028_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-3oc9W3M5]{--cover: url(../assets/img_00068_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-oP9YDTGb] table{font-size:0.8em}div#\:\$p > svg > foreignObject > section[data-marpit-scope-kDC9vStm]{--cover: url(../assets/img_00023_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-MFjiYSyj]{--cover: url(../assets/img_00050_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-xShUm8XL]{--cover: url(../assets/img_00069_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-z3pndYPN]{--cover: url(../assets/img_00033_peticiones.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-udyg40DG]{--cover: url(../assets/img_00070_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-ltnEtScc]{--cover: url(../assets/img_00071_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-marpit-scope-IJgoxsyj="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="1" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="seguridad-web-y-m%C3%B3vil">Seguridad web y móvil</h1>
+<h2 id="contenidos">Contenidos</h2>
+<ul>
+<li>Vulnerabilidades comunes y cómo mitigarlas</li>
+<li>Autenticación y autorización</li>
+<li>Seguridad en el manejo de datos y en el código</li>
+<li>Seguridad en las APIs y en el despliegue</li>
+<li>Herramientas y recursos en la web</li>
+</ul>
+<blockquote>
+<p><strong>Laravel 13</strong> en el back-end · <strong>Vue / Ionic + Capacitor</strong> en el cliente <br />Curso <em>Desarrollo de Software IV</em> · II Ciclo 2026</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="%C2%BFpor-qu%C3%A9-un-tema-entero-de-seguridad">¿Por qué un tema entero de seguridad?</h2>
+<ul>
+<li>La seguridad <strong>no es una funcionalidad</strong> que se agrega al final: es una propiedad de <strong>todo</strong> el sistema</li>
+</ul>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%8C%90-web"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> Web</h3>
+<p>El navegador ejecuta código de terceros, guarda cookies y confía en lo que el servidor le envía</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%B1-m%C3%B3vil"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Móvil</h3>
+<p>La app vive en un dispositivo que <strong>el atacante puede tener en la mano</strong>: se descompila, se inspecciona, se modifica</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%8C-api"><img class="emoji" draggable="false" alt="🔌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f50c.svg" data-marp-twemoji=""/> API</h3>
+<p>Es la puerta común de web y móvil: un fallo aquí afecta a <strong>todos</strong> los clientes</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%80-despliegue"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f680.svg" data-marp-twemoji=""/> Despliegue</h3>
+<p>Un <code>.env</code> publicado o un puerto abierto anulan todo lo demás</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f511.svg" data-marp-twemoji=""/> Regla de oro: <strong>nunca confíes en el cliente</strong>. Todo lo que llega por HTTP puede haber sido fabricado</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="principios-que-atraviesan-todo-el-tema">Principios que atraviesan todo el tema</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.9rem;">
+<div>
+<h3 id="%F0%9F%A7%85-defensa-en-profundidad"><img class="emoji" draggable="false" alt="🧅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9c5.svg" data-marp-twemoji=""/> Defensa en profundidad</h3>
+<p>Varias capas de control: si una falla, la siguiente detiene el ataque</p>
+<h3 id="%F0%9F%8E%AF-m%C3%ADnimo-privilegio"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3af.svg" data-marp-twemoji=""/> Mínimo privilegio</h3>
+<p>Cada usuario, token, proceso y contenedor tiene <strong>solo</strong> los permisos que necesita</p>
+<h3 id="%F0%9F%9A%AB-denegar-por-defecto"><img class="emoji" draggable="false" alt="🚫" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6ab.svg" data-marp-twemoji=""/> Denegar por defecto</h3>
+<p>Lo que no está explícitamente permitido, está prohibido</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%92-seguro-por-defecto"><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> Seguro por defecto</h3>
+<p>La configuración inicial debe ser la segura; abrir requiere una decisión consciente</p>
+<h3 id="%F0%9F%A7%B1-reducir-la-superficie-de-ataque"><img class="emoji" draggable="false" alt="🧱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9f1.svg" data-marp-twemoji=""/> Reducir la superficie de ataque</h3>
+<p>Menos endpoints, menos dependencias, menos permisos, menos datos</p>
+<h3 id="%F0%9F%99%88-sin-seguridad-por-oscuridad"><img class="emoji" draggable="false" alt="🙈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f648.svg" data-marp-twemoji=""/> Sin seguridad por oscuridad</h3>
+<p>Ocultar una URL o &quot;minificar&quot; el código <strong>no</strong> protege nada</p>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="advertencia-%C3%A9tica-y-legal">Advertencia ética y legal</h2>
+<ul>
+<li><img class="emoji" draggable="false" alt="⚖️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2696.svg" data-marp-twemoji=""/> Todas las pruebas de este tema se realizan <strong>únicamente sobre la aplicación del propio equipo</strong>, en entorno <strong>local</strong> o de pruebas</li>
+<li>Probar sistemas de terceros sin autorización escrita es una <strong>falta grave</strong> con consecuencias legales</li>
+<li><img class="emoji" draggable="false" alt="🇨🇷" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f1e8-1f1f7.svg" data-marp-twemoji=""/> En Costa Rica el <strong>Código Penal</strong> tipifica el acceso no autorizado a sistemas informáticos, y la <strong>Ley 8968</strong> protege los datos personales</li>
+<li>Si encuentras una vulnerabilidad en un sistema ajeno: <strong>divulgación responsable</strong> al dueño (busca su <code>/.well-known/security.txt</code>)</li>
+</ul>
+<br />
+<blockquote>
+<p><em>&quot;Con autorización es una auditoría. Sin autorización es un delito.&quot;</em></p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-scope-3oc9W3M5="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="5" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="61-vulnerabilidades-comunes">6.1 Vulnerabilidades comunes</h1>
+<h2 id="contenidos-1">Contenidos</h2>
+<ul>
+<li>OWASP Top 10:2025</li>
+<li>Inyección (SQL y comandos)</li>
+<li>XSS, CSRF y SSRF</li>
+<li>Asignación masiva y <em>clickjacking</em></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-scope-oP9YDTGb="" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="owasp-top-102025">OWASP Top 10:2025</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Categoría</th>
+<th style="text-align:left">Ejemplo en el proyecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>A01</strong></td>
+<td style="text-align:left">Pérdida de control de acceso</td>
+<td style="text-align:left"><code>GET /api/pedidos/42</code> devuelve el pedido de otra persona</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A02</strong></td>
+<td style="text-align:left">Configuración de seguridad incorrecta</td>
+<td style="text-align:left"><code>APP_DEBUG=true</code> en producción, CORS <code>*</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A03</strong></td>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> Fallas en la cadena de suministro de software</td>
+<td style="text-align:left">Un paquete de npm comprometido</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A04</strong></td>
+<td style="text-align:left">Fallas criptográficas</td>
+<td style="text-align:left">Contraseñas con <code>md5</code>, HTTP sin TLS</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A05</strong></td>
+<td style="text-align:left">Inyección</td>
+<td style="text-align:left">SQL construido por concatenación</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A06</strong></td>
+<td style="text-align:left">Diseño inseguro</td>
+<td style="text-align:left">Recuperar contraseña con &quot;pregunta secreta&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A07</strong></td>
+<td style="text-align:left">Fallas de autenticación</td>
+<td style="text-align:left">Sin límite de intentos, tokens eternos</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A08</strong></td>
+<td style="text-align:left">Fallas en la integridad del software o de los datos</td>
+<td style="text-align:left">CDN sin SRI, deserializar datos del cliente</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A09</strong></td>
+<td style="text-align:left">Fallas en el registro, alerta y monitoreo</td>
+<td style="text-align:left">Nadie se entera de 10 000 intentos de login</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>A10</strong></td>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> Manejo inadecuado de condiciones excepcionales</td>
+<td style="text-align:left">Un error que deja la transacción a medias o &quot;falla abierto&quot;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4c8.svg" data-marp-twemoji=""/> La lista se actualiza cada ~4 años con datos reales. Cambios clave frente a 2021: la <strong>cadena de suministro</strong> sube al 3.º lugar y la <strong>configuración</strong> al 2.º</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="inyecci%C3%B3n-sql">Inyección SQL</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Vulnerable: el dato se vuelve código SQL</span>
+<span class="hljs-variable">$email</span> = <span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">input</span>(<span class="hljs-string">&#x27;email&#x27;</span>);
+DB::<span class="hljs-title function_ invoke__">select</span>(<span class="hljs-string">&quot;SELECT * FROM users WHERE email = &#x27;<span class="hljs-subst">$email</span>&#x27;&quot;</span>);
+
+<span class="hljs-comment">// Entrada maliciosa:   &#x27; OR &#x27;1&#x27;=&#x27;1</span>
+<span class="hljs-comment">// Resultado:           ... WHERE email = &#x27;&#x27; OR &#x27;1&#x27;=&#x27;1&#x27;</span>
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Parámetros vinculados</span>
+DB::<span class="hljs-title function_ invoke__">select</span>(<span class="hljs-string">&#x27;SELECT * FROM users WHERE email = ?&#x27;</span>, [<span class="hljs-variable">$email</span>]);
+
+<span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Eloquent / Query Builder ya vinculan</span>
+<span class="hljs-title class_">User</span>::<span class="hljs-title function_ invoke__">where</span>(<span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-variable">$email</span>)-&gt;<span class="hljs-title function_ invoke__">first</span>();
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Aun con ORM se puede romper</span>
+<span class="hljs-title class_">User</span>::<span class="hljs-title function_ invoke__">orderByRaw</span>(<span class="hljs-variable">$request</span>-&gt;orden)-&gt;<span class="hljs-title function_ invoke__">get</span>();      <span class="hljs-comment">// <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/></span>
+<span class="hljs-title class_">User</span>::<span class="hljs-title function_ invoke__">orderBy</span>(                                  <span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/></span>
+    <span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$r</span>-&gt;orden, [<span class="hljs-string">&#x27;nombre&#x27;</span>,<span class="hljs-string">&#x27;fecha&#x27;</span>]) ? <span class="hljs-variable">$r</span>-&gt;orden : <span class="hljs-string">&#x27;id&#x27;</span>
+)-&gt;<span class="hljs-title function_ invoke__">get</span>();
+</code></pre>
+</div>
+<div>
+<ul>
+<li>El problema es <strong>mezclar datos con código</strong></li>
+<li>La solución es <strong>separarlos</strong>: el motor recibe la consulta y los parámetros por canales distintos</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Los métodos <code>*Raw()</code> (<code>whereRaw</code>, <code>orderByRaw</code>, <code>DB::raw</code>) <strong>no</strong> escapan nada</li>
+<li>Nombres de columnas y direcciones de orden <strong>no</strong> se pueden parametrizar: se validan contra una <strong>lista blanca</strong></li>
+</ul>
+<br />
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> Mismo patrón en <strong>inyección de comandos</strong> (<code>exec</code>, <code>shell_exec</code>) y <strong>NoSQL</strong>: nunca construyas la orden con texto del usuario</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cross-site-scripting-xss">Cross-Site Scripting (XSS)</h2>
+<ul>
+<li>El atacante logra que <strong>su JavaScript</strong> se ejecute en el navegador de otra persona, con su sesión</li>
+</ul>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<h3 id="tres-variantes">Tres variantes</h3>
+<ul>
+<li><strong>Almacenado</strong> — el script queda en la base de datos (un comentario, un nombre de producto)</li>
+<li><strong>Reflejado</strong> — viaja en la URL y el servidor lo devuelve</li>
+<li><strong>Basado en DOM</strong> — el propio JavaScript del cliente lo inserta</li>
+</ul>
+<pre><code class="language-js"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Inserta HTML: ejecuta &lt;img src=x onerror=...&gt;</span>
+div.<span class="hljs-property">innerHTML</span> = comentario.<span class="hljs-property">texto</span>;
+
+<span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Inserta texto plano</span>
+div.<span class="hljs-property">textContent</span> = comentario.<span class="hljs-property">texto</span>;
+</code></pre>
+</div>
+<div>
+<h3 id="mitigaci%C3%B3n">Mitigación</h3>
+<ul>
+<li><strong>Escapar al mostrar</strong>: Blade <code>{{ $x }}</code>, Vue <code>{{ x }}</code> y React <code>{x}</code> ya escapan</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <code>{!! $x !!}</code>, <code>v-html</code> y <code>dangerouslySetInnerHTML</code> desactivan la protección</li>
+<li>Si hay que mostrar HTML del usuario: <strong>sanear</strong> con <strong>DOMPurify</strong></li>
+<li><strong>CSP</strong> como segunda línea: bloquea scripts <em>inline</em> y de orígenes no autorizados</li>
+<li>Cookies de sesión <code>HttpOnly</code>: JavaScript no puede leerlas</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cross-site-request-forgery-csrf">Cross-Site Request Forgery (CSRF)</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- En sitio-malicioso.com --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;https://banco.com/transferir&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;destino&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;atacante&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;monto&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;100000&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">forms</span>[<span class="hljs-number">0</span>].<span class="hljs-title function_">submit</span>()</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<ul>
+<li>El navegador <strong>adjunta las cookies</strong> de <code>banco.com</code> automáticamente</li>
+<li>El servidor ve una petición <strong>legítima</strong> de la víctima</li>
+</ul>
+</div>
+<div>
+<h3 id="mitigaci%C3%B3n-1">Mitigación</h3>
+<ul>
+<li><strong>Token CSRF</strong> en cada formulario (<code>@csrf</code> en Blade)</li>
+<li>Cookies <code>SameSite=Lax</code> o <code>Strict</code></li>
+<li>Verificar el encabezado <code>Origin</code> (Laravel 13: <code>PreventRequestForgery</code>)</li>
+<li>Nunca cambiar estado con <code>GET</code></li>
+</ul>
+<br />
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> Una API con <strong>token Bearer</strong> en <code>Authorization</code> no es vulnerable a CSRF: el navegador <strong>no</strong> envía ese encabezado solo. Sí lo es si usa <strong>cookies</strong> (Sanctum SPA)</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="ssrf-asignaci%C3%B3n-masiva-y-clickjacking">SSRF, asignación masiva y <em>clickjacking</em></h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%94%81-ssrf"><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> SSRF</h3>
+<p>El servidor descarga una URL que <strong>elige el usuario</strong>: <code>http://169.254.169.254/</code> expone credenciales de la nube.<br />
+<strong>Mitigar</strong>: lista blanca de dominios, bloquear IP privadas, no seguir redirecciones</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%A6-asignaci%C3%B3n-masiva"><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Asignación masiva</h3>
+<p><code>User::create($request-&gt;all())</code> permite enviar <code>&quot;rol&quot;: &quot;admin&quot;</code>.<br />
+<strong>Mitigar</strong>: <code>$fillable</code> + <code>$request-&gt;validated()</code></p>
+</div>
+<div>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-clickjacking"><img class="emoji" draggable="false" alt="🖼️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5bc.svg" data-marp-twemoji=""/> <em>Clickjacking</em></h3>
+<p>Tu sitio cargado en un <code>&lt;iframe&gt;</code> invisible bajo un botón trampa.<br />
+<strong>Mitigar</strong>: <code>frame-ancestors 'none'</code> en la CSP</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%80-redirecci%C3%B3n-abierta"><img class="emoji" draggable="false" alt="🔀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f500.svg" data-marp-twemoji=""/> Redirección abierta</h3>
+<p><code>/login?next=https://phishing.com</code>.<br />
+<strong>Mitigar</strong>: redirigir solo a rutas internas</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%81-recorrido-de-rutas"><img class="emoji" draggable="false" alt="📁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4c1.svg" data-marp-twemoji=""/> Recorrido de rutas</h3>
+<p><code>?archivo=../../.env</code>.<br />
+<strong>Mitigar</strong>: nunca usar el nombre del usuario como ruta; usar identificadores</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%A4-carga-de-archivos"><img class="emoji" draggable="false" alt="📤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4e4.svg" data-marp-twemoji=""/> Carga de archivos</h3>
+<p>Un <code>.php</code> subido como &quot;foto&quot;.<br />
+<strong>Mitigar</strong>: validar tipo real (<code>mimes</code>), renombrar, guardar fuera de <code>public/</code></p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-scope-kDC9vStm="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="11" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="62-autenticaci%C3%B3n-y-autorizaci%C3%B3n">6.2 Autenticación y autorización</h1>
+<h2 id="contenidos-2">Contenidos</h2>
+<ul>
+<li>¿Quién eres? vs. ¿qué puedes hacer?</li>
+<li>Contraseñas, MFA y <em>passkeys</em></li>
+<li>Sesiones, tokens y JWT</li>
+<li>Roles, políticas y defensa en profundidad</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="12" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="autenticaci%C3%B3n-%E2%89%A0-autorizaci%C3%B3n">Autenticación ≠ Autorización</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.92rem;">
+<div>
+<h3 id="%F0%9F%AA%AA-autenticaci%C3%B3n--%C2%BFqui%C3%A9n-eres"><img class="emoji" draggable="false" alt="🪪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1faaa.svg" data-marp-twemoji=""/> Autenticación — <em>¿quién eres?</em></h3>
+<ul>
+<li>Verificar la identidad</li>
+<li>Contraseña, token, <em>passkey</em>, biometría</li>
+<li>Falla → <strong>401 Unauthorized</strong></li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%94%91-autorizaci%C3%B3n--%C2%BFqu%C3%A9-puedes-hacer"><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f511.svg" data-marp-twemoji=""/> Autorización — <em>¿qué puedes hacer?</em></h3>
+<ul>
+<li>Verificar los permisos de una identidad <strong>ya conocida</strong></li>
+<li>Roles, políticas, permisos por recurso</li>
+<li>Falla → <strong>403 Forbidden</strong></li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <em>A01 Pérdida de control de acceso</em> es la vulnerabilidad <strong>n.º 1</strong>: casi siempre es una autorización que <strong>no</strong> se verificó a nivel de recurso</li>
+<li><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4da.svg" data-marp-twemoji=""/> El detalle con Sanctum, políticas y pruebas está en el tema <a href="../backend/">Desarrollo Backend</a></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="factores-de-autenticaci%C3%B3n">Factores de autenticación</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%A7%A0-algo-que-sabes"><img class="emoji" draggable="false" alt="🧠" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9e0.svg" data-marp-twemoji=""/> Algo que sabes</h3>
+<p>Contraseña, PIN. El factor más débil: se reutiliza, se filtra, se adivina</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%B1-algo-que-tienes"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Algo que tienes</h3>
+<p>App TOTP (Google/Microsoft Authenticator), llave física (YubiKey), el teléfono</p>
+</div>
+<div>
+<h3 id="%F0%9F%91%86-algo-que-eres"><img class="emoji" draggable="false" alt="👆" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f446.svg" data-marp-twemoji=""/> Algo que eres</h3>
+<p>Huella, rostro. En móvil, <strong>siempre</strong> a través del sistema operativo, nunca procesado por la app</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> <strong>MFA</strong> = combinar al menos dos factores <strong>distintos</strong>. Una contraseña + una pregunta secreta <strong>no</strong> es MFA</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> El SMS es el segundo factor más débil: vulnerable a <em>SIM swapping</em></li>
+<li><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> <strong>Passkeys (WebAuthn / FIDO2)</strong>: un par de claves por sitio, guardado en el dispositivo. <strong>Inmunes al <em>phishing</em></strong>: la clave solo responde al dominio legítimo</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="contrase%C3%B1as-lo-que-dice-nist-sp-800-63b">Contraseñas: lo que dice NIST SP 800-63B</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<h3 id="%E2%9C%85-hacer"><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Hacer</h3>
+<ul>
+<li>Mínimo <strong>8</strong> caracteres (15 si es el único factor), permitir hasta <strong>64</strong></li>
+<li>Aceptar <strong>espacios, Unicode</strong> y pegar desde el gestor de contraseñas</li>
+<li>Comparar contra listas de contraseñas <strong>filtradas</strong></li>
+<li>Limitar intentos (<em>rate limiting</em>)</li>
+<li>Guardar con <code>argon2id</code> o <code>bcrypt</code> (con sal)</li>
+</ul>
+</div>
+<div>
+<h3 id="%E2%9D%8C-no-hacer"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> No hacer</h3>
+<ul>
+<li>Forzar reglas de composición arbitrarias</li>
+<li>Obligar a cambiarla <strong>periódicamente</strong> sin motivo</li>
+<li>Preguntas de seguridad</li>
+<li>Pistas de contraseña</li>
+<li>Guardarla en texto plano, cifrada reversible o con <code>md5</code>/<code>sha1</code></li>
+</ul>
+</div>
+</split-slide>
+<pre><code class="language-php"><span class="hljs-string">&#x27;password&#x27;</span> =&gt; [<span class="hljs-string">&#x27;required&#x27;</span>, <span class="hljs-string">&#x27;confirmed&#x27;</span>, <span class="hljs-title class_">Password</span>::<span class="hljs-title function_ invoke__">min</span>(<span class="hljs-number">12</span>)-&gt;<span class="hljs-title function_ invoke__">uncompromised</span>()],
+<span class="hljs-comment">// casts(): &#x27;password&#x27; =&gt; &#x27;hashed&#x27;     → bcrypt / argon2 automático</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="15" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="sesiones-tokens-y-jwt">Sesiones, tokens y JWT</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%8D%AA-cookie-de-sesi%C3%B3n"><img class="emoji" draggable="false" alt="🍪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f36a.svg" data-marp-twemoji=""/> Cookie de sesión</h3>
+<ul>
+<li>Ideal para la <strong>web del mismo dominio</strong></li>
+<li>Atributos obligatorios:</li>
+</ul>
+<pre><code class="language-http"><span class="hljs-attribute">Set-Cookie</span><span class="hljs-punctuation">: </span>sesion=abc123;
+  HttpOnly; Secure; SameSite=Lax;
+  Path=/; Max-Age=7200
+</code></pre>
+<ul>
+<li>Regenerar el ID al iniciar sesión (<em>session fixation</em>)</li>
+</ul>
+<h3 id="%F0%9F%8E%AB-token-opaco-sanctum"><img class="emoji" draggable="false" alt="🎫" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3ab.svg" data-marp-twemoji=""/> Token opaco (Sanctum)</h3>
+<ul>
+<li>Cadena aleatoria guardada en la BD</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Revocación inmediata</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%AA%99-jwt"><img class="emoji" draggable="false" alt="🪙" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1fa99.svg" data-marp-twemoji=""/> JWT</h3>
+<p><code>encabezado.carga.firma</code> en Base64URL</p>
+<ul>
+<li>La carga <strong>no está cifrada</strong>: cualquiera la lee en <a href="https://jwt.io">jwt.io</a></li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Nunca meter datos sensibles en la carga</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Rechazar <code>alg: none</code> y fijar el algoritmo esperado</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Validar <code>exp</code>, <code>iss</code> y <code>aud</code></li>
+<li>Revocar es difícil: expiración <strong>corta</strong> (minutos) + <em>refresh token</em> con <strong>rotación</strong></li>
+</ul>
+<br />
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> <strong>OAuth 2.0 / OpenID Connect</strong> para &quot;Iniciar sesión con…&quot;: en apps móviles y SPA, flujo <strong>Authorization Code + PKCE</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="16" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="autorizaci%C3%B3n-roles-pol%C3%ADticas-y-dos-capas">Autorización: roles, políticas y dos capas</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.78rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PedidoPolicy</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">view</span>(<span class="hljs-params">User <span class="hljs-variable">$user</span>, Pedido <span class="hljs-variable">$pedido</span></span>): <span class="hljs-title">bool</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-variable">$user</span>-&gt;<span class="hljs-title function_ invoke__">hasRole</span>(<span class="hljs-string">&#x27;admin&#x27;</span>)
+            || <span class="hljs-variable">$pedido</span>-&gt;cliente-&gt;user_id === <span class="hljs-variable">$user</span>-&gt;id;
+    }
+}
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// Capa 1 — controlador</span>
+<span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">authorize</span>(<span class="hljs-string">&#x27;view&#x27;</span>, <span class="hljs-variable">$pedido</span>);
+
+<span class="hljs-comment">// Capa 2 — servicio</span>
+<span class="hljs-title class_">Gate</span>::<span class="hljs-title function_ invoke__">forUser</span>(<span class="hljs-variable">$actor</span>)-&gt;<span class="hljs-title function_ invoke__">authorize</span>(<span class="hljs-string">&#x27;view&#x27;</span>, <span class="hljs-variable">$pedido</span>);
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>RBAC</strong> (por rol): <em>¿puede ver pedidos?</em></li>
+<li><strong>Por recurso</strong> (política): <em>¿puede ver <strong>este</strong> pedido?</em></li>
+<li><strong>ABAC</strong> (por atributos): hora, ubicación, estado del recurso</li>
+</ul>
+<br />
+<ul>
+<li><img class="emoji" draggable="false" alt="🧅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9c5.svg" data-marp-twemoji=""/> Verificar en <strong>dos capas</strong>: un comando, una cola u otro controlador pueden llamar al servicio sin pasar por la ruta</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Ocultar el botón en el front-end <strong>no</strong> es autorización</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-scope-MFjiYSyj="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="17" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="63-seguridad-en-el-manejo-de-datos">6.3 Seguridad en el manejo de datos</h1>
+<h2 id="contenidos-3">Contenidos</h2>
+<ul>
+<li>Clasificación y minimización</li>
+<li>Cifrado en tránsito y en reposo</li>
+<li>Datos en el dispositivo móvil</li>
+<li>Privacidad y Ley 8968</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="clasificar-antes-de-proteger">Clasificar antes de proteger</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Nivel</th>
+<th style="text-align:left">Ejemplos</th>
+<th style="text-align:left">Tratamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e2.svg" data-marp-twemoji=""/> <strong>Público</strong></td>
+<td style="text-align:left">Catálogo, precios</td>
+<td style="text-align:left">Puede cachearse y exponerse</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🟡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e1.svg" data-marp-twemoji=""/> <strong>Interno</strong></td>
+<td style="text-align:left">Estadísticas, configuración</td>
+<td style="text-align:left">Solo usuarios autenticados</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🟠" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e0.svg" data-marp-twemoji=""/> <strong>Confidencial</strong></td>
+<td style="text-align:left">Nombre, correo, teléfono, dirección</td>
+<td style="text-align:left">Control de acceso por recurso, no aparece en bitácoras</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🔴" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f534.svg" data-marp-twemoji=""/> <strong>Sensible / restringido</strong></td>
+<td style="text-align:left">Contraseñas, tokens, cédula, salud, tarjetas</td>
+<td style="text-align:left">Derivación o cifrado, enmascarado, acceso auditado</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><img class="emoji" draggable="false" alt="🧹" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9f9.svg" data-marp-twemoji=""/> <strong>Minimización</strong>: el dato más seguro es el que <strong>no se recolecta</strong>. ¿Realmente necesitas la fecha de nacimiento completa?</li>
+<li><img class="emoji" draggable="false" alt="⏳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/23f3.svg" data-marp-twemoji=""/> <strong>Retención</strong>: define cuánto tiempo se guarda y bórralo después</li>
+<li><img class="emoji" draggable="false" alt="💳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4b3.svg" data-marp-twemoji=""/> Tarjetas: <strong>nunca</strong> las guardes tú; usa la pasarela (tokenización) y quedas fuera del alcance de PCI DSS</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cifrado-en-tr%C3%A1nsito-y-en-reposo">Cifrado en tránsito y en reposo</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%9A%9A-en-tr%C3%A1nsito"><img class="emoji" draggable="false" alt="🚚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f69a.svg" data-marp-twemoji=""/> En tránsito</h3>
+<ul>
+<li><strong>HTTPS en todo</strong>, también en desarrollo móvil contra la API</li>
+<li>TLS <strong>1.2+</strong> (idealmente 1.3)</li>
+<li><strong>HSTS</strong> obliga al navegador a usar HTTPS</li>
+<li>Certificados gratuitos con <strong>Let's Encrypt</strong></li>
+<li>Conexión <strong>cifrada</strong> también a la BD y a otros servicios internos</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%92%BE-en-reposo"><img class="emoji" draggable="false" alt="💾" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4be.svg" data-marp-twemoji=""/> En reposo</h3>
+<ul>
+<li>Contraseñas → <strong>derivación</strong> (<code>argon2id</code>, <code>bcrypt</code>), no cifrado</li>
+<li>Datos que hay que leer después → <strong>cifrado simétrico</strong> (AES-256-GCM)</li>
+<li>Respaldos cifrados y probados</li>
+</ul>
+<pre><code class="language-php"><span class="hljs-comment">// Laravel: cifrado transparente con APP_KEY</span>
+<span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">casts</span>(<span class="hljs-params"></span>): <span class="hljs-title">array</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">&#x27;cedula&#x27;</span>   =&gt; <span class="hljs-string">&#x27;encrypted&#x27;</span>,
+        <span class="hljs-string">&#x27;telefono&#x27;</span> =&gt; <span class="hljs-string">&#x27;encrypted&#x27;</span>,
+    ];
+}
+</code></pre>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <strong>No inventes criptografía</strong>: usa las bibliotecas del framework. Derivar ≠ cifrar ≠ codificar (Base64 <strong>no</strong> es cifrado)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="datos-que-salen-de-la-api">Datos que salen de la API</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Devuelve TODAS las columnas del modelo</span>
+<span class="hljs-keyword">return</span> <span class="hljs-title class_">User</span>::<span class="hljs-title function_ invoke__">find</span>(<span class="hljs-variable">$id</span>);
+
+<span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Recurso explícito: solo lo necesario</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UsuarioResource</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">JsonResource</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toArray</span>(<span class="hljs-params"><span class="hljs-variable">$request</span></span>): <span class="hljs-title">array</span>
+    </span>{
+        <span class="hljs-keyword">return</span> [
+            <span class="hljs-string">&#x27;id&#x27;</span>     =&gt; <span class="hljs-variable language_">$this</span>-&gt;id,
+            <span class="hljs-string">&#x27;nombre&#x27;</span> =&gt; <span class="hljs-variable language_">$this</span>-&gt;name,
+            <span class="hljs-string">&#x27;correo&#x27;</span> =&gt; <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">when</span>(
+                <span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">user</span>()-&gt;<span class="hljs-title function_ invoke__">can</span>(<span class="hljs-string">&#x27;verCorreo&#x27;</span>, <span class="hljs-variable">$this</span>-&gt;resource),
+                <span class="hljs-variable">$this</span>-&gt;email),
+        ];
+    }
+}
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🙈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f648.svg" data-marp-twemoji=""/> <code>$hidden</code> en el modelo es una red de seguridad, <strong>no</strong> la estrategia</li>
+<li><img class="emoji" draggable="false" alt="🎭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3ad.svg" data-marp-twemoji=""/> Enmascarar en pantalla: <code>**** **** **** 4242</code></li>
+<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Bitácoras <strong>sin</strong> contraseñas, tokens ni datos personales</li>
+<li><img class="emoji" draggable="false" alt="🚫" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6ab.svg" data-marp-twemoji=""/> Errores sin trazas de pila ni mensajes de la BD</li>
+<li><img class="emoji" draggable="false" alt="🔎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f50e.svg" data-marp-twemoji=""/> El front-end <strong>no</strong> debe recibir datos &quot;para filtrarlos después&quot;: lo que llega al cliente, el atacante lo ve en DevTools</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="datos-en-el-dispositivo-m%C3%B3vil">Datos en el dispositivo móvil</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<h3 id="%E2%9D%8C-inseguro"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Inseguro</h3>
+<ul>
+<li><code>localStorage</code> / <code>@capacitor/preferences</code>: texto plano</li>
+<li>SQLite sin cifrar</li>
+<li>Archivos en almacenamiento <strong>externo</strong> compartido</li>
+<li>Datos sensibles en <strong>bitácoras</strong> (<code>console.log</code> → <code>adb logcat</code>)</li>
+<li>Capturas automáticas al pasar a segundo plano</li>
+<li>Portapapeles con datos sensibles</li>
+</ul>
+</div>
+<div>
+<h3 id="%E2%9C%85-seguro"><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Seguro</h3>
+<ul>
+<li>Tokens y secretos en <strong>Keychain</strong> (iOS) / <strong>Keystore</strong> (Android) mediante un plugin de <em>secure storage</em></li>
+<li>SQLite cifrado (SQLCipher) si hay datos sensibles offline</li>
+<li>Ocultar la vista al ir a segundo plano (<code>FLAG_SECURE</code> en Android)</li>
+<li>Borrar los datos al cerrar sesión</li>
+<li>Biometría para <strong>desbloquear</strong> la clave del Keystore, no como contraseña</li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Supón que el dispositivo puede <strong>perderse, rootearse o tener <em>malware</em></strong>: OWASP Mobile <strong>M9 — Almacenamiento inseguro de datos</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="22" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="privacidad-ley-8968-y-buenas-pr%C3%A1cticas">Privacidad: Ley 8968 y buenas prácticas</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%93%9D-consentimiento-informado"><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Consentimiento informado</h3>
+<p>Explicar <strong>qué</strong> datos, <strong>para qué</strong> y <strong>por cuánto</strong> tiempo antes de recolectarlos</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%BE-derechos-arco"><img class="emoji" draggable="false" alt="🧾" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9fe.svg" data-marp-twemoji=""/> Derechos ARCO</h3>
+<p>Acceso, Rectificación, Cancelación y Oposición: la app debe permitir ejercerlos</p>
+</div>
+<div>
+<h3 id="%F0%9F%8F%9B%EF%B8%8F-prodhab"><img class="emoji" draggable="false" alt="🏛️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3db.svg" data-marp-twemoji=""/> PRODHAB</h3>
+<p>Agencia de Protección de Datos de los Habitantes: supervisa la Ley 8968 en Costa Rica</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%8D-permisos-m%C3%B3viles"><img class="emoji" draggable="false" alt="📍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cd.svg" data-marp-twemoji=""/> Permisos móviles</h3>
+<p>Pedir <strong>solo</strong> los necesarios, <strong>cuando</strong> se necesitan, explicando el motivo (<code>Info.plist</code>, <code>AndroidManifest.xml</code>)</p>
+</div>
+<div>
+<h3 id="%F0%9F%8C%8D-alcance-internacional"><img class="emoji" draggable="false" alt="🌍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f30d.svg" data-marp-twemoji=""/> Alcance internacional</h3>
+<p>Usuarios en Europa → <strong>RGPD</strong>; tiendas de apps exigen <strong>política de privacidad</strong> y etiquetas de datos</p>
+</div>
+<div>
+<h3 id="%F0%9F%95%B5%EF%B8%8F-seudonimizar">🕵️ Seudonimizar</h3>
+<p>Analítica y pruebas con datos <strong>anonimizados</strong>, nunca con la copia de producción</p>
+</div>
+</div>
+<ul>
+<li>OWASP Mobile <strong>M6 — Controles de privacidad inadecuados</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-scope-xShUm8XL="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="23" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="64-seguridad-en-el-c%C3%B3digo">6.4 Seguridad en el código</h1>
+<h2 id="contenidos-4">Contenidos</h2>
+<ul>
+<li>Validación de entradas</li>
+<li>Secretos fuera del código</li>
+<li>Dependencias y cadena de suministro</li>
+<li>Revisión y análisis estático</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="24" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="validaci%C3%B3n-entradas-y-salidas">Validación: entradas y salidas</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// Form Request: el controlador nunca ve datos sin validar</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rules</span>(<span class="hljs-params"></span>): <span class="hljs-title">array</span>
+</span>{
+    <span class="hljs-keyword">return</span> [
+        <span class="hljs-string">&#x27;cantidad&#x27;</span>  =&gt; [<span class="hljs-string">&#x27;required&#x27;</span>, <span class="hljs-string">&#x27;integer&#x27;</span>, <span class="hljs-string">&#x27;between:1,100&#x27;</span>],
+        <span class="hljs-string">&#x27;correo&#x27;</span>    =&gt; [<span class="hljs-string">&#x27;required&#x27;</span>, <span class="hljs-string">&#x27;email:rfc,dns&#x27;</span>],
+        <span class="hljs-string">&#x27;estado&#x27;</span>    =&gt; [<span class="hljs-string">&#x27;required&#x27;</span>, <span class="hljs-title class_">Rule</span>::<span class="hljs-title function_ invoke__">in</span>([<span class="hljs-string">&#x27;borrador&#x27;</span>, <span class="hljs-string">&#x27;enviado&#x27;</span>])],
+        <span class="hljs-string">&#x27;foto&#x27;</span>      =&gt; [<span class="hljs-string">&#x27;image&#x27;</span>, <span class="hljs-string">&#x27;mimes:jpg,png&#x27;</span>, <span class="hljs-string">&#x27;max:2048&#x27;</span>],
+    ];
+}
+
+<span class="hljs-comment">// Solo los campos validados</span>
+<span class="hljs-variable">$pedido</span> = <span class="hljs-title class_">Pedido</span>::<span class="hljs-title function_ invoke__">create</span>(<span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">validated</span>());
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Lista blanca</strong> (qué se acepta) mejor que lista negra (qué se rechaza)</li>
+<li>Validar <strong>tipo, longitud, rango y formato</strong></li>
+<li>La validación del cliente es para la <strong>experiencia</strong>; la del servidor es para la <strong>seguridad</strong></li>
+<li><strong>Codificar la salida</strong> según el contexto: HTML, URL, JS, SQL</li>
+<li>OWASP Mobile <strong>M4 — Validación insuficiente de entradas/salidas</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="manejo-de-errores-y-condiciones-excepcionales">Manejo de errores y condiciones excepcionales</h2>
+<ul>
+<li><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> <strong>A10:2025</strong> — un error mal manejado puede dejar el sistema en un estado inseguro</li>
+</ul>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Falla ABIERTO: si el servicio cae, deja pasar</span>
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$permitido</span> = <span class="hljs-variable">$autorizador</span>-&gt;<span class="hljs-title function_ invoke__">verificar</span>(<span class="hljs-variable">$user</span>);
+} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Throwable</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-variable">$permitido</span> = <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Falla CERRADO</span>
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-variable">$permitido</span> = <span class="hljs-variable">$autorizador</span>-&gt;<span class="hljs-title function_ invoke__">verificar</span>(<span class="hljs-variable">$user</span>);
+} <span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Throwable</span> <span class="hljs-variable">$e</span>) {
+    <span class="hljs-title function_ invoke__">report</span>(<span class="hljs-variable">$e</span>);
+    <span class="hljs-variable">$permitido</span> = <span class="hljs-literal">false</span>;
+}
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> <strong>Fallar cerrado</strong>: ante la duda, denegar</li>
+<li><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f504.svg" data-marp-twemoji=""/> Usar <strong>transacciones</strong>: o se hace todo o nada</li>
+<li><img class="emoji" draggable="false" alt="🙊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f64a.svg" data-marp-twemoji=""/> Al usuario, un mensaje genérico; el detalle, a la bitácora</li>
+<li><img class="emoji" draggable="false" alt="🧯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ef.svg" data-marp-twemoji=""/> Manejador <strong>centralizado</strong> de excepciones (<code>bootstrap/app.php</code>)</li>
+<li><img class="emoji" draggable="false" alt="⏱️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/23f1.svg" data-marp-twemoji=""/> <em>Timeouts</em> en llamadas externas</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="secretos-fuera-del-c%C3%B3digo">Secretos fuera del código</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># .gitignore</span>
+.<span class="hljs-built_in">env</span>
+.<span class="hljs-built_in">env</span>.*
+!.env.example
+*.pem
+*.key
+google-services.json   <span class="hljs-comment"># si contiene claves privadas</span>
+</code></pre>
+<pre><code class="language-bash"><span class="hljs-comment"># Detectar secretos antes de que lleguen al repo</span>
+gitleaks detect --<span class="hljs-built_in">source</span> .
+gitleaks protect --staged   <span class="hljs-comment"># en un hook pre-commit</span>
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Un secreto que llegó a Git <strong>está filtrado</strong>, aunque lo borres en el siguiente commit: hay que <strong>rotarlo</strong></li>
+<li><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> <strong>En la app móvil no hay secretos</strong>: el APK/IPA se descompila en minutos. Cualquier clave en el bundle (<code>VITE_*</code>, <code>import.meta.env</code>) es <strong>pública</strong></li>
+<li>Las claves privadas de terceros (pagos, correo) viven <strong>solo</strong> en el back-end</li>
+<li>En producción: variables de entorno o un <strong>gestor de secretos</strong> (Vault, AWS Secrets Manager, GitHub Secrets)</li>
+<li>OWASP Mobile <strong>M1 — Uso inadecuado de credenciales</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cadena-de-suministro-de-software">Cadena de suministro de software</h2>
+<ul>
+<li><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> <strong>A03:2025</strong> y Mobile <strong>M2</strong>: tu código incluye cientos de dependencias que <strong>no escribiste</strong></li>
+</ul>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<h3 id="ataques-reales">Ataques reales</h3>
+<ul>
+<li><strong>axios</strong> comprometido en npm (marzo 2026): versiones con troyano de acceso remoto</li>
+<li><em>Typosquatting</em>: <code>expres</code> en vez de <code>express</code></li>
+<li>Scripts <code>postinstall</code> que roban variables de entorno</li>
+<li>Mantenedores que venden o abandonan el paquete</li>
+</ul>
+</div>
+<div>
+<h3 id="defensas">Defensas</h3>
+<pre><code class="language-bash">pnpm audit          <span class="hljs-comment"># npm audit</span>
+composer audit
+</code></pre>
+<pre><code class="language-yaml"><span class="hljs-comment"># pnpm-workspace.yaml — esperar 24 h</span>
+<span class="hljs-attr">minimumReleaseAge:</span> <span class="hljs-number">1440</span>
+</code></pre>
+<ul>
+<li>Confirmar el <strong>lockfile</strong> (<code>pnpm-lock.yaml</code>, <code>composer.lock</code>)</li>
+<li>Instalar en CI con <code>--frozen-lockfile</code></li>
+<li><strong>Dependabot</strong> / <strong>Renovate</strong> para actualizaciones</li>
+<li><strong>SRI</strong> para scripts de CDN</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="integridad-sri-y-firmas">Integridad: SRI y firmas</h2>
+<split-slide style="--left: 58%; --right: 42%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Si el CDN es comprometido, el navegador NO ejecuta el archivo --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>
+  <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js&quot;</span>
+  <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-...&quot;</span>
+  <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<pre><code class="language-bash"><span class="hljs-comment"># Calcular el hash</span>
+curl -s URL | openssl dgst -sha384 -binary | openssl <span class="hljs-built_in">base64</span> -A
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>A08:2025</strong> — integridad del software y de los datos</li>
+<li>Firmar los artefactos: APK/AAB con la clave de la tienda, imágenes de contenedor con <strong>cosign</strong></li>
+<li>Generar un <strong>SBOM</strong> (lista de componentes) en el pipeline</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Nunca deserializar objetos que vengan del cliente (<code>unserialize()</code> en PHP)</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="revisi%C3%B3n-de-c%C3%B3digo-y-an%C3%A1lisis-est%C3%A1tico-sast">Revisión de código y análisis estático (SAST)</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%91%80-revisi%C3%B3n-entre-pares"><img class="emoji" draggable="false" alt="👀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f440.svg" data-marp-twemoji=""/> Revisión entre pares</h3>
+<p>Pull requests obligatorios. Lista de verificación: autorización, validación, secretos, consultas crudas</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%8D-sast"><img class="emoji" draggable="false" alt="🔍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f50d.svg" data-marp-twemoji=""/> SAST</h3>
+<p>Analiza el código fuente sin ejecutarlo: <strong>Semgrep</strong>, <strong>SonarQube</strong>, <strong>CodeQL</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%B9-linters-de-seguridad"><img class="emoji" draggable="false" alt="🧹" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9f9.svg" data-marp-twemoji=""/> Linters de seguridad</h3>
+<p><code>eslint-plugin-security</code>, <strong>PHPStan</strong> / <strong>Larastan</strong>, <strong>Psalm</strong> (<em>taint analysis</em>)</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%AA-pruebas-de-seguridad"><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Pruebas de seguridad</h3>
+<p>Pruebas que verifican <strong>403</strong> al acceder a recursos ajenos y <strong>429</strong> al superar el límite</p>
+</div>
+</div>
+<pre><code class="language-bash">semgrep scan --config p/owasp-top-ten --config p/php
+</code></pre>
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> <em>Shift left</em>: cuanto antes se detecta una falla, más barato es corregirla</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="30" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="seguridad-del-c%C3%B3digo-m%C3%B3vil">Seguridad del código móvil</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%A7%A9-protecci%C3%B3n-del-binario-m7"><img class="emoji" draggable="false" alt="🧩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9e9.svg" data-marp-twemoji=""/> Protección del binario (M7)</h3>
+<ul>
+<li>Activar <strong>ofuscación</strong> y <em>minify</em> en el build de release (R8 / ProGuard en Android)</li>
+<li>Desactivar <code>debuggable</code> y el inspector del WebView en producción</li>
+<li>Detectar <em>root</em> / <em>jailbreak</em> para funciones críticas (sin depender solo de eso)</li>
+<li><strong>Play Integrity API</strong> / <strong>App Attest</strong> para que la API sepa que habla con la app legítima</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%8C%90-webview-capacitor--ionic"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> WebView (Capacitor / Ionic)</h3>
+<ul>
+<li>Cargar <strong>solo</strong> contenido local de la app; no navegar a URLs arbitrarias</li>
+<li><code>allowNavigation</code> restringido en <code>capacitor.config.ts</code></li>
+<li><strong>CSP</strong> también dentro de la app</li>
+<li>Validar los <em>deep links</em>: un enlace <code>miapp://</code> puede venir de cualquier sitio</li>
+<li>Plugins nativos: revisar qué permisos agregan</li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> La ofuscación <strong>retrasa</strong> al atacante, no lo detiene: la seguridad real sigue estando en el servidor</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-marpit-scope-z3pndYPN="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="31" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="65-seguridad-en-las-apis">6.5 Seguridad en las APIs</h1>
+<h2 id="contenidos-5">Contenidos</h2>
+<ul>
+<li>OWASP API Security Top 10:2023</li>
+<li>Limitación de tasa y consumo de recursos</li>
+<li>CORS y encabezados</li>
+<li>Comunicación segura desde el móvil</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="owasp-api-security-top-102023">OWASP API Security Top 10:2023</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Riesgo</th>
+<th style="text-align:left">Mitigación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>API1</strong></td>
+<td style="text-align:left">Autorización rota a nivel de <strong>objeto</strong> (BOLA)</td>
+<td style="text-align:left">Política por recurso: <code>authorize('view', $pedido)</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API2</strong></td>
+<td style="text-align:left">Autenticación rota</td>
+<td style="text-align:left">Sanctum/JWT bien configurado, <code>throttle</code> en login</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API3</strong></td>
+<td style="text-align:left">Autorización rota a nivel de <strong>propiedad</strong></td>
+<td style="text-align:left">Recursos de API + <code>$fillable</code> / <code>validated()</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API4</strong></td>
+<td style="text-align:left">Consumo de recursos sin restricción</td>
+<td style="text-align:left"><em>Rate limiting</em>, tope de paginación, tamaño máximo</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API5</strong></td>
+<td style="text-align:left">Autorización rota a nivel de <strong>función</strong> (BFLA)</td>
+<td style="text-align:left"><code>DELETE /api/usuarios/7</code> solo para admin</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API6</strong></td>
+<td style="text-align:left">Acceso sin restricción a flujos de negocio sensibles</td>
+<td style="text-align:left">Anti-automatización en compra, registro, cupones</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API7</strong></td>
+<td style="text-align:left"><em>Server-Side Request Forgery</em> (SSRF)</td>
+<td style="text-align:left">Lista blanca de destinos</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API8</strong></td>
+<td style="text-align:left">Configuración de seguridad incorrecta</td>
+<td style="text-align:left">CORS explícito, sin <code>APP_DEBUG</code>, encabezados</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API9</strong></td>
+<td style="text-align:left">Gestión inadecuada del inventario</td>
+<td style="text-align:left">Retirar <code>/api/v1</code> viejas, documentar todo en OpenAPI</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API10</strong></td>
+<td style="text-align:left">Consumo inseguro de APIs de terceros</td>
+<td style="text-align:left">Validar sus respuestas como si vinieran del usuario</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="33" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="bola-la-vulnerabilidad-n%C2%BA-1-de-las-apis">BOLA: la vulnerabilidad n.º 1 de las APIs</h2>
+<steps>
+<step>
+<pre><code class="language-http">GET /api/pedidos/42        Authorization: Bearer &lt;token de Ana&gt;   → 200 <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> (es de Ana)
+GET /api/pedidos/43        Authorization: Bearer &lt;token de Ana&gt;   → 200 <img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> (es de Luis)
+</code></pre>
+</step>
+<step>
+<pre><code class="language-php"><span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Opción 1 — política</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span>(<span class="hljs-params">Pedido <span class="hljs-variable">$pedido</span></span>) </span>{
+    <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">authorize</span>(<span class="hljs-string">&#x27;view&#x27;</span>, <span class="hljs-variable">$pedido</span>);      <span class="hljs-comment">// 403 si no es suya</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PedidoResource</span>(<span class="hljs-variable">$pedido</span>);
+}
+
+<span class="hljs-comment">// <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Opción 2 — consultar siempre desde el dueño</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$id</span></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PedidoResource</span>(
+        <span class="hljs-title function_ invoke__">auth</span>()-&gt;<span class="hljs-title function_ invoke__">user</span>()-&gt;<span class="hljs-title function_ invoke__">pedidos</span>()-&gt;<span class="hljs-title function_ invoke__">findOrFail</span>(<span class="hljs-variable">$id</span>)   <span class="hljs-comment">// 404 si no es suya</span>
+    );
+}
+</code></pre>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Usar UUID en vez de enteros <strong>dificulta</strong> adivinar, pero <strong>no</strong> reemplaza la verificación</li>
+</ul>
+</step>
+</steps>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="34" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="consumo-de-recursos-y-limitaci%C3%B3n-de-tasa">Consumo de recursos y limitación de tasa</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// AppServiceProvider</span>
+<span class="hljs-title class_">RateLimiter</span>::<span class="hljs-keyword">for</span>(<span class="hljs-string">&#x27;api&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">fn</span> (<span class="hljs-params"><span class="hljs-variable">$r</span></span>) =&gt;</span>
+    <span class="hljs-title class_">Limit</span>::<span class="hljs-title function_ invoke__">perMinute</span>(<span class="hljs-number">60</span>)-&gt;<span class="hljs-title function_ invoke__">by</span>(<span class="hljs-variable">$r</span>-&gt;<span class="hljs-title function_ invoke__">user</span>()?-&gt;id ?: <span class="hljs-variable">$r</span>-&gt;<span class="hljs-title function_ invoke__">ip</span>()));
+
+<span class="hljs-title class_">RateLimiter</span>::<span class="hljs-keyword">for</span>(<span class="hljs-string">&#x27;login&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">fn</span> (<span class="hljs-params"><span class="hljs-variable">$r</span></span>) =&gt;</span> [
+    <span class="hljs-title class_">Limit</span>::<span class="hljs-title function_ invoke__">perMinute</span>(<span class="hljs-number">5</span>)-&gt;<span class="hljs-title function_ invoke__">by</span>(<span class="hljs-variable">$r</span>-&gt;<span class="hljs-title function_ invoke__">ip</span>()),
+    <span class="hljs-title class_">Limit</span>::<span class="hljs-title function_ invoke__">perMinute</span>(<span class="hljs-number">5</span>)-&gt;<span class="hljs-title function_ invoke__">by</span>(<span class="hljs-variable">$r</span>-&gt;<span class="hljs-title function_ invoke__">input</span>(<span class="hljs-string">&#x27;email&#x27;</span>)),
+]);
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// Tope de página</span>
+<span class="hljs-variable">$porPagina</span> = <span class="hljs-title function_ invoke__">min</span>((<span class="hljs-keyword">int</span>) <span class="hljs-variable">$request</span>-&gt;<span class="hljs-title function_ invoke__">input</span>(<span class="hljs-string">&#x27;per_page&#x27;</span>, <span class="hljs-number">15</span>), <span class="hljs-number">100</span>);
+<span class="hljs-keyword">return</span> <span class="hljs-title class_">Pedido</span>::<span class="hljs-title function_ invoke__">paginate</span>(<span class="hljs-variable">$porPagina</span>);
+</code></pre>
+</div>
+<div>
+<ul>
+<li>Respuesta <strong>429 Too Many Requests</strong> con <code>Retry-After</code></li>
+<li>Limitar <strong>por usuario y por IP</strong></li>
+<li>Tope a: tamaño del cuerpo, archivos, elementos por página, profundidad de consultas (GraphQL)</li>
+<li><em>Timeouts</em> en consultas y trabajos</li>
+<li>Protege contra <strong>fuerza bruta</strong>, <em>scraping</em> y costos inesperados en la nube</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="35" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cors-y-encabezados-de-seguridad">CORS y encabezados de seguridad</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.72rem;">
+<div>
+<pre><code class="language-php"><span class="hljs-comment">// config/cors.php</span>
+<span class="hljs-string">&#x27;paths&#x27;</span>                =&gt; [<span class="hljs-string">&#x27;api/*&#x27;</span>],
+<span class="hljs-string">&#x27;allowed_origins&#x27;</span>      =&gt; [<span class="hljs-string">&#x27;https://proyecto.ucr.ac.cr&#x27;</span>,
+                           <span class="hljs-string">&#x27;capacitor://localhost&#x27;</span>,
+                           <span class="hljs-string">&#x27;https://localhost&#x27;</span>],
+<span class="hljs-string">&#x27;allowed_methods&#x27;</span>      =&gt; [<span class="hljs-string">&#x27;GET&#x27;</span>,<span class="hljs-string">&#x27;POST&#x27;</span>,<span class="hljs-string">&#x27;PUT&#x27;</span>,<span class="hljs-string">&#x27;DELETE&#x27;</span>],
+<span class="hljs-string">&#x27;allowed_headers&#x27;</span>      =&gt; [<span class="hljs-string">&#x27;Authorization&#x27;</span>,<span class="hljs-string">&#x27;Content-Type&#x27;</span>],
+<span class="hljs-string">&#x27;supports_credentials&#x27;</span> =&gt; <span class="hljs-literal">false</span>,
+</code></pre>
+<pre><code class="language-http"><span class="hljs-attribute">Content-Security-Policy</span><span class="hljs-punctuation">: </span>default-src &#x27;self&#x27;; frame-ancestors &#x27;none&#x27;
+<span class="hljs-attribute">Strict-Transport-Security</span><span class="hljs-punctuation">: </span>max-age=31536000; includeSubDomains
+<span class="hljs-attribute">X-Content-Type-Options</span><span class="hljs-punctuation">: </span>nosniff
+<span class="hljs-attribute">Referrer-Policy</span><span class="hljs-punctuation">: </span>strict-origin-when-cross-origin
+<span class="hljs-attribute">Permissions-Policy</span><span class="hljs-punctuation">: </span>geolocation=(), camera=()
+<span class="hljs-attribute">Cache-Control</span><span class="hljs-punctuation">: </span>no-store            ← respuestas con datos personales
+</code></pre>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-malentendido-frecuente"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Malentendido frecuente</h3>
+<blockquote>
+<p><em>CORS <strong>no es un control de autorización</strong>: protege al navegador de la persona usuaria, no a la API. <code>curl</code> o Postman lo ignoran.</em></p>
+</blockquote>
+<br />
+<ul>
+<li><code>*</code> con credenciales es rechazado por los navegadores</li>
+<li>Quitar encabezados que revelan versiones: <code>X-Powered-By</code>, <code>Server</code></li>
+<li>Verifica tu sitio en <strong>securityheaders.com</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="36" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="comunicaci%C3%B3n-segura-desde-la-app-m%C3%B3vil">Comunicación segura desde la app móvil</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<h3 id="%F0%9F%94%90-m5--comunicaci%C3%B3n-insegura"><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> M5 — Comunicación insegura</h3>
+<ul>
+<li><strong>Solo HTTPS</strong>: Android bloquea HTTP por defecto desde la API 28, iOS con <strong>ATS</strong></li>
+<li>No desactivar la validación de certificados &quot;para que funcione en desarrollo&quot;</li>
+</ul>
+<pre><code class="language-xml"><span class="hljs-comment">&lt;!-- res/xml/network_security_config.xml --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">network-security-config</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">base-config</span> <span class="hljs-attr">cleartextTrafficPermitted</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span>
+  <span class="hljs-comment">&lt;!-- solo en de<span class="hljs-doctag">bug:</span> 10.0.2.2 para el emulador --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">network-security-config</span>&gt;</span>
+</code></pre>
+</div>
+<div>
+<h3 id="%F0%9F%93%8C-certificate-pinning"><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cc.svg" data-marp-twemoji=""/> <em>Certificate pinning</em></h3>
+<ul>
+<li>La app solo acepta <strong>el</strong> certificado (o clave pública) del servidor propio</li>
+<li>Protege contra proxies maliciosos y CA comprometidas</li>
+<li><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a0.svg" data-marp-twemoji=""/> Requiere plan de rotación: si el certificado cambia, la app deja de funcionar</li>
+<li>Reservado para apps de alto riesgo (banca, salud)</li>
+</ul>
+<br />
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> La app es un cliente <strong>más</strong>: la API aplica <strong>las mismas</strong> reglas que a la web</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-marpit-scope-udyg40DG="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="37" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="66-seguridad-en-el-despliegue">6.6 Seguridad en el despliegue</h1>
+<h2 id="contenidos-6">Contenidos</h2>
+<ul>
+<li>Configuración por entorno</li>
+<li>Servidor, contenedores y red</li>
+<li>CI/CD seguro (DevSecOps)</li>
+<li>Registro, monitoreo y respuesta</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="38" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="configuraci%C3%B3n-por-entorno">Configuración por entorno</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># .env de producción — no negociable</span>
+APP_ENV=production
+APP_DEBUG=<span class="hljs-literal">false</span>
+APP_URL=https://proyecto.ucr.ac.cr
+SESSION_SECURE_COOKIE=<span class="hljs-literal">true</span>
+LOG_LEVEL=warning
+</code></pre>
+<pre><code class="language-bash"><span class="hljs-comment"># Despliegue de Laravel</span>
+composer install --no-dev --optimize-autoloader
+php artisan config:cache
+php artisan route:cache
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>A02:2025 — Configuración incorrecta</strong> sube al <strong>2.º</strong> lugar</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <code>APP_DEBUG=true</code> muestra variables de entorno, rutas y consultas a cualquiera</li>
+<li>Sin dependencias de desarrollo en producción</li>
+<li>Documentación interactiva (Swagger UI, Telescope, phpMyAdmin) <strong>apagada o protegida</strong></li>
+<li>Credenciales por defecto cambiadas</li>
+<li>Entornos <strong>separados</strong>: datos, claves y BD distintos en desarrollo, pruebas y producción</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="39" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="servidor-contenedores-y-red">Servidor, contenedores y red</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%8C%90-servidor-web"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> Servidor web</h3>
+<p>Solo <code>public/</code> es la raíz. <code>.env</code>, <code>storage/</code> y <code>.git/</code> <strong>nunca</strong> accesibles por URL</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%B1-red"><img class="emoji" draggable="false" alt="🧱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9f1.svg" data-marp-twemoji=""/> Red</h3>
+<p>Firewall: solo 80/443 abiertos. La BD <strong>no</strong> escucha en Internet</p>
+</div>
+<div>
+<h3 id="%F0%9F%90%B3-contenedores"><img class="emoji" draggable="false" alt="🐳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f433.svg" data-marp-twemoji=""/> Contenedores</h3>
+<p>Imagen base mínima y fijada por versión, usuario <strong>no root</strong>, sin secretos en la imagen</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%84-parches"><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f504.svg" data-marp-twemoji=""/> Parches</h3>
+<p>Sistema operativo, PHP, Node y dependencias <strong>actualizados</strong>. Versiones con soporte de seguridad</p>
+</div>
+<div>
+<h3 id="%F0%9F%9B%A1%EF%B8%8F-waf--cdn"><img class="emoji" draggable="false" alt="🛡️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6e1.svg" data-marp-twemoji=""/> WAF / CDN</h3>
+<p>Cloudflare u otro proxy filtra ataques comunes y absorbe DDoS</p>
+</div>
+<div>
+<h3 id="%F0%9F%92%BE-respaldos"><img class="emoji" draggable="false" alt="💾" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4be.svg" data-marp-twemoji=""/> Respaldos</h3>
+<p>Automáticos, cifrados, <strong>fuera</strong> del servidor y con restauración <strong>probada</strong></p>
+</div>
+</div>
+<pre><code class="language-dockerfile"><span class="hljs-keyword">FROM</span> php:<span class="hljs-number">8.4</span>-fpm-alpine
+<span class="hljs-keyword">RUN</span><span class="language-bash"> adduser -D app</span>
+<span class="hljs-keyword">USER</span> app            <span class="hljs-comment"># nunca correr como root</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="40" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="cicd-seguro-devsecops">CI/CD seguro: DevSecOps</h2>
+<pre><code class="language-text"> commit ──► pre-commit ──► CI ───────────────────────────────► despliegue ──► producción
+           gitleaks        ├─ pruebas (Pest / Vitest)          secretos del    DAST (ZAP)
+                           ├─ SAST (Semgrep / CodeQL)          entorno, no     monitoreo
+                           ├─ auditoría de dependencias        del repo        alertas
+                           ├─ escaneo de imagen (Trivy)
+                           └─ build firmado + SBOM
+</code></pre>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<ul>
+<li>Rama <code>main</code> <strong>protegida</strong>: PR + revisión + CI en verde</li>
+<li>Secretos del pipeline en <strong>GitHub Secrets</strong>, con mínimo privilegio</li>
+<li>Acciones de terceros fijadas por <strong>hash</strong> del commit</li>
+</ul>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Móvil: la <strong>clave de firma</strong> (keystore / certificado de Apple) nunca en el repo; usar <em>Play App Signing</em></li>
+<li>Builds de release <strong>reproducibles</strong> desde el pipeline, no desde la laptop de alguien</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="41" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="registro-monitoreo-y-respuesta-a-incidentes">Registro, monitoreo y respuesta a incidentes</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%93%8B-qu%C3%A9-registrar-a09"><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Qué registrar (A09)</h3>
+<ul>
+<li>Inicios de sesión exitosos <strong>y fallidos</strong></li>
+<li>Accesos denegados (401 / 403)</li>
+<li>Cambios de permisos y de contraseña</li>
+<li>Errores 5xx y validaciones rechazadas en masa</li>
+<li>Con fecha, usuario, IP y un <strong>ID de correlación</strong></li>
+</ul>
+<h3 id="%F0%9F%99%88-qu%C3%A9-no-registrar"><img class="emoji" draggable="false" alt="🙈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f648.svg" data-marp-twemoji=""/> Qué <strong>no</strong> registrar</h3>
+<p>Contraseñas, tokens, números de tarjeta, datos personales completos</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A8-alertar"><img class="emoji" draggable="false" alt="🚨" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a8.svg" data-marp-twemoji=""/> Alertar</h3>
+<p>Un registro que nadie mira no sirve: alertas ante picos de 401, 429 o 5xx (Sentry, Grafana, Logtail)</p>
+<h3 id="%F0%9F%A7%AF-plan-de-respuesta"><img class="emoji" draggable="false" alt="🧯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ef.svg" data-marp-twemoji=""/> Plan de respuesta</h3>
+<ol>
+<li><strong>Detectar</strong> y contener</li>
+<li><strong>Rotar</strong> credenciales afectadas</li>
+<li><strong>Corregir</strong> y desplegar</li>
+<li><strong>Notificar</strong> a los afectados (PRODHAB si hay datos personales)</li>
+<li><strong>Aprender</strong>: análisis post-incidente sin culpables</li>
+</ol>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-marpit-scope-ltnEtScc="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="42" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="48">
+<h1 id="67-herramientas-y-recursos">6.7 Herramientas y recursos</h1>
+<h2 id="contenidos-7">Contenidos</h2>
+<ul>
+<li>Escáneres y proxies</li>
+<li>Análisis de dependencias y código</li>
+<li>Herramientas móviles</li>
+<li>Guías y estándares de referencia</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="43" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="herramientas-de-an%C3%A1lisis">Herramientas de análisis</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Categoría</th>
+<th style="text-align:left">Herramienta</th>
+<th style="text-align:left">Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>DAST / proxy</strong></td>
+<td style="text-align:left"><a href="https://www.zaproxy.org">OWASP ZAP</a>, <a href="https://portswigger.net/burp/communitydownload">Burp Suite Community</a></td>
+<td style="text-align:left">Interceptar y atacar la app en ejecución</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SAST</strong></td>
+<td style="text-align:left"><a href="https://semgrep.dev">Semgrep</a>, <a href="https://www.sonarsource.com/products/sonarqube/">SonarQube</a>, <a href="https://codeql.github.com">CodeQL</a></td>
+<td style="text-align:left">Encontrar patrones inseguros en el código</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Dependencias</strong></td>
+<td style="text-align:left"><code>pnpm audit</code>, <code>composer audit</code>, <a href="https://docs.github.com/code-security/dependabot">Dependabot</a>, <a href="https://snyk.io">Snyk</a>, <a href="https://google.github.io/osv-scanner/">OSV-Scanner</a></td>
+<td style="text-align:left">Vulnerabilidades conocidas en librerías</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Secretos</strong></td>
+<td style="text-align:left"><a href="https://github.com/gitleaks/gitleaks">Gitleaks</a>, <a href="https://github.com/trufflesecurity/trufflehog">TruffleHog</a>, <em>secret scanning</em> de GitHub</td>
+<td style="text-align:left">Claves filtradas en el repositorio</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Contenedores</strong></td>
+<td style="text-align:left"><a href="https://trivy.dev">Trivy</a></td>
+<td style="text-align:left">Vulnerabilidades en imágenes y configuración</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Móvil</strong></td>
+<td style="text-align:left"><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">MobSF</a>, <a href="https://frida.re">Frida</a>, <a href="https://github.com/skylot/jadx">jadx</a></td>
+<td style="text-align:left">Análisis estático/dinámico de APK e IPA</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>API</strong></td>
+<td style="text-align:left">Postman, <a href="https://www.usebruno.com">Bruno</a>, pruebas Pest</td>
+<td style="text-align:left">Probar BOLA, 401/403/429 a mano y automatizado</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="44" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="verificadores-en-l%C3%ADnea">Verificadores en línea</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%A7%BE-securityheaderscom"><img class="emoji" draggable="false" alt="🧾" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9fe.svg" data-marp-twemoji=""/> <a href="https://securityheaders.com">securityheaders.com</a></h3>
+<p>Califica los encabezados de seguridad de un sitio</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%92-ssl-labs"><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> <a href="https://www.ssllabs.com/ssltest/">SSL Labs</a></h3>
+<p>Configuración TLS y certificado del servidor</p>
+</div>
+<div>
+<h3 id="%F0%9F%A6%8A-mozilla-observatory"><img class="emoji" draggable="false" alt="🦊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f98a.svg" data-marp-twemoji=""/> <a href="https://developer.mozilla.org/observatory">Mozilla Observatory</a></h3>
+<p>Encabezados, cookies, CSP y buenas prácticas</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%AA-csp-evaluator"><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ea.svg" data-marp-twemoji=""/> <a href="https://csp-evaluator.withgoogle.com">CSP Evaluator</a></h3>
+<p>Detecta debilidades en una política CSP</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%93-have-i-been-pwned"><img class="emoji" draggable="false" alt="🔓" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f513.svg" data-marp-twemoji=""/> <a href="https://haveibeenpwned.com">Have I Been Pwned</a></h3>
+<p>¿Mi correo o contraseña aparecen en una filtración?</p>
+</div>
+<div>
+<h3 id="%F0%9F%AA%99-jwtio"><img class="emoji" draggable="false" alt="🪙" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1fa99.svg" data-marp-twemoji=""/> <a href="https://jwt.io">jwt.io</a></h3>
+<p>Decodificar un JWT (¡nunca pegues tokens de producción!)</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="⚖️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2696.svg" data-marp-twemoji=""/> Escanea <strong>solo</strong> tus propios dominios</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="45" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="est%C3%A1ndares-gu%C3%ADas-y-pr%C3%A1ctica">Estándares, guías y práctica</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<h3 id="%F0%9F%93%9A-est%C3%A1ndares-owasp"><img class="emoji" draggable="false" alt="📚" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4da.svg" data-marp-twemoji=""/> Estándares OWASP</h3>
+<ul>
+<li><a href="https://top10.owasp.org/2025/es/">OWASP Top 10:2025</a></li>
+<li><a href="https://owasp.org/API-Security/">OWASP API Security Top 10</a></li>
+<li><a href="https://owasp.org/www-project-mobile-top-10/">OWASP Mobile Top 10</a></li>
+<li><a href="https://owasp.org/www-project-application-security-verification-standard/">ASVS</a> — lista de verificación para web</li>
+<li><a href="https://mas.owasp.org">MASVS / MASTG</a> — estándar y guía de pruebas móviles</li>
+<li><a href="https://cheatsheetseries.owasp.org">Cheat Sheet Series</a> — recetas concretas por tema</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%8F%8B%EF%B8%8F-para-practicar-legalmente">🏋️ Para practicar (legalmente)</h3>
+<ul>
+<li><a href="https://portswigger.net/web-security">PortSwigger Web Security Academy</a> — laboratorios gratuitos</li>
+<li><a href="https://owasp.org/www-project-juice-shop/">OWASP Juice Shop</a> — tienda vulnerable a propósito</li>
+<li><a href="https://github.com/digininja/DVWA">DVWA</a> — app PHP vulnerable</li>
+<li><a href="https://mas.owasp.org/crackmes/">OWASP UnCrackable Apps</a> — retos móviles</li>
+</ul>
+<h3 id="%F0%9F%93%B0-mantenerse-al-d%C3%ADa"><img class="emoji" draggable="false" alt="📰" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f0.svg" data-marp-twemoji=""/> Mantenerse al día</h3>
+<ul>
+<li><a href="https://www.cve.org">CVE</a> / <a href="https://nvd.nist.gov">NVD</a>, avisos de seguridad de Laravel y Node</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="46" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="lista-de-verificaci%C3%B3n-del-proyecto">Lista de verificación del proyecto</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<h3 id="%F0%9F%94%90-api"><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> API</h3>
+<ul>
+<li>[ ] Toda ruta privada con <code>auth:sanctum</code></li>
+<li>[ ] Política por recurso (prueba con el ID de otro usuario → 403/404)</li>
+<li>[ ] <code>throttle</code> en login y en la API general</li>
+<li>[ ] Form Requests + <code>validated()</code></li>
+<li>[ ] Recursos de API, nunca el modelo</li>
+<li>[ ] CORS con orígenes explícitos</li>
+<li>[ ] Encabezados de seguridad</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%93%B1-cliente-y-despliegue"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> Cliente y despliegue</h3>
+<ul>
+<li>[ ] Token en almacenamiento seguro, no en <code>localStorage</code></li>
+<li>[ ] Ningún secreto en el bundle web/móvil</li>
+<li>[ ] Sin <code>v-html</code> con datos del usuario</li>
+<li>[ ] <code>.env</code> fuera del repo, <code>APP_DEBUG=false</code></li>
+<li>[ ] <code>pnpm audit</code> / <code>composer audit</code> sin altas</li>
+<li>[ ] HTTPS con HSTS</li>
+<li>[ ] Bitácora de accesos denegados</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="47" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="actividad-de-cierre">Actividad de cierre</h2>
+<div class="grid">
+<div>
+<h3 id="1%EF%B8%8F%E2%83%A3-atacar"><img class="emoji" draggable="false" alt="1️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/31-20e3.svg" data-marp-twemoji=""/> Atacar</h3>
+<p>Con <strong>ZAP</strong> sobre <code>localhost</code>, escanear la API del equipo y listar los hallazgos</p>
+</div>
+<div>
+<h3 id="2%EF%B8%8F%E2%83%A3-bola"><img class="emoji" draggable="false" alt="2️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/32-20e3.svg" data-marp-twemoji=""/> BOLA</h3>
+<p>Con dos usuarios, intentar leer y borrar los recursos del otro. Documentar el código de respuesta</p>
+</div>
+<div>
+<h3 id="3%EF%B8%8F%E2%83%A3-dependencias"><img class="emoji" draggable="false" alt="3️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/33-20e3.svg" data-marp-twemoji=""/> Dependencias</h3>
+<p>Ejecutar <code>pnpm audit</code>, <code>composer audit</code> y <code>gitleaks</code>. Corregir lo crítico</p>
+</div>
+<div>
+<h3 id="4%EF%B8%8F%E2%83%A3-encabezados"><img class="emoji" draggable="false" alt="4️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/34-20e3.svg" data-marp-twemoji=""/> Encabezados</h3>
+<p>Agregar CSP y HSTS, y verificar con las DevTools del navegador</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Entregable: tabla <strong>vulnerabilidad → evidencia → mitigación → prueba que lo demuestra</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="48" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="48">
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://top10.owasp.org/2025/es/">OWASP Top 10:2025</a></li>
+<li><a href="https://owasp.org/API-Security/editions/2023/es/0x00-header/">OWASP API Security Top 10:2023</a></li>
+<li><a href="https://owasp.org/www-project-mobile-top-10/">OWASP Mobile Top 10:2024</a></li>
+<li><a href="https://cheatsheetseries.owasp.org">OWASP Cheat Sheet Series</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/Security">MDN — Seguridad web</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/HTTP/Guides/CSP">MDN — Content Security Policy</a></li>
+<li><a href="https://pages.nist.gov/800-63-4/sp800-63b.html">NIST SP 800-63B — Identidad digital</a></li>
+<li><a href="https://laravel.com/docs/13.x/authentication">Laravel — Seguridad: autenticación, autorización, cifrado y hashing</a></li>
+<li><a href="https://capacitorjs.com/docs/guides/security">Capacitor — Guía de seguridad</a></li>
+<li><a href="https://www.prodhab.go.cr">Ley 8968 — Protección de la persona frente al tratamiento de sus datos personales (PRODHAB)</a></li>
+<li><a href="../backend/">Desarrollo Backend</a> · <a href="../desarrollo-movil/">Desarrollo Móvil</a> — temas del curso relacionados</li>
+</ul>
+<script src="../assets/steps.js"></script>
+<script src="../assets/image-modal.js"></script>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o),l=Symbol();let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[l];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();a()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[l]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.5.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter(function(e){return e!==t})},l=function(e,t){return(i[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach(function(e){e(u)}),n||c(0),u}}),t),o=e(r);const i=document.body,a=(...e)=>history.replaceState(...e),s="",l="presenter",c="next",d="overview",u=["",l,d,c],f="bespoke-marp-",m=`data-${f}`,g=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},p=()=>i.dataset.bespokeView,v=e=>new URLSearchParams(location.search).get(e),h=(e,t={})=>{const n={location,setter:a,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",g(r,n.location))}catch(e){console.error(e)}},w=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},k=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},E=e=>{e.parent.classList.add(`${f}parent`),e.slides.forEach(e=>e.classList.add(`${f}slide`)),e.on("activate",t=>{const n=`${f}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${m}fragment`,(i?"":"in")+"active");const a=`${m}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)})}),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}}),e.on("prev",({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},L=document,S=()=>!(!L.fullscreenEnabled&&!L.webkitFullscreenEnabled),P=()=>!(!L.fullscreenElement&&!L.webkitFullscreenElement),_=e=>{e.fullscreen=()=>{S()&&(async()=>{P()?(L.exitFullscreen||L.webkitExitFullscreen)?.call(L):((e=L.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!S()||(e.fullscreen(),t.preventDefault())})},O=`${f}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout(()=>{r.add(O),o()},e),r.contains(O)&&(r.remove(O),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},A=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${m}load`,e?"":"hideable")}})},C=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},D=(e=`.${f}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${m}osc=${JSON.stringify(e)}]`).forEach(n)};if(S()||n("fullscreen",e=>e.style.display="none"),!w){const e=(e,t)=>{e.disabled=!0,e.title=`${t} is disabled due to restricted localStorage.`};n("presenter",t=>e(t,"Presenter view")),n("overview",t=>e(t,"Overview view"))}return e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n?e.openPresenterView():"overview"===n&&e.toggleOverviewView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),S()&&(e=>{for(const t of["","webkit"])L.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",S()&&P())))}},N=e=>{if(e.syncKey&&"string"==typeof e.syncKey)return!0;throw new Error("The current instance of Bespoke.js is incompatible with Marp bespoke sync plugin.")},B=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},h({},{setter:(e,...t)=>a({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},i=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),i(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&i(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const a=()=>{const{reference:e}=o();void 0===e||e<=1?k(n):i(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),a()}),e.on("destroy",a)}},K=e=>{w&&document.addEventListener("keydown",t=>{("o"!==t.key||t.altKey||t.ctrlKey||t.metaKey)&&"Escape"!==t.key||(t.preventDefault(),e())})};let q=null;const V=({closeOnSelect:e=!0}={})=>t=>{N(t);const n=n=>{const r=(()=>{if(!q||!q.isConnected){q=document.createElement("div"),q.className=`${f}overview`,q.inert=!0;const n=document.createElement("iframe");n.src=(()=>{const n=new URLSearchParams(location.search);return n.set("view","overview"),n.set("sync",t.syncKey),e&&n.set("closeOnSelect","1"),g(n)})(),q.append(n),document.body.append(q)}return q})(),o=n??!r.dataset.open;setTimeout(()=>{if(r.dataset.open=o?"1":"",r.inert=!o,t.skipTransition=o,o){const e=r.querySelector("iframe");try{e?.contentWindow?.focus()}catch{e?.focus()}}else window.focus()},0)};Object.defineProperties(t,{toggleOverviewView:{enumerable:!0,value:n}}),window.addEventListener("message",e=>{e.origin===window.origin&&"closeOverview"===e.data&&n(!1)}),K(n)},j=e=>{const{title:t}=document;document.title="[Overview]"+(t?` - ${t}`:"");const n=!!v("closeOnSelect"),r=()=>{window.parent.postMessage("closeOverview","null"===window.origin?"*":window.origin)};if(e.slides.forEach((t,o)=>{t.tabIndex=0;const i=()=>{e.slide(o,{fragment:-1}),n&&r()};t.addEventListener("click",i),t.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),i())})}),window.addEventListener("keydown",t=>{const n=e.slide(),r=t=>{const r=t=>{const n=e.slides[t].getBoundingClientRect();return[Math.round((n.left+n.right)/2),Math.round((n.top+n.bottom)/2)]};let o=null,i=n;do{const e=r(i);if(o){if(Math.abs(e[0]-o[0])<2)return i}else o=e;i+=t}while(i>=0&&i<e.slides.length);return n};if("ArrowLeft"===t.key)e.slide(Math.max(n-1,0),{fragment:-1});else if("ArrowRight"===t.key)e.slide(Math.min(n+1,e.slides.length-1),{fragment:-1});else if("ArrowUp"===t.key)e.slide(r(-1),{fragment:-1});else if("ArrowDown"===t.key)e.slide(r(1),{fragment:-1});else if("End"===t.key)e.slide(e.slides.length-1,{fragment:-1});else{if("Home"!==t.key)return;e.slide(0,{fragment:-1})}t.preventDefault();const o=e.slide();e.slides[o]?.focus?.(),e.slides[o]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),e.on("slide",({index:t})=>{e.slides[t]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),window.parent!==window){K(r);const e=document.createElement("header");e.className=`${f}overview-header`;const t=document.createElement("button");t.className=`${f}overview-close`,t.type="button",t.title="Close overview",t.textContent=t.title,t.addEventListener("click",r),e.append(t),document.body.prepend(e)}},F=()=>{const e=p();return{[s]:V(),[l]:V({closeOnSelect:!1}),[d]:j}[e]},U=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}})};var R,X,H,W,J,Y,z,G={exports:{}},Q=(R||(R=1,G.exports=(X=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],H=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+W[e]+";"})},W={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},J="dangerouslySetInnerHTML",Y={className:"class",htmlFor:"for"},z={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var i in t)!1!==t[i]&&null!=t[i]&&i!==J&&(r+=" "+(Y[i]?Y[i]:H(i))+'="'+H(t[i])+'"');r+=">"}if(-1===X.indexOf(e)){if(t[J])r+=t[J].__html;else for(;n.length;){var a=n.pop();if(a)if(a.pop)for(var s=a.length;s--;)n.push(a[s]);else r+=!0===z[a]?a:H(a)}r+=e?"</"+e+">":""}return z[r]=!0,r})),G.exports),Z=e(Q);const ee=({children:e})=>Z(null,null,...e),te=`${f}presenter-`,ne={container:`${te}container`,dragbar:`${te}dragbar-container`,next:`${te}next`,nextContainer:`${te}next-container`,noteContainer:`${te}note-container`,noteWrapper:`${te}note-wrapper`,noteButtons:`${te}note-buttons`,infoContainer:`${te}info-container`,infoPageArea:`${te}info-page-area`,infoPage:`${te}info-page`,infoPagePrev:`${te}info-page-prev`,infoPageNext:`${te}info-page-next`,noteButtonsBigger:`${te}note-bigger`,noteButtonsSmaller:`${te}note-smaller`,infoTime:`${te}info-time`,infoTimer:`${te}info-timer`},re=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=ne.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",Z(ee,null,Z("div",{class:ne.nextContainer},Z("iframe",{class:ne.next,src:"?view=next"})),Z("div",{class:ne.dragbar}),Z("div",{class:ne.noteContainer},Z("div",{class:ne.noteWrapper}),Z("div",{class:ne.noteButtons},Z("button",{class:ne.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),Z("button",{class:ne.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),Z("div",{class:ne.infoContainer},Z("div",{class:ne.infoPageArea},Z("button",{class:ne.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),Z("button",{class:ne.infoPage}),Z("button",{class:ne.infoPageNext,tabindex:"-1",title:"Next"},"Next")),Z("time",{class:ne.infoTime,title:"Current time"}),Z("time",{class:ne.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(ne.dragbar).addEventListener("mousedown",()=>{t=!0,r(ne.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(ne.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(ne.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(ne.nextContainer).addEventListener("click",()=>e.next());const n=r(ne.next),o=(i=n,(e,t)=>i.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var i;n.addEventListener("load",()=>{r(ne.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const a=document.querySelectorAll(".bespoke-marp-note");a.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(ne.noteWrapper).appendChild(e)}),e.on("activate",()=>a.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const l=e=>{s=Math.max(-5,s+e),r(ne.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(ne.noteButtonsBigger),f=r(ne.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),c()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&c(),"-"===e.key&&d()},!0);const m=r(ne.infoPage);e.on("activate",({index:t})=>{m.textContent=`${t+1} / ${e.slides.length}`}),m.addEventListener("click",()=>{m.blur(),e.toggleOverviewView()});const g=r(ne.infoPagePrev),p=r(ne.infoPageNext);g.addEventListener("click",t=>{g.blur(),e.prev({fragment:!t.shiftKey})}),p.addEventListener("click",t=>{p.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{g.disabled=0===t&&0===r,p.disabled=t===e.slides.length-1&&r===n.length-1});let v=new Date;const h=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-v.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(ne.infoTime).textContent=e.toLocaleTimeString(),r(ne.infoTimer).textContent=`${a}:${i}:${o}`};h(),setInterval(h,250),r(ne.infoTimer).addEventListener("click",()=>{v=new Date})})(e)},oe=e=>{N(e),Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:ie},presenterUrl:{enumerable:!0,get:ae}}),w&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function ie(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,te+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function ae(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),g(e)}const se=e=>{const t=p();return t===c&&e.appendChild(document.createElement("span")),{[s]:oe,[l]:re,[c]:U}[t]},le=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},ce=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},de=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?ce(v("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(ce(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],i=r.closest("[data-marpit-fragment]");if(t&&i){const e=t.indexOf(i);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||h({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),h({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},{PI:ue,abs:fe,sqrt:me,atan2:ge}=Math,pe={passive:!0},ve=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?i(e[0]):void 0},pe),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=me(fe(n)**2+fe(o)**2),r.radian=ge(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+ue)%(2*ue)-ue;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},pe)},he=new Map;he.clear(),he.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const we={both:"",outgoing:"outgoing-",incoming:"incoming-"},ye={forward:"",backward:"-backward"},be=e=>`--marp-bespoke-transition-animation-${e}`,ke=e=>`--marp-transition-${e}`,xe=be("name"),Ee=be("duration"),$e=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ke("duration"));i&&Number.parseFloat(i)>=0&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),Le=async e=>he.has(e)?he.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(we))for(const[i,a]of Object.entries(ye)){const s=`marp-${o}transition${a}-${e}`;n.push($e(s).then(e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(he.set(e,t),t)),Se=e=>Object.values(e).flatMap(Object.values).every(e=>!e),Pe=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[xe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[be("direction")]="reverse"),e}})();return!o&&n?Pe(e,{type:t,backward:!1}):o||{[xe]:"__bespoke_marp_transition_no_animation__"}},_e=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},Oe="_tSId",Te="_tA",Ie="bespoke-marp-transition-warming-up",Me=window.matchMedia("(prefers-reduced-motion: reduce)"),Ae="__bespoke_marp_transition_reduced_outgoing__",Ce="__bespoke_marp_transition_reduced_incoming__",De={forward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}},backward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}}},Ne=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ke("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>Le(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=_e(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>i=>{const a=t();if(a)return!!i[Te]||!("object"!=typeof a||(a.skipTransition(),!i.forSync));if(e.skipTransition)return!0;if(!o(i))return!0;const s=e.slides[e.slide()],l=()=>i.back??r,c="data-transition"+(l()?"-back":""),d=s.querySelector(`section[${c}]`);if(!d)return!0;const u=_e(d.getAttribute(c)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await Le(e);if(Se(n)){if(!t)return;return n=await Le(`__builtin__${e}`),Se(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;Me.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=De);const o=document.getElementById(Oe);o&&o.remove();const a=document.createElement("style");a.id=Oe,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ke("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${Ee}:${o};}`);const i=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${i(Pe(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(Pe(e,{...t,type:"incoming"}))}}`),n})(r,{backward:l(),duration:u.duration}).forEach(e=>a.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ie);let c=!1;const d=()=>{c||(n(i),c=!0,s.remove(Ie))},f=()=>{t(!1),a.remove(),s.remove(Ie)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[Te]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[Te]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[Te]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Be;const Ke=()=>(void 0===Be&&(Be="wakeLock"in navigator&&navigator.wakeLock),Be),qe=async()=>{const e=Ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ve=async()=>{if(!Ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&qe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await qe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=v("view");i.dataset.bespokeView=u.some(t=>t&&t===e)?e:""})();const t=(e=>{const t=v(e);return h({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=u.findIndex(e=>p()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,1,0],B({key:t})],[[1,1,0,1],se(e)],[[1,1,0,0],M],[[1,1,1,1],E],[[1,0,0,0],T()],[[1,1,1,1],A],[[1,1,1,1],de({history:!1})],[[1,1,0,0],C()],[[1,1,1,0],_],[[1,0,0,0],le],[[1,1,0,0],ve()],[[1,0,0,0],D()],[[1,1,1,0],F()],[[1,0,0,0],Ne],[[1,1,1,1],$],[[1,1,1,0],Ve]))})()}();</script></body></html>
