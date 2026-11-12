@@ -1,0 +1,1603 @@
+<!DOCTYPE html><html lang="en-US"><head><title>Despliegue y publicación</title><meta property="og:title" content="Despliegue y publicación"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=overview] button.bespoke-marp-overview-close:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=overview] button.bespoke-marp-overview-close,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4O3J4OjVweDtyeTo1cHg7d2lkdGg6MjVweDtoZWlnaHQ6MjVweH08L3N0eWxlPjwvZGVmcz48cmVjdCB4PSIyMCIgeT0iMjAiIGNsYXNzPSJhIi8+PHJlY3QgeD0iNTUiIHk9IjIwIiBjbGFzcz0iYSIvPjxyZWN0IHg9IjIwIiB5PSI1NSIgY2xhc3M9ImEiLz48cmVjdCB4PSI1NSIgeT0iNTUiIGNsYXNzPSJhIi8+PC9zdmc+") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;interactivity:inert;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;interactivity:auto;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent{inset:0;position:absolute}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;view-transition-name:__bespoke_marp_transition_osc__;white-space:nowrap;will-change:transform;z-index:1}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*){margin-left:6px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>:where(*):where(:first-child){margin-left:0}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=overview],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}:is(body[data-bespoke-view=""],body[data-bespoke-view=next]) svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+:where(.bespoke-marp-parent){top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent){grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide){height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container :where(.bespoke-marp-parent) :where(svg.bespoke-marp-slide).bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;interactivity:inert;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container :is(.bespoke-marp-presenter-info-page-area,.bespoke-marp-presenter-info-time,.bespoke-marp-presenter-info-timer){box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page-area .bespoke-marp-presenter-info-page{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}body[data-bespoke-view=overview]{background:#161616;overflow:auto}body[data-bespoke-view=overview] [data-bespoke-marp-fragment=inactive]{visibility:visible}body[data-bespoke-view=overview] .bespoke-marp-overview-header{backdrop-filter:blur(4px);background:#222222d9;box-shadow:0 3px 10px #00000080;box-sizing:border-box;display:flex;height:48px;inset:0 0 auto;justify-content:flex-end;padding:10px;position:fixed;z-index:1}body[data-bespoke-view=overview] button.bespoke-marp-overview-close{height:28px;line-height:28px;transform:rotate(45deg);width:28px}body[data-bespoke-view=overview] .bespoke-marp-parent{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(0,240px));justify-content:space-around;padding:30px}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide{--bov-selected:#0000;--bov-focus:#161616;--bov-focus-outline:#0000;background-image:conic-gradient(#161616 0 0),conic-gradient(var(--bov-focus) 0 0),conic-gradient(var(--bov-focus-outline) 0 0),conic-gradient(var(--bov-selected) 0 0);background-position:5px 5px,3px 3px,2px 2px,0 0;background-repeat:no-repeat;background-size:calc(100% - 10px) calc(100% - 10px),calc(100% - 6px) calc(100% - 6px),calc(100% - 4px) calc(100% - 4px),100% 100%;content-visibility:visible;cursor:pointer;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));margin:-6px;padding:6px;interactivity:auto;opacity:1;outline:0;pointer-events:auto;scroll-margin-block:30px;width:100%;z-index:0}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide *,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active *{pointer-events:none;interactivity:inert}body[data-bespoke-view=overview] .bespoke-marp-parent :is(svg.bespoke-marp-slide:active,svg.bespoke-marp-slide:focus-visible,svg.bespoke-marp-slide:hover){--bov-focus-outline:#161616}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:focus-visible,body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:hover{--bov-focus:#999}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide:active{--bov-focus:#eee}body[data-bespoke-view=overview] .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{--bov-selected:#0288d1}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent{padding-top:78px}body[data-bespoke-view=overview]:has(.bespoke-marp-overview-header) .bespoke-marp-parent svg.bespoke-marp-slide{scroll-margin-top:78px}.bespoke-marp-overview{background:#000000a6;inset:0;opacity:0;pointer-events:none;position:fixed;transition:opacity .1s ease;z-index:10}.bespoke-marp-overview iframe{background:#222;border:0;display:block;height:100%;left:0;position:absolute;top:0;width:100%}.bespoke-marp-overview[data-open="1"]{opacity:1;pointer-events:auto}}@media print{.bespoke-marp-overview,.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;700&display=swap');@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/monokai.css');div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :where(:is(h1, marp-h1)){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section section:where(:is(h1, marp-h1)){--marpit-root-font-size: 2em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > :where(section):not([\20 root]){font-family:"Outfit", sans-serif;font-weight:200;font-size:20px;padding:calc(var(--marpit-root-font-size, 1rem) * 2.5);background:#181818;color:#ccc}div#\:\$p > svg > foreignObject > :where(section):not([\20 root]){--marpit-root-font-size: 20px}div#\:\$p > svg > foreignObject > section spoiler{color:transparent;text-shadow:none}div#\:\$p > svg > foreignObject > section .bespoke-marp-parent{position:absolute;inset:0;overflow:hidden;aspect-ratio:16/9!important;align-self:center}div#\:\$p > svg > foreignObject > section.cover{background:linear-gradient(to bottom, black, transparent 40% 96%, black 100%), linear-gradient(to right, #000 3%, #000e 15%, #000c 20%, transparent 28%), var(--cover, url(cover.jpg));background-color:black;background-size:auto 765px;background-position:top right;background-repeat:no-repeat}div#\:\$p > svg > foreignObject > section.cover ul{padding-left:5px;list-style:none}div#\:\$p > svg > foreignObject > section.cover li{background:#000c;margin:calc(var(--marpit-root-font-size, 1rem) * 1) 0;padding:calc(var(--marpit-root-font-size, 1rem) * 1);box-shadow:3px 3px 0 #fe704d;max-width:max-content}div#\:\$p > svg > foreignObject > section.cover li:hover{background:#fe704d;cursor:pointer}div#\:\$p > svg > foreignObject > section.cover blockquote{position:absolute;bottom:calc(var(--marpit-root-font-size, 1rem) * 5);right:calc(var(--marpit-root-font-size, 1rem) * 5);padding:calc(var(--marpit-root-font-size, 1rem) * 1);background:#000c}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){color:#fe704d}div#\:\$p > svg > foreignObject > section li{margin:calc(var(--marpit-root-font-size, 1rem) * .5) 0}div#\:\$p > svg > foreignObject > section strong{color:white}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:#000;color:white;padding:calc(var(--marpit-root-font-size, 1rem) * 1);margin:0}div#\:\$p > svg > foreignObject > section code{color:gold;text-wrap:auto}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{color:white}div#\:\$p > svg > foreignObject > section a{color:#3179ed;text-decoration:none}div#\:\$p > svg > foreignObject > section svg[data-marpit-svg]{background:linear-gradient(126deg, indigo, deeppink)}div#\:\$p > svg > foreignObject > section .grid{display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:repeat(auto-fit, minmax(300px, 1fr))}div#\:\$p > svg > foreignObject > section:has(steps){position:relative}div#\:\$p > svg > foreignObject > section .step-indicator{position:absolute;top:0;right:0;font-size:0.85em;font-weight:400;padding:calc(var(--marpit-root-font-size, 1rem) * 0.3) calc(var(--marpit-root-font-size, 1rem) * 0.8);background:#fe704d22;color:#fe704d;border-radius:0 0 0 calc(var(--marpit-root-font-size, 1rem) * 0.5);z-index:100;letter-spacing:0.05em;pointer-events:none}div#\:\$p > svg > foreignObject > section section.step-indicator{--marpit-root-font-size: 0.85em}div#\:\$p > svg > foreignObject > section steps{display:block;position:relative}div#\:\$p > svg > foreignObject > section step{display:block}div#\:\$p > svg > foreignObject > section step:not(:first-child){display:none}div#\:\$p > svg > foreignObject > section step[data-marpit-fragment]{display:none}div#\:\$p > svg > foreignObject > section steps:has(> step[data-bespoke-marp-fragment=active])>step:first-child{display:none}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=inactive]{visibility:visible!important;display:none!important}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=active]{display:block!important;visibility:visible!important}div#\:\$p > svg > foreignObject > section step[data-bespoke-marp-fragment=active]:has(~ step[data-bespoke-marp-fragment=active]){display:none!important}div#\:\$p > svg > foreignObject > section split-slide{--left: 50%;--right: 50%;--font-size: calc(var(--marpit-root-font-size, 1rem) * 1);display:grid;grid-template-columns:var(--left) var(--right);gap:calc(var(--marpit-root-font-size, 1rem) * 1)}div#\:\$p > svg > foreignObject > section split-slide :is(pre, marp-pre){font-size:var(--font-size)}div#\:\$p > svg > foreignObject > section table{--width: 100%;width:var(--width);border-collapse:collapse}div#\:\$p > svg > foreignObject > section th, div#\:\$p > svg > foreignObject > section td{border:1px solid #ddd;padding:8px;text-align:center}div#\:\$p > svg > foreignObject > section a:is([href$=".png"],[href$=".jpg"],[href$=".jpeg"],[href$=".webp"],[href$=".gif"])::before{content:"";display:inline-block;vertical-align:middle;margin-right:calc(var(--marpit-root-font-size, 1rem) * 0.2);width:24px;height:24px;background-size:contain;background-repeat:no-repeat;background-position:center;background-image:url(../assets/icon-img.png)}div#\:\$p > svg > foreignObject > section[data-marpit-scope-tWCQZpsJ]{--cover: url(../assets/img_00054_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-RXdKHjPW]{--cover: url(../assets/img_00055_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-pAyNyu7K]{--cover: url(../assets/img_00056_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-sJwA9QMW] table{font-size:0.78em}div#\:\$p > svg > foreignObject > section[data-marpit-scope-VHgVeZln]{--cover: url(../assets/img_00057_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-c8Rx7hzH]{--cover: url(../assets/img_00058_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-0RMVsbZA] table{font-size:0.8em}div#\:\$p > svg > foreignObject > section[data-marpit-scope-WdMVB2d8]{--cover: url(../assets/img_00059_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-HEsJ0UnX]{--cover: url(../assets/img_00077_.png);}div#\:\$p > svg > foreignObject > section[data-marpit-scope-odDO7eOE] table{font-size:0.8em}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-progress-parent"><div class="bespoke-progress-bar"></div></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-marpit-scope-tWCQZpsJ="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="1" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="despliegue-y-publicaci%C3%B3n">Despliegue y publicación</h1>
+<h2 id="contenidos">Contenidos</h2>
+<ul>
+<li>7.1 Despliegue de aplicaciones web
+<ul>
+<li>Empaquetado · Hospedaje · Servidores web · Dominios · Despliegue</li>
+</ul>
+</li>
+<li>7.2 Publicación de aplicaciones móviles</li>
+</ul>
+<blockquote>
+<p><strong>Vue + Vite</strong> y <strong>Laravel 13</strong> en la web · <strong>Ionic + Capacitor</strong> en móvil <br />Curso <em>Desarrollo de Software IV</em> · II Ciclo 2026</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="2" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="%C2%BFqu%C3%A9-significa-desplegar">¿Qué significa &quot;desplegar&quot;?</h2>
+<ul>
+<li><strong>Desplegar</strong> es llevar el código desde la máquina del equipo hasta un lugar donde <strong>los usuarios reales</strong> puedan usarlo</li>
+<li><strong>Publicar</strong> (en móvil) es hacerlo llegar a una <strong>tienda</strong> que lo distribuye a los dispositivos</li>
+</ul>
+<pre><code class="language-text"> código ──► empaquetado ──► artefacto ──► hospedaje ──► servidor web ──► dominio ──► <img class="emoji" draggable="false" alt="👤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f464.svg" data-marp-twemoji=""/> usuario
+ (repo)     (build)         (dist/,       (dónde        (quién sirve      (cómo lo
+                             imagen,       vive)         las peticiones)   encuentra)
+                             AAB / IPA)
+</code></pre>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%93%A6-empaquetado"><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Empaquetado</h3>
+<p>Transformar el código fuente en algo <strong>ejecutable y optimizado</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%8F%A0-hospedaje"><img class="emoji" draggable="false" alt="🏠" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3e0.svg" data-marp-twemoji=""/> Hospedaje</h3>
+<p>Elegir <strong>dónde</strong> corre: CDN, PaaS, VPS, contenedores</p>
+</div>
+<div>
+<h3 id="%F0%9F%8C%90-servidor-web"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> Servidor web</h3>
+<p>El programa que <strong>atiende</strong> HTTP/HTTPS: Nginx, Apache, Caddy</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%A4-dominio"><img class="emoji" draggable="false" alt="🔤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f524.svg" data-marp-twemoji=""/> Dominio</h3>
+<p>El <strong>nombre</strong> que se traduce, vía DNS, a una dirección IP</p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="3" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="entornos-no-todo-se-prueba-en-producci%C3%B3n">Entornos: no todo se prueba en producción</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.88rem;">
+<div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Entorno</th>
+<th style="text-align:left">Para qué</th>
+<th style="text-align:left">Datos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="💻" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4bb.svg" data-marp-twemoji=""/> <strong>Local</strong></td>
+<td style="text-align:left">Desarrollar</td>
+<td style="text-align:left">Ficticios (<em>seeders</em>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ea.svg" data-marp-twemoji=""/> <strong>Pruebas / CI</strong></td>
+<td style="text-align:left">Ejecutar las pruebas automáticas</td>
+<td style="text-align:left">Efímeros</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🎭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3ad.svg" data-marp-twemoji=""/> <strong>Staging</strong></td>
+<td style="text-align:left">Ensayo general, idéntico a producción</td>
+<td style="text-align:left">Anonimizados</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f680.svg" data-marp-twemoji=""/> <strong>Producción</strong></td>
+<td style="text-align:left">Usuarios reales</td>
+<td style="text-align:left">Reales</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<ul>
+<li>Cada entorno tiene su <strong>propio</strong> <code>.env</code>, base de datos y claves</li>
+<li><em>Staging</em> debe parecerse a producción lo <strong>más posible</strong>: misma versión de PHP, Node, BD y servidor web</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> &quot;En mi máquina sí funciona&quot; casi siempre es una <strong>diferencia de entorno</strong></li>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> Los <strong>12 factores</strong> (<a href="https://12factor.net/es/">12factor.net</a>): la configuración vive en <strong>variables de entorno</strong>, no en el código</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="%C2%BFqu%C3%A9-desplegamos-en-el-proyecto-del-curso">¿Qué desplegamos en el proyecto del curso?</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-front-end-spa-vue--vite"><img class="emoji" draggable="false" alt="🖼️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5bc.svg" data-marp-twemoji=""/> Front-end SPA (Vue + Vite)</h3>
+<p>Archivos <strong>estáticos</strong>: HTML, CSS, JS e imágenes. Cualquier CDN los sirve</p>
+</div>
+<div>
+<h3 id="%E2%9A%99%EF%B8%8F-api-laravel-13"><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2699.svg" data-marp-twemoji=""/> API (Laravel 13)</h3>
+<p>Proceso <strong>dinámico</strong>: PHP-FPM + base de datos + colas. Necesita un servidor</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%AD-sitio-ssr--ssg-astro-nuxt"><img class="emoji" draggable="false" alt="🧭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ed.svg" data-marp-twemoji=""/> Sitio SSR / SSG (Astro, Nuxt)</h3>
+<p>SSG = estático. SSR = necesita un <strong>runtime</strong> (Node, <em>edge</em>)</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%B1-app-m%C3%B3vil-ionic--capacitor"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> App móvil (Ionic + Capacitor)</h3>
+<p>Un <strong>AAB</strong> para Google Play y un <strong>IPA</strong> para la App Store, firmados</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f511.svg" data-marp-twemoji=""/> La pregunta que decide todo: <strong>¿hay código que se ejecuta en el servidor por cada petición?</strong> Si no, el despliegue es mucho más simple y barato</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-scope-RXdKHjPW="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="5" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="711-empaquetado">7.1.1 Empaquetado</h1>
+<h2 id="contenidos-1">Contenidos</h2>
+<ul>
+<li>Qué hace un <em>build</em> de producción</li>
+<li>Vite: <code>dist/</code>, variables de entorno y <code>base</code></li>
+<li>Empaquetado de Laravel</li>
+<li>Contenedores como artefacto</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="6" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="%C2%BFqu%C3%A9-hace-un-build-de-producci%C3%B3n">¿Qué hace un <em>build</em> de producción?</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.88rem;">
+<div>
+<h3 id="%F0%9F%94%A7-transformaciones"><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f527.svg" data-marp-twemoji=""/> Transformaciones</h3>
+<ul>
+<li><strong>Transpilar</strong>: TypeScript, <code>.vue</code>, JSX → JavaScript que entiende el navegador</li>
+<li><strong>Empaquetar</strong> (<em>bundling</em>): cientos de módulos → pocos archivos</li>
+<li><strong>Minificar</strong>: quitar espacios, acortar nombres</li>
+<li><strong>Tree shaking</strong>: eliminar código que nunca se usa</li>
+<li><strong>Code splitting</strong>: un <em>chunk</em> por ruta con <code>import()</code> dinámico</li>
+<li><strong>Optimizar</strong> imágenes y CSS</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%8F%B7%EF%B8%8F-nombres-con-hash"><img class="emoji" draggable="false" alt="🏷️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3f7.svg" data-marp-twemoji=""/> Nombres con <em>hash</em></h3>
+<pre><code class="language-text">dist/
+├── index.html
+└── assets/
+    ├── index-B4x9kQ2a.js
+    ├── index-D8fLm1zc.css
+    └── PedidosView-Cq3pT7.js
+</code></pre>
+<ul>
+<li>El <em>hash</em> cambia <strong>solo si cambia el contenido</strong></li>
+<li>Permite caché agresiva: <code>Cache-Control: max-age=31536000, immutable</code></li>
+<li><code>index.html</code> <strong>nunca</strong> se cachea: es el que apunta a los nuevos archivos</li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Lo medimos en <em>Rendimiento web</em>: el tamaño del <em>bundle</em> impacta directamente en LCP e INP</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="build-con-vite">Build con Vite</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<pre><code class="language-bash">pnpm run build     <span class="hljs-comment"># vite build → genera dist/</span>
+pnpm run preview   <span class="hljs-comment"># sirve dist/ localmente</span>
+</code></pre>
+<pre><code class="language-js"><span class="hljs-comment">// vite.config.js</span>
+<span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span>;
+<span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>({
+  <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()],
+  <span class="hljs-attr">base</span>: <span class="hljs-string">&#x27;/&#x27;</span>,            <span class="hljs-comment">// &#x27;/repo/&#x27; en GitHub Pages</span>
+  <span class="hljs-attr">build</span>: {
+    <span class="hljs-attr">outDir</span>: <span class="hljs-string">&#x27;dist&#x27;</span>,
+    <span class="hljs-attr">sourcemap</span>: <span class="hljs-literal">false</span>,   <span class="hljs-comment">// no publicar el código fuente</span>
+  },
+});
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <strong>Nunca</strong> se despliega lo que sirve <code>pnpm dev</code>: es un servidor de desarrollo, sin optimizar</li>
+<li><strong>Siempre</strong> probar con <code>preview</code> antes de subir: aparecen errores de rutas y de <code>base</code></li>
+<li><code>base</code> es la <strong>ruta</strong> donde vivirá el sitio. En GitHub Pages es <code>/nombre-repo/</code> (lo vimos en <em>JS avanzado</em>)</li>
+<li>Los <em>source maps</em> ayudan a depurar, pero exponen el código: súbelos a la herramienta de errores (Sentry), no al público</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="variables-de-entorno-en-el-front-end">Variables de entorno en el front-end</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># .env.development</span>
+VITE_API_URL=http://localhost:8000/api
+
+<span class="hljs-comment"># .env.production</span>
+VITE_API_URL=https://api.proyecto.ucr.ac.cr/api
+</code></pre>
+<pre><code class="language-js"><span class="hljs-keyword">const</span> api = <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">VITE_API_URL</span>;
+</code></pre>
+<pre><code class="language-bash">vite build                  <span class="hljs-comment"># usa .env.production</span>
+vite build --mode staging   <span class="hljs-comment"># usa .env.staging</span>
+</code></pre>
+</div>
+<div>
+<ul>
+<li>Vite <strong>reemplaza</strong> las variables <code>VITE_*</code> en el momento del <em>build</em>: quedan <strong>escritas</strong> en el JS final</li>
+<li><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a0.svg" data-marp-twemoji=""/> Por eso <strong>no son secretas</strong>: cualquiera las lee con las DevTools</li>
+<li>Solo van aquí datos <strong>públicos</strong>: URL de la API, clave pública de mapas, nombre del entorno</li>
+<li>Cambiar una variable exige <strong>volver a compilar</strong> el front-end</li>
+<li><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> Los secretos viven <strong>solo</strong> en el servidor (<code>.env</code> de Laravel), nunca en el <em>bundle</em></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="empaquetado-de-una-aplicaci%C3%B3n-laravel">Empaquetado de una aplicación Laravel</h2>
+<split-slide style="--left: 52%; --right: 48%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># 1. Dependencias de PHP, sin las de desarrollo</span>
+composer install --no-dev --optimize-autoloader
+
+<span class="hljs-comment"># 2. Recursos del front-end (si Laravel los sirve)</span>
+pnpm install --frozen-lockfile
+pnpm run build          <span class="hljs-comment"># public/build/ + manifest</span>
+
+<span class="hljs-comment"># 3. Cachés de producción</span>
+php artisan optimize    <span class="hljs-comment"># config, rutas, vistas y eventos</span>
+
+<span class="hljs-comment"># 4. Base de datos</span>
+php artisan migrate --force
+
+<span class="hljs-comment"># 5. Enlace del almacenamiento público</span>
+php artisan storage:<span class="hljs-built_in">link</span>
+</code></pre>
+</div>
+<div>
+<ul>
+<li>El <strong>artefacto</strong> es la carpeta del proyecto <strong>sin</strong> <code>node_modules</code>, <code>tests/</code> ni <code>.env</code></li>
+<li><code>--no-dev</code> deja fuera Pest, Faker y herramientas de depuración</li>
+<li><code>optimize</code> acelera el arranque, pero tras cambiar <code>.env</code> hay que <strong>volver a ejecutarlo</strong> (<code>optimize:clear</code>)</li>
+<li><code>--force</code> es obligatorio: en producción Artisan <strong>pide confirmación</strong> antes de migrar</li>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Recuerda de <em>Seguridad</em>: <code>APP_ENV=production</code> y <code>APP_DEBUG=false</code></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="contenedores-el-artefacto-que-corre-igual-en-todos-lados">Contenedores: el artefacto que corre igual en todos lados</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-dockerfile"><span class="hljs-comment"># Etapa 1: compilar el front-end</span>
+<span class="hljs-keyword">FROM</span> node:<span class="hljs-number">24</span>-alpine AS front
+<span class="hljs-keyword">WORKDIR</span><span class="language-bash"> /app</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> package.json pnpm-lock.yaml ./</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> corepack <span class="hljs-built_in">enable</span> &amp;&amp; pnpm install --frozen-lockfile</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> . .</span>
+<span class="hljs-keyword">RUN</span><span class="language-bash"> pnpm run build</span>
+
+<span class="hljs-comment"># Etapa 2: servirlo con Nginx</span>
+<span class="hljs-keyword">FROM</span> nginx:<span class="hljs-number">1.28</span>-alpine
+<span class="hljs-keyword">COPY</span><span class="language-bash"> --from=front /app/dist /usr/share/nginx/html</span>
+<span class="hljs-keyword">COPY</span><span class="language-bash"> nginx.conf /etc/nginx/conf.d/default.conf</span>
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span>
+</code></pre>
+<pre><code class="language-bash">docker build -t proyecto-web:1.4.0 .
+docker run -p 8080:80 proyecto-web:1.4.0
+</code></pre>
+</div>
+<div>
+<ul>
+<li>Una <strong>imagen</strong> empaqueta el código <strong>y</strong> su entorno: SO base, runtime, dependencias</li>
+<li><strong>Multi-etapa</strong>: la imagen final no lleva Node ni <code>node_modules</code>, solo el resultado</li>
+<li>Etiquetar con la <strong>versión</strong>, no solo <code>latest</code></li>
+<li><code>.dockerignore</code> para no copiar <code>.env</code>, <code>.git</code> ni <code>node_modules</code></li>
+<li><img class="emoji" draggable="false" alt="🐳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f433.svg" data-marp-twemoji=""/> <strong>Docker Compose</strong> levanta API + BD + Redis en local con un solo comando</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="11" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="versionado-sem%C3%A1ntico-del-artefacto">Versionado semántico del artefacto</h2>
+<ul>
+<li>Cada despliegue debe poder responder: <strong>¿qué versión está en producción?</strong></li>
+</ul>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%94%A2-semver"><img class="emoji" draggable="false" alt="🔢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f522.svg" data-marp-twemoji=""/> SemVer</h3>
+<p><code>MAYOR.MENOR.PARCHE</code> → <code>2.3.1</code><br />
+Mayor rompe compatibilidad, menor agrega, parche corrige</p>
+</div>
+<div>
+<h3 id="%F0%9F%8F%B7%EF%B8%8F-etiquetas-de-git"><img class="emoji" draggable="false" alt="🏷️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3f7.svg" data-marp-twemoji=""/> Etiquetas de Git</h3>
+<p><code>git tag v2.3.1</code> + <code>git push --tags</code><br />
+La etiqueta apunta al commit <strong>exacto</strong> desplegado</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%9D-changelog"><img class="emoji" draggable="false" alt="📝" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4dd.svg" data-marp-twemoji=""/> Changelog</h3>
+<p>Qué cambió en cada versión. Se puede generar desde <em>Conventional Commits</em></p>
+</div>
+<div>
+<h3 id="%E2%86%A9%EF%B8%8F-reversi%C3%B3n"><img class="emoji" draggable="false" alt="↩️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/21a9.svg" data-marp-twemoji=""/> Reversión</h3>
+<p>Si el artefacto está versionado, volver atrás es <strong>redesplegar</strong> la versión anterior</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Lo vimos en <em>Control de versiones</em>: <code>semver</code> y <code>package.json</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-scope-pAyNyu7K="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="12" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="712-hospedaje">7.1.2 Hospedaje</h1>
+<h2 id="contenidos-2">Contenidos</h2>
+<ul>
+<li>Modelos de hospedaje</li>
+<li>Proveedores en 2026</li>
+<li>Cómo elegir</li>
+<li>Modelo de responsabilidad compartida</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-marpit-scope-sJwA9QMW="" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="13" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="modelos-de-hospedaje">Modelos de hospedaje</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Modelo</th>
+<th style="text-align:left">Qué te dan</th>
+<th style="text-align:left">Ejemplos</th>
+<th style="text-align:left">Ideal para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🌍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f30d.svg" data-marp-twemoji=""/> <strong>Estático / CDN</strong></td>
+<td style="text-align:left">Archivos servidos desde cientos de nodos</td>
+<td style="text-align:left">GitHub Pages, Netlify, Cloudflare, Vercel</td>
+<td style="text-align:left">SPA, SSG, documentación</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🧩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9e9.svg" data-marp-twemoji=""/> <strong>PaaS</strong></td>
+<td style="text-align:left">Subes el código, la plataforma ejecuta y escala</td>
+<td style="text-align:left">Laravel Cloud, Render, Railway, Heroku, Fly.io</td>
+<td style="text-align:left">APIs, equipos pequeños</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a1.svg" data-marp-twemoji=""/> <strong>Serverless / Edge</strong></td>
+<td style="text-align:left">Funciones que corren por petición, pagas por uso</td>
+<td style="text-align:left">Vercel Functions, Cloudflare Workers, AWS Lambda</td>
+<td style="text-align:left">SSR, picos de tráfico</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🐳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f433.svg" data-marp-twemoji=""/> <strong>Contenedores</strong></td>
+<td style="text-align:left">Corres tu imagen; la plataforma la orquesta</td>
+<td style="text-align:left">Google Cloud Run, AWS ECS, Azure Container Apps, Kubernetes</td>
+<td style="text-align:left">Varios servicios</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🖥️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5a5.svg" data-marp-twemoji=""/> <strong>VPS / IaaS</strong></td>
+<td style="text-align:left">Una máquina virtual con <em>root</em>: todo lo instalas tú</td>
+<td style="text-align:left">DigitalOcean, Hetzner, AWS EC2, Linode</td>
+<td style="text-align:left">Control total, costo fijo</td>
+</tr>
+<tr>
+<td style="text-align:left"><img class="emoji" draggable="false" alt="🏚️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3da.svg" data-marp-twemoji=""/> <strong>Compartido</strong></td>
+<td style="text-align:left">Un espacio en un servidor con cPanel</td>
+<td style="text-align:left">Hostinger, hosting local</td>
+<td style="text-align:left">Sitios PHP sencillos</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Moverse hacia <strong>abajo</strong> en la tabla = <strong>más control</strong> y <strong>más responsabilidad</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="14" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="el-modelo-de-responsabilidad-compartida">El modelo de responsabilidad compartida</h2>
+<pre><code class="language-text">                    On-premise     IaaS / VPS     PaaS          Serverless     SaaS
+ Aplicación y datos    TÚ             TÚ           TÚ            TÚ            proveedor*
+ Runtime (PHP, Node)   TÚ             TÚ           proveedor     proveedor     proveedor
+ Sistema operativo     TÚ             TÚ           proveedor     proveedor     proveedor
+ Virtualización        TÚ             proveedor    proveedor     proveedor     proveedor
+ Hardware y red        TÚ             proveedor    proveedor     proveedor     proveedor
+</code></pre>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<ul>
+<li>En un <strong>VPS</strong> tú actualizas el SO, configuras el firewall, instalas PHP y renuevas certificados</li>
+<li>En un <strong>PaaS</strong> la plataforma se encarga de eso; tú solo del código y la configuración</li>
+</ul>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a0.svg" data-marp-twemoji=""/> En <strong>todos</strong> los modelos, tus <strong>datos</strong> y el <strong>control de acceso</strong> son tu responsabilidad</li>
+<li>* Incluso en SaaS sigues decidiendo quién tiene acceso</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="15" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="opciones-para-el-proyecto-del-curso">Opciones para el proyecto del curso</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-front-end-vue--vite"><img class="emoji" draggable="false" alt="🖼️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5bc.svg" data-marp-twemoji=""/> Front-end (Vue + Vite)</h3>
+<ul>
+<li><strong>GitHub Pages</strong> — gratis, ideal para repos públicos; ruta <code>/repo/</code></li>
+<li><strong>Netlify / Vercel</strong> — despliegue por cada <code>push</code>, URL de vista previa por cada PR</li>
+<li><strong>Cloudflare Workers</strong> (<em>static assets</em>) — Cloudflare ya recomienda Workers sobre Pages para proyectos nuevos</li>
+</ul>
+<h3 id="%F0%9F%93%B1-pwa"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> PWA</h3>
+<ul>
+<li>Igual que un sitio estático, pero <strong>exige HTTPS</strong> para el <em>service worker</em></li>
+</ul>
+</div>
+<div>
+<h3 id="%E2%9A%99%EF%B8%8F-api-laravel-13-1"><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2699.svg" data-marp-twemoji=""/> API (Laravel 13)</h3>
+<ul>
+<li><strong>Laravel Cloud</strong> — PaaS oficial, plan inicial por uso, BD y colas administradas</li>
+<li><strong>Laravel Forge</strong> — administra <strong>tu propio</strong> VPS (DigitalOcean, Hetzner, AWS)</li>
+<li><strong>Render / Railway / Fly.io</strong> — con un <code>Dockerfile</code></li>
+<li><strong>VPS manual</strong> — Nginx + PHP-FPM + MySQL/PostgreSQL: el más didáctico</li>
+</ul>
+<h3 id="%F0%9F%97%84%EF%B8%8F-base-de-datos"><img class="emoji" draggable="false" alt="🗄️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5c4.svg" data-marp-twemoji=""/> Base de datos</h3>
+<ul>
+<li>Administrada (Neon, Supabase, PlanetScale, RDS) o en el mismo VPS</li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="💰" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4b0.svg" data-marp-twemoji=""/> Los planes gratuitos <strong>cambian seguido</strong> y suelen &quot;dormir&quot; la app tras inactividad: revisa los términos vigentes</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="16" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="c%C3%B3mo-elegir-un-hospedaje">Cómo elegir un hospedaje</h2>
+<div class="grid">
+<div>
+<h3 id="%E2%9A%99%EF%B8%8F-tipo-de-app"><img class="emoji" draggable="false" alt="⚙️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2699.svg" data-marp-twemoji=""/> Tipo de app</h3>
+<p>¿Estática, SSR, API con BD, colas, <em>websockets</em>?</p>
+</div>
+<div>
+<h3 id="%F0%9F%92%B0-costo"><img class="emoji" draggable="false" alt="💰" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4b0.svg" data-marp-twemoji=""/> Costo</h3>
+<p>Fijo (VPS) vs. por uso (serverless). Cuidado con la <strong>transferencia</strong> de datos y los límites</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%8D-regi%C3%B3n-y-latencia"><img class="emoji" draggable="false" alt="📍" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cd.svg" data-marp-twemoji=""/> Región y latencia</h3>
+<p>Cerca de los usuarios. Para Costa Rica: regiones de EE. UU. este o México</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%88-escalado"><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4c8.svg" data-marp-twemoji=""/> Escalado</h3>
+<p>¿Escala solo? ¿Escala a cero? ¿Cuánto tarda el arranque en frío?</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%91%E2%80%8D%F0%9F%94%A7-operaci%C3%B3n"><img class="emoji" draggable="false" alt="🧑‍🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9d1-200d-1f527.svg" data-marp-twemoji=""/> Operación</h3>
+<p>¿Quién parcha el SO, hace respaldos y renueva TLS?</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%92-cumplimiento"><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> Cumplimiento</h3>
+<p>Dónde se guardan los datos personales (<strong>Ley 8968</strong>), SLA, soporte</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Evitar el <strong>encierro</strong> con el proveedor (<em>vendor lock-in</em>): un <code>Dockerfile</code> y variables de entorno hacen la app <strong>portable</strong></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-scope-VHgVeZln="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="17" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="713-servidores-web">7.1.3 Servidores web</h1>
+<h2 id="contenidos-3">Contenidos</h2>
+<ul>
+<li>Qué hace un servidor web</li>
+<li>Nginx, Apache, Caddy y FrankenPHP</li>
+<li>Configuración para una SPA y para Laravel</li>
+<li>Proxy inverso, HTTPS, compresión y caché</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="18" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="%C2%BFqu%C3%A9-hace-un-servidor-web">¿Qué hace un servidor web?</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<pre><code class="language-text"> navegador ──HTTPS:443──► ┌───────────────┐
+                          │  Servidor web │──► archivos estáticos (dist/)
+                          │    (Nginx)    │
+                          └───────┬───────┘
+                                  │ proxy / FastCGI
+                     ┌────────────┴───────────┐
+                     ▼                        ▼
+               PHP-FPM (Laravel)       Node (SSR, NestJS)
+                     │
+                     ▼
+                  MySQL / PostgreSQL
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>Escucha</strong> en los puertos 80 (HTTP) y 443 (HTTPS)</li>
+<li><strong>Termina TLS</strong>: descifra HTTPS y gestiona el certificado</li>
+<li><strong>Sirve estáticos</strong> muy rápido, sin pasar por PHP ni Node</li>
+<li><strong>Proxy inverso</strong>: reenvía las peticiones dinámicas a la aplicación</li>
+<li>Comprime, cachea, limita peticiones y agrega <strong>encabezados</strong> de seguridad</li>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> La aplicación (Express, Laravel) <strong>no</strong> debería exponerse directamente a Internet</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="19" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="servidores-web-m%C3%A1s-usados">Servidores web más usados</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%9F%A9-nginx"><img class="emoji" draggable="false" alt="🟩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e9.svg" data-marp-twemoji=""/> Nginx</h3>
+<p>El más usado en la web. Basado en <strong>eventos</strong>, muy eficiente con miles de conexiones. Proxy inverso por excelencia</p>
+</div>
+<div>
+<h3 id="%F0%9F%AA%B6-apache-http-server"><img class="emoji" draggable="false" alt="🪶" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1fab6.svg" data-marp-twemoji=""/> Apache HTTP Server</h3>
+<p>El clásico del stack <strong>LAMP</strong>. Configuración por carpeta con <code>.htaccess</code> (común en hosting compartido)</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%92-caddy"><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> Caddy</h3>
+<p>Escrito en Go. <strong>HTTPS automático</strong> con Let's Encrypt sin configurar nada. Archivo de configuración mínimo</p>
+</div>
+<div>
+<h3 id="%F0%9F%90%98-frankenphp"><img class="emoji" draggable="false" alt="🐘" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f418.svg" data-marp-twemoji=""/> FrankenPHP</h3>
+<p>Servidor moderno sobre Caddy que <strong>incrusta PHP</strong>. Soportado por Laravel Octane para mantener la app en memoria</p>
+</div>
+<div>
+<h3 id="%F0%9F%AA%9F-iis--kestrel"><img class="emoji" draggable="false" alt="🪟" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1fa9f.svg" data-marp-twemoji=""/> IIS / Kestrel</h3>
+<p>IIS en Windows Server; <strong>Kestrel</strong> es el servidor de ASP.NET Core (detrás de un proxy)</p>
+</div>
+<div>
+<h3 id="%E2%98%81%EF%B8%8F-gestionados"><img class="emoji" draggable="false" alt="☁️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2601.svg" data-marp-twemoji=""/> Gestionados</h3>
+<p>Los CDN y PaaS traen su propio servidor: <strong>no</strong> lo configuras tú</p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="20" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="nginx-para-una-spa">Nginx para una SPA</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-nginx"><span class="hljs-section">server</span> {
+    <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;
+    <span class="hljs-attribute">server_name</span> proyecto.ucr.ac.cr;
+    <span class="hljs-attribute">root</span> /var/www/proyecto/dist;
+    <span class="hljs-attribute">index</span> index.html;
+
+    <span class="hljs-comment"># Rutas del cliente: /pedidos/42 → index.html</span>
+    <span class="hljs-section">location</span> / {
+        <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /index.html;
+    }
+
+    <span class="hljs-comment"># Archivos con hash: caché de un año</span>
+    <span class="hljs-section">location</span> /assets/ {
+        <span class="hljs-attribute">expires</span> <span class="hljs-number">1y</span>;
+        <span class="hljs-attribute">add_header</span> Cache-Control <span class="hljs-string">&quot;public, immutable&quot;</span>;
+    }
+
+    <span class="hljs-comment"># index.html siempre fresco</span>
+    <span class="hljs-section">location</span> = /index.html {
+        <span class="hljs-attribute">add_header</span> Cache-Control <span class="hljs-string">&quot;no-cache&quot;</span>;
+    }
+
+    <span class="hljs-attribute">gzip</span> <span class="hljs-literal">on</span>;
+    <span class="hljs-attribute">gzip_types</span> text/css application/javascript image/svg+xml;
+}
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <strong>El error clásico</strong>: la app funciona al navegar, pero al <strong>recargar</strong> <code>/pedidos/42</code> da <strong>404</strong></li>
+<li>La causa: ese archivo no existe en disco; la ruta la resuelve <strong>Vue Router</strong> en el navegador</li>
+<li><code>try_files</code> devuelve <code>index.html</code> para cualquier ruta desconocida</li>
+<li>En Netlify: <code>_redirects</code> con <code>/* /index.html 200</code></li>
+<li>En GitHub Pages: copiar <code>index.html</code> como <code>404.html</code> o usar <code>createWebHashHistory</code></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="21" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="nginx-para-laravel">Nginx para Laravel</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-nginx"><span class="hljs-section">server</span> {
+    <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;
+    <span class="hljs-attribute">server_name</span> api.proyecto.ucr.ac.cr;
+    <span class="hljs-attribute">root</span> /var/www/api/public;      <span class="hljs-comment"># ⚠ solo public/</span>
+
+    <span class="hljs-attribute">add_header</span> X-Frame-Options <span class="hljs-string">&quot;SAMEORIGIN&quot;</span>;
+    <span class="hljs-attribute">add_header</span> X-Content-Type-Options <span class="hljs-string">&quot;nosniff&quot;</span>;
+    <span class="hljs-attribute">index</span> index.php;
+    <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;
+
+    <span class="hljs-section">location</span> / {
+        <span class="hljs-attribute">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ /index.php?<span class="hljs-variable">$query_string</span>;
+    }
+
+    <span class="hljs-section">location</span> <span class="hljs-regexp">~ ^/index\.php(/|$)</span> {
+        <span class="hljs-attribute">fastcgi_pass</span> unix:/var/run/php/php8.4-fpm.sock;
+        <span class="hljs-attribute">fastcgi_param</span> SCRIPT_FILENAME <span class="hljs-variable">$realpath_root</span><span class="hljs-variable">$fastcgi_script_name</span>;
+        <span class="hljs-attribute">include</span> fastcgi_params;
+        <span class="hljs-attribute">fastcgi_hide_header</span> X-Powered-By;
+    }
+
+    <span class="hljs-section">location</span> <span class="hljs-regexp">~ /\.(?!well-known).*</span> {
+        <span class="hljs-attribute">deny</span> all;                  <span class="hljs-comment"># .env, .git</span>
+    }
+}
+</code></pre>
+</div>
+<div>
+<ul>
+<li>La <strong>raíz</strong> es <code>public/</code>: así <code>.env</code>, <code>storage/</code> y el código <strong>no</strong> son accesibles por URL</li>
+<li><strong>PHP-FPM</strong> es un proceso aparte que ejecuta PHP; Nginx le habla por <strong>FastCGI</strong></li>
+<li>Toda petición que no sea un archivo real entra por <code>public/index.php</code></li>
+<li>Bloquear archivos ocultos excepto <code>/.well-known/</code> (lo usa Let's Encrypt)</li>
+<li>Base: la configuración recomendada en la <a href="https://laravel.com/docs/13.x/deployment">documentación de Laravel</a></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="22" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="proxy-inverso-para-node-y-caddy">Proxy inverso para Node y Caddy</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%9F%A9-nginx-delante-de-node-ssr-nestjs"><img class="emoji" draggable="false" alt="🟩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e9.svg" data-marp-twemoji=""/> Nginx delante de Node (SSR, NestJS)</h3>
+<pre><code class="language-nginx"><span class="hljs-section">server</span> {
+    <span class="hljs-attribute">server_name</span> app.proyecto.ucr.ac.cr;
+    <span class="hljs-section">location</span> / {
+        <span class="hljs-attribute">proxy_pass</span> http://127.0.0.1:3000;
+        <span class="hljs-attribute">proxy_set_header</span> Host <span class="hljs-variable">$host</span>;
+        <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;
+        <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-Proto <span class="hljs-variable">$scheme</span>;
+    }
+}
+</code></pre>
+<ul>
+<li>El proceso Node lo mantiene vivo <strong>PM2</strong> o <strong>systemd</strong>; Nginx solo reenvía</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%94%92-la-misma-spa-con-caddy"><img class="emoji" draggable="false" alt="🔒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f512.svg" data-marp-twemoji=""/> La misma SPA con Caddy</h3>
+<pre><code class="language-text">proyecto.ucr.ac.cr {
+    root * /var/www/proyecto/dist
+    encode zstd gzip
+    try_files {path} /index.html
+    file_server
+}
+
+api.proyecto.ucr.ac.cr {
+    reverse_proxy 127.0.0.1:8000
+}
+</code></pre>
+<ul>
+<li>Con solo poner el <strong>dominio</strong>, Caddy obtiene y <strong>renueva</strong> el certificado HTTPS</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="23" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="https-con-lets-encrypt">HTTPS con Let's Encrypt</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># Ubuntu + Nginx</span>
+<span class="hljs-built_in">sudo</span> apt install certbot python3-certbot-nginx
+<span class="hljs-built_in">sudo</span> certbot --nginx -d proyecto.ucr.ac.cr \
+                     -d api.proyecto.ucr.ac.cr
+
+<span class="hljs-comment"># Probar la renovación automática</span>
+<span class="hljs-built_in">sudo</span> certbot renew --dry-run
+</code></pre>
+<pre><code class="language-nginx"><span class="hljs-comment"># Certbot agrega la redirección 80 → 443</span>
+<span class="hljs-section">server</span> {
+    <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;
+    <span class="hljs-attribute">return</span> <span class="hljs-number">301</span> https://<span class="hljs-variable">$host</span><span class="hljs-variable">$request_uri</span>;
+}
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>Let's Encrypt</strong>: autoridad certificadora <strong>gratuita</strong> y automatizada (protocolo <strong>ACME</strong>)</li>
+<li>Verifica que controlas el dominio con un archivo en <code>/.well-known/acme-challenge/</code> o un registro DNS</li>
+<li>Los certificados duran <strong>90 días</strong> y el ecosistema avanza hacia vigencias <strong>más cortas</strong>: la renovación <strong>debe</strong> ser automática</li>
+<li>HTTPS es requisito para PWA, <em>service workers</em>, geolocalización, cámara y cookies <code>Secure</code></li>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Luego agregar <strong>HSTS</strong> (tema de <em>Seguridad</em>) y verificar con <a href="https://www.ssllabs.com/ssltest/">SSL Labs</a></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-scope-c8Rx7hzH="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="24" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="714-dominios">7.1.4 Dominios</h1>
+<h2 id="contenidos-4">Contenidos</h2>
+<ul>
+<li>Anatomía de un nombre de dominio</li>
+<li>Cómo funciona DNS</li>
+<li>Tipos de registro</li>
+<li>Registrar y conectar un dominio</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="25" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="anatom%C3%ADa-de-un-nombre-de-dominio">Anatomía de un nombre de dominio</h2>
+<pre><code class="language-text">   https://api.proyecto.ac.cr/pedidos
+           │   │        │  └─ TLD de país (ccTLD): .cr
+           │   │        └──── segundo nivel: .ac.cr (académico)
+           │   └───────────── nombre registrado
+           └───────────────── subdominio (lo creas tú, gratis)
+</code></pre>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%8C%90-gtld"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> gTLD</h3>
+<p>Genéricos: <code>.com</code>, <code>.org</code>, <code>.net</code>, <code>.dev</code>, <code>.app</code></p>
+</div>
+<div>
+<h3 id="%F0%9F%87%A8%F0%9F%87%B7-cctld"><img class="emoji" draggable="false" alt="🇨🇷" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f1e8-1f1f7.svg" data-marp-twemoji=""/> ccTLD</h3>
+<p>De país: <code>.cr</code>, <code>.co.cr</code>, <code>.ac.cr</code>, <code>.go.cr</code>, <code>.or.cr</code></p>
+</div>
+<div>
+<h3 id="%F0%9F%8F%A2-registro-registry"><img class="emoji" draggable="false" alt="🏢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3e2.svg" data-marp-twemoji=""/> Registro (<em>registry</em>)</h3>
+<p>Administra un TLD. Para <code>.cr</code>: <strong>NIC Costa Rica</strong> (<a href="https://www.nic.cr">nic.cr</a>)</p>
+</div>
+<div>
+<h3 id="%F0%9F%9B%92-registrador-registrar"><img class="emoji" draggable="false" alt="🛒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6d2.svg" data-marp-twemoji=""/> Registrador (<em>registrar</em>)</h3>
+<p>Te vende el dominio: Cloudflare, Namecheap, Porkbun…</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> En <em>Fundamentos de la web</em> vimos las partes de una <strong>URL</strong>; el dominio es solo una de ellas</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="26" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="%C2%BFc%C3%B3mo-funciona-dns">¿Cómo funciona DNS?</h2>
+<split-slide style="--left: 55%; --right: 45%; --font-size: 0.82rem;">
+<div>
+<pre><code class="language-text"> navegador: ¿IP de api.proyecto.ac.cr?
+     │
+     ▼
+ ① caché del navegador / del SO
+     │ no está
+     ▼
+ ② resolvedor recursivo (ISP, 1.1.1.1, 8.8.8.8)
+     │
+     ├──► ③ servidor raíz (.)      → &quot;pregunta a .cr&quot;
+     ├──► ④ servidor de .cr        → &quot;pregunta a NS de proyecto.ac.cr&quot;
+     └──► ⑤ servidor autoritativo  → &quot;A 203.0.113.10&quot;
+     │
+     ▼
+ navegador abre conexión TCP/TLS con 203.0.113.10
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>DNS</strong> es la &quot;agenda telefónica&quot; de Internet: traduce <strong>nombres</strong> a <strong>direcciones IP</strong></li>
+<li>El servidor <strong>autoritativo</strong> es el que tiene la respuesta oficial; lo define el registro <strong>NS</strong></li>
+<li>Cada respuesta se guarda en caché según su <strong>TTL</strong> (segundos)</li>
+<li><img class="emoji" draggable="false" alt="🕒" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f552.svg" data-marp-twemoji=""/> La famosa <strong>&quot;propagación&quot;</strong> no es más que esperar a que expiren las cachés</li>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> Antes de migrar, <strong>baja el TTL</strong> (p. ej. a 300 s) un día antes</li>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> <code>dns-prefetch</code> y <code>preconnect</code> (<em>Rendimiento web</em>) adelantan este paso</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-marpit-scope-0RMVsbZA="" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="27" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="tipos-de-registro-dns">Tipos de registro DNS</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Registro</th>
+<th style="text-align:left">Para qué</th>
+<th style="text-align:left">Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>A</strong></td>
+<td style="text-align:left">Nombre → dirección <strong>IPv4</strong></td>
+<td style="text-align:left"><code>api  A  203.0.113.10</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>AAAA</strong></td>
+<td style="text-align:left">Nombre → dirección <strong>IPv6</strong></td>
+<td style="text-align:left"><code>api  AAAA  2001:db8::10</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CNAME</strong></td>
+<td style="text-align:left">Alias de <strong>otro nombre</strong> (no se usa en la raíz)</td>
+<td style="text-align:left"><code>www  CNAME  usuario.github.io.</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ALIAS / ANAME</strong></td>
+<td style="text-align:left">Como CNAME pero en la raíz (lo ofrecen algunos proveedores)</td>
+<td style="text-align:left"><code>@  ALIAS  proyecto.netlify.app.</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MX</strong></td>
+<td style="text-align:left">Servidores de <strong>correo</strong> del dominio</td>
+<td style="text-align:left"><code>@  MX  10 mail.proveedor.com.</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>TXT</strong></td>
+<td style="text-align:left">Texto: verificación de dominio, SPF, DKIM, DMARC</td>
+<td style="text-align:left"><code>@  TXT  &quot;v=spf1 include:_spf.google.com ~all&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>NS</strong></td>
+<td style="text-align:left">Qué servidores son <strong>autoritativos</strong></td>
+<td style="text-align:left"><code>@  NS  ana.ns.cloudflare.com.</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CAA</strong></td>
+<td style="text-align:left">Qué autoridades pueden emitir certificados</td>
+<td style="text-align:left"><code>@  CAA  0 issue &quot;letsencrypt.org&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>@</code> representa el dominio raíz (<em>apex</em>): <code>proyecto.ac.cr</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="28" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="registrar-y-conectar-un-dominio">Registrar y conectar un dominio</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.84rem;">
+<div>
+<h3 id="1%EF%B8%8F%E2%83%A3-registrar"><img class="emoji" draggable="false" alt="1️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/31-20e3.svg" data-marp-twemoji=""/> Registrar</h3>
+<ul>
+<li>Buscar disponibilidad y pagar <strong>por año</strong> (renovación anual)</li>
+<li><code>.cr</code> y <code>.co.cr</code> se registran en <strong>NIC Costa Rica</strong> (<a href="https://www.dominios.cr">dominios.cr</a>); exige al menos <strong>dos</strong> servidores DNS</li>
+<li>Activar <strong>renovación automática</strong> y bloqueo de transferencia</li>
+<li>Datos de contacto reales: si vence, <strong>otro puede comprarlo</strong></li>
+</ul>
+<h3 id="2%EF%B8%8F%E2%83%A3-delegar-el-dns"><img class="emoji" draggable="false" alt="2️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/32-20e3.svg" data-marp-twemoji=""/> Delegar el DNS</h3>
+<ul>
+<li>Usar los DNS del registrador <strong>o</strong> apuntar los <strong>NS</strong> a otro proveedor (Cloudflare, Route 53)</li>
+</ul>
+</div>
+<div>
+<h3 id="3%EF%B8%8F%E2%83%A3-crear-los-registros"><img class="emoji" draggable="false" alt="3️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/33-20e3.svg" data-marp-twemoji=""/> Crear los registros</h3>
+<pre><code class="language-text">@     A      203.0.113.10        ; API / VPS
+www   CNAME  proyecto.ac.cr.
+app   CNAME  equipo.github.io.   ; front-end
+</code></pre>
+<h3 id="4%EF%B8%8F%E2%83%A3-verificar"><img class="emoji" draggable="false" alt="4️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/34-20e3.svg" data-marp-twemoji=""/> Verificar</h3>
+<pre><code class="language-bash">dig proyecto.ac.cr A +short
+dig app.proyecto.ac.cr CNAME
+nslookup proyecto.ac.cr 1.1.1.1
+</code></pre>
+<ul>
+<li>Después configurar el dominio en el proveedor (GitHub Pages → <em>Custom domain</em>) y activar <strong>HTTPS</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="29" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="dominio-subdominios-y-cors">Dominio, subdominios y CORS</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%8C%90-front-y-api-en-subdominios"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> Front y API en subdominios</h3>
+<p><code>app.proyecto.ac.cr</code> y <code>api.proyecto.ac.cr</code>: <strong>mismo sitio</strong>, distinto <strong>origen</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%94%80-cors"><img class="emoji" draggable="false" alt="🔀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f500.svg" data-marp-twemoji=""/> CORS</h3>
+<p>La API debe permitir <strong>explícitamente</strong> el origen del front-end (nunca <code>*</code> con credenciales)</p>
+</div>
+<div>
+<h3 id="%F0%9F%8D%AA-cookies"><img class="emoji" draggable="false" alt="🍪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f36a.svg" data-marp-twemoji=""/> Cookies</h3>
+<p>Sanctum SPA necesita <code>SANCTUM_STATEFUL_DOMAINS</code> y <code>SESSION_DOMAIN=.proyecto.ac.cr</code></p>
+</div>
+<div>
+<h3 id="%F0%9F%93%B1-app-m%C3%B3vil"><img class="emoji" draggable="false" alt="📱" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f1.svg" data-marp-twemoji=""/> App móvil</h3>
+<p>Sus orígenes son <code>capacitor://localhost</code> (iOS) y <code>https://localhost</code> (Android): agrégalos a CORS</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Un cambio de dominio rompe <strong>CORS</strong>, cookies, enlaces profundos de la app y el <code>redirect_uri</code> de OAuth: planifícalo</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-scope-WdMVB2d8="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="30" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="715-despliegue">7.1.5 Despliegue</h1>
+<h2 id="contenidos-5">Contenidos</h2>
+<ul>
+<li>Del despliegue manual a CI/CD</li>
+<li>GitHub Actions: front-end y API</li>
+<li>Estrategias de despliegue</li>
+<li>Reversión, verificación y monitoreo</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="31" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="formas-de-desplegar">Formas de desplegar</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%A7%B3-manual"><img class="emoji" draggable="false" alt="🧳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9f3.svg" data-marp-twemoji=""/> Manual</h3>
+<p>Copiar archivos por FTP/SFTP o <code>scp</code>. Propenso a errores y no repetible. <strong>Evitar</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%8C%BF-por-rama"><img class="emoji" draggable="false" alt="🌿" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f33f.svg" data-marp-twemoji=""/> Por rama</h3>
+<p><code>gh-pages -d dist</code> publica la carpeta en una rama (lo usamos en este curso)</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%97-integraci%C3%B3n-con-git"><img class="emoji" draggable="false" alt="🔗" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f517.svg" data-marp-twemoji=""/> Integración con Git</h3>
+<p>Netlify, Vercel, Laravel Cloud: cada <code>push</code> a <code>main</code> <strong>despliega solo</strong>, y cada PR tiene su URL de vista previa</p>
+</div>
+<div>
+<h3 id="%F0%9F%A4%96-cicd-propio"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f916.svg" data-marp-twemoji=""/> CI/CD propio</h3>
+<p>Un <em>pipeline</em> (GitHub Actions, GitLab CI) compila, prueba y despliega</p>
+</div>
+</div>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<ul>
+<li><strong>CI</strong> (<em>integración continua</em>): cada cambio se compila y se <strong>prueba</strong> automáticamente</li>
+</ul>
+</div>
+<div>
+<ul>
+<li><strong>CD</strong> (<em>entrega / despliegue continuo</em>): lo que pasa las pruebas queda <strong>listo</strong> o se <strong>despliega</strong> solo</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="32" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="github-actions-spa-a-github-pages">GitHub Actions: SPA a GitHub Pages</h2>
+<split-slide style="--left: 58%; --right: 42%; --font-size: 0.75rem;">
+<div>
+<pre><code class="language-yaml"><span class="hljs-comment"># .github/workflows/deploy.yml</span>
+<span class="hljs-attr">name:</span> <span class="hljs-string">Desplegar</span> <span class="hljs-string">front-end</span>
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span> [<span class="hljs-string">main</span>]
+
+<span class="hljs-attr">permissions:</span>
+  <span class="hljs-attr">contents:</span> <span class="hljs-string">read</span>
+  <span class="hljs-attr">pages:</span> <span class="hljs-string">write</span>
+  <span class="hljs-attr">id-token:</span> <span class="hljs-string">write</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">build:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v5</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">pnpm/action-setup@v4</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v5</span>
+        <span class="hljs-attr">with:</span> { <span class="hljs-attr">node-version:</span> <span class="hljs-number">24</span>, <span class="hljs-attr">cache:</span> <span class="hljs-string">pnpm</span> }
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">pnpm</span> <span class="hljs-string">install</span> <span class="hljs-string">--frozen-lockfile</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">pnpm</span> <span class="hljs-string">test</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">pnpm</span> <span class="hljs-string">run</span> <span class="hljs-string">build</span>
+        <span class="hljs-attr">env:</span>
+          <span class="hljs-attr">VITE_API_URL:</span> <span class="hljs-string">${{</span> <span class="hljs-string">vars.VITE_API_URL</span> <span class="hljs-string">}}</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/upload-pages-artifact@v4</span>
+        <span class="hljs-attr">with:</span> { <span class="hljs-attr">path:</span> <span class="hljs-string">dist</span> }
+
+  <span class="hljs-attr">deploy:</span>
+    <span class="hljs-attr">needs:</span> <span class="hljs-string">build</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">environment:</span> <span class="hljs-string">github-pages</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/deploy-pages@v4</span>
+</code></pre>
+</div>
+<div>
+<ul>
+<li>Se dispara con cada <code>push</code> a <code>main</code></li>
+<li><strong>Si las pruebas fallan, no se despliega</strong></li>
+<li><code>permissions</code> con <strong>mínimo privilegio</strong></li>
+<li><code>--frozen-lockfile</code>: instala <strong>exactamente</strong> lo del <em>lockfile</em></li>
+<li>Valores públicos en <code>vars</code>; secretos en <code>secrets</code></li>
+<li>Activar en <em>Settings → Pages → Source: GitHub Actions</em></li>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> En <em>Seguridad</em> vimos fijar acciones de terceros por <strong>hash</strong></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="33" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="despliegue-de-laravel-sin-tiempo-fuera-de-servicio">Despliegue de Laravel sin tiempo fuera de servicio</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-text">/var/www/api/
+├── releases/
+│   ├── 20261103-1530/
+│   ├── 20261110-0915/
+│   └── 20261110-1420/   ← nueva versión
+├── shared/
+│   ├── .env
+│   └── storage/
+└── current → releases/20261110-1420   (enlace)
+</code></pre>
+<pre><code class="language-bash"><span class="hljs-comment"># Script de despliegue (Forge, Envoy, Deployer)</span>
+<span class="hljs-built_in">cd</span> releases/<span class="hljs-variable">$NUEVA</span>
+composer install --no-dev --optimize-autoloader
+<span class="hljs-built_in">ln</span> -s ../../shared/.env .<span class="hljs-built_in">env</span>
+php artisan migrate --force
+php artisan optimize
+<span class="hljs-built_in">ln</span> -sfn releases/<span class="hljs-variable">$NUEVA</span> ../current   <span class="hljs-comment"># cambio atómico</span>
+php artisan queue:restart
+<span class="hljs-built_in">sudo</span> systemctl reload php8.4-fpm
+</code></pre>
+</div>
+<div>
+<ul>
+<li>Cada versión en <strong>su propia carpeta</strong>; <code>current</code> es un enlace simbólico</li>
+<li>El cambio de enlace es <strong>atómico</strong>: no hay un momento con la app a medias</li>
+<li><code>.env</code> y <code>storage/</code> viven en <code>shared/</code> y se <strong>comparten</strong> entre versiones</li>
+<li><code>queue:restart</code>: los <em>workers</em> cargan el código nuevo</li>
+<li><strong>Revertir</strong> = apuntar <code>current</code> a la carpeta anterior</li>
+<li><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a0.svg" data-marp-twemoji=""/> Las migraciones deben ser <strong>compatibles hacia atrás</strong>: primero agregar columnas, después borrar las viejas en otro despliegue</li>
+<li>Herramientas: Laravel Forge, Envoyer, <a href="https://deployer.org">Deployer</a></li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="34" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="estrategias-de-despliegue">Estrategias de despliegue</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%94%81-recrear"><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> Recrear</h3>
+<p>Se apaga la versión vieja y se levanta la nueva. Simple, pero hay <strong>tiempo fuera de servicio</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%8C%8A-rodante-rolling"><img class="emoji" draggable="false" alt="🌊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f30a.svg" data-marp-twemoji=""/> Rodante (<em>rolling</em>)</h3>
+<p>Se reemplazan las instancias <strong>de a poco</strong>. Conviven dos versiones un rato</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%B5%F0%9F%9F%A2-azul--verde"><img class="emoji" draggable="false" alt="🔵" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f535.svg" data-marp-twemoji=""/><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f7e2.svg" data-marp-twemoji=""/> Azul / verde</h3>
+<p>Dos entornos idénticos; se cambia el tráfico <strong>de golpe</strong>. Revertir es instantáneo</p>
+</div>
+<div>
+<h3 id="%F0%9F%90%A4-canario"><img class="emoji" draggable="false" alt="🐤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f424.svg" data-marp-twemoji=""/> Canario</h3>
+<p>La versión nueva recibe primero un <strong>5 %</strong> del tráfico; si las métricas están bien, se amplía</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-feature-flags"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <em>Feature flags</em></h3>
+<p>El código se despliega <strong>apagado</strong> y se activa por usuario o porcentaje (Laravel <strong>Pennant</strong>)</p>
+</div>
+<div>
+<h3 id="%F0%9F%91%80-vista-previa"><img class="emoji" draggable="false" alt="👀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f440.svg" data-marp-twemoji=""/> Vista previa</h3>
+<p>Un despliegue <strong>temporal</strong> por cada PR para revisarlo antes de fusionar</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="💡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4a1.svg" data-marp-twemoji=""/> <strong>Desplegar ≠ liberar</strong>: con <em>feature flags</em> se puede desplegar el lunes y activar la función el jueves</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="35" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="despu%C3%A9s-del-despliegue">Después del despliegue</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.85rem;">
+<div>
+<h3 id="%E2%9C%85-verificar"><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Verificar</h3>
+<ul>
+<li><strong>Health check</strong>: Laravel trae la ruta <code>/up</code></li>
+<li>Pruebas de humo: login, listado, crear un recurso</li>
+<li>Revisar la consola del navegador y los registros del servidor</li>
+<li>Comprobar HTTPS, encabezados y CORS desde el dominio real</li>
+</ul>
+<h3 id="%E2%86%A9%EF%B8%8F-plan-de-reversi%C3%B3n"><img class="emoji" draggable="false" alt="↩️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/21a9.svg" data-marp-twemoji=""/> Plan de reversión</h3>
+<ul>
+<li>Saber <strong>antes</strong> cómo volver a la versión anterior, y haberlo <strong>probado</strong></li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%93%88-monitorear"><img class="emoji" draggable="false" alt="📈" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4c8.svg" data-marp-twemoji=""/> Monitorear</h3>
+<ul>
+<li><strong>Errores</strong>: Sentry, Flare, Laravel Nightwatch</li>
+<li><strong>Disponibilidad</strong>: UptimeRobot, Better Stack</li>
+<li><strong>Rendimiento real</strong>: Core Web Vitals de usuarios reales</li>
+<li>Alertas ante picos de 5xx o de latencia</li>
+</ul>
+<h3 id="%F0%9F%92%BE-respaldos"><img class="emoji" draggable="false" alt="💾" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4be.svg" data-marp-twemoji=""/> Respaldos</h3>
+<ul>
+<li>BD respaldada <strong>antes</strong> de migrar, automáticos y con restauración probada</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="36" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="lista-de-verificaci%C3%B3n-de-despliegue-web">Lista de verificación de despliegue web</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%93%A6-antes"><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4e6.svg" data-marp-twemoji=""/> Antes</h3>
+<ul>
+<li>[ ] Pruebas en verde en CI</li>
+<li>[ ] <code>pnpm run build</code> y <code>preview</code> sin errores</li>
+<li>[ ] <code>.env</code> de producción: <code>APP_DEBUG=false</code>, <code>APP_URL</code> correcta</li>
+<li>[ ] <code>composer install --no-dev</code> + <code>php artisan optimize</code></li>
+<li>[ ] Migraciones compatibles hacia atrás y respaldo de la BD</li>
+<li>[ ] Versión etiquetada en Git</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%9A%80-despu%C3%A9s"><img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f680.svg" data-marp-twemoji=""/> Después</h3>
+<ul>
+<li>[ ] Dominio resuelve (<code>dig</code>) y HTTPS válido</li>
+<li>[ ] Recargar una ruta interna de la SPA <strong>no</strong> da 404</li>
+<li>[ ] CORS permite solo los orígenes del front y la app</li>
+<li>[ ] <code>/.env</code> y <code>/.git/</code> devuelven 403/404</li>
+<li>[ ] <code>/up</code> responde 200</li>
+<li>[ ] Errores llegando a la herramienta de monitoreo</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-marpit-scope-HEsJ0UnX="" data-paginate="true" data-class="cover" data-theme="alo" lang="en-US" class="cover" data-marpit-pagination="37" style="--paginate:true;--class:cover;--theme:alo;" data-marpit-pagination-total="53">
+<h1 id="72-publicaci%C3%B3n-de-aplicaciones-m%C3%B3viles">7.2 Publicación de aplicaciones móviles</h1>
+<h2 id="contenidos-6">Contenidos</h2>
+<ul>
+<li>Compilación de <em>release</em> con Capacitor</li>
+<li>Versionado y firma</li>
+<li>Google Play</li>
+<li>App Store</li>
+<li>Actualizaciones, PWA y distribución alternativa</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="38" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="del-c%C3%B3digo-a-la-tienda">Del código a la tienda</h2>
+<pre><code class="language-text"> pnpm build ──► npx cap sync ──► build release ──► firmar ──► subir ──► pruebas ──► revisión ──► <img class="emoji" draggable="false" alt="🏪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3ea.svg" data-marp-twemoji=""/> publicada
+  (dist/)       (copia a          (Gradle /          (keystore /  (Play Console /  (cerradas /   (horas a
+                android/ e ios/)   Xcode)             certificado)  App Store       TestFlight)   días)
+                                                                    Connect)
+</code></pre>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%A4%96-android"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f916.svg" data-marp-twemoji=""/> Android</h3>
+<p>Artefacto <strong>AAB</strong> (<em>Android App Bundle</em>). Play genera los APK optimizados para cada dispositivo</p>
+</div>
+<div>
+<h3 id="%F0%9F%8D%8E-ios"><img class="emoji" draggable="false" alt="🍎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f34e.svg" data-marp-twemoji=""/> iOS</h3>
+<p>Artefacto <strong>IPA</strong>, generado con <strong>Xcode en una Mac</strong>, o en la nube (Xcode Cloud, Codemagic, Bitrise)</p>
+</div>
+<div>
+<h3 id="%F0%9F%86%94-identificador"><img class="emoji" draggable="false" alt="🆔" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f194.svg" data-marp-twemoji=""/> Identificador</h3>
+<p><code>cr.ac.ucr.pedidos</code>: <strong>permanente</strong>. Si cambia, para la tienda es otra app</p>
+</div>
+<div>
+<h3 id="%E2%8F%B1%EF%B8%8F-tiempo-real"><img class="emoji" draggable="false" alt="⏱️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/23f1.svg" data-marp-twemoji=""/> Tiempo real</h3>
+<p>Una publicación <strong>no</strong> es inmediata: planifica días, no minutos</p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="39" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="compilar-una-versi%C3%B3n-de-release-con-capacitor">Compilar una versión de <em>release</em> con Capacitor</h2>
+<split-slide style="--left: 52%; --right: 48%; --font-size: 0.8rem;">
+<div>
+<pre><code class="language-bash"><span class="hljs-comment"># 1. Web de producción</span>
+pnpm run build
+
+<span class="hljs-comment"># 2. Copiar a los proyectos nativos</span>
+npx <span class="hljs-built_in">cap</span> <span class="hljs-built_in">sync</span>
+
+<span class="hljs-comment"># 3a. Android: AAB firmado desde la terminal</span>
+npx <span class="hljs-built_in">cap</span> build android \
+  --androidreleasetype AAB \
+  --keystorepath ../release.jks \
+  --keystorealias upload
+
+<span class="hljs-comment"># 3b. o con Gradle / Android Studio</span>
+<span class="hljs-built_in">cd</span> android &amp;&amp; ./gradlew bundleRelease
+<span class="hljs-comment">#   → app/build/outputs/bundle/release/app-release.aab</span>
+
+<span class="hljs-comment"># 4. iOS: abrir Xcode → Product → Archive</span>
+npx <span class="hljs-built_in">cap</span> open ios
+</code></pre>
+</div>
+<div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Antes de compilar: quitar <code>server.url</code> de <code>capacitor.config.ts</code> (recarga en vivo) o la app apuntará a tu laptop</li>
+<li><code>VITE_API_URL</code> debe apuntar a la API <strong>pública</strong> con HTTPS</li>
+<li>Íconos y pantalla de inicio: <code>@capacitor/assets generate</code> desde un logo de 1024×1024</li>
+<li>Revisar los <strong>permisos</strong> declarados: cada uno se justifica ante la tienda</li>
+<li>Probar el <em>release</em> en un <strong>dispositivo real</strong>, no solo en el emulador</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="40" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="versionado-de-la-app">Versionado de la app</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.84rem;">
+<div>
+<h3 id="%F0%9F%A4%96-android--androidappbuildgradle"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f916.svg" data-marp-twemoji=""/> Android — <code>android/app/build.gradle</code></h3>
+<pre><code class="language-groovy">defaultConfig {
+    applicationId <span class="hljs-string">&quot;cr.ac.ucr.pedidos&quot;</span>
+    minSdkVersion <span class="hljs-number">24</span>
+    targetSdkVersion <span class="hljs-number">36</span>
+    versionCode <span class="hljs-number">12</span>          <span class="hljs-comment">// entero, siempre sube</span>
+    versionName <span class="hljs-string">&quot;1.4.0&quot;</span>     <span class="hljs-comment">// lo que ve el usuario</span>
+}
+</code></pre>
+<h3 id="%F0%9F%8D%8E-ios--xcode-%E2%86%92-general"><img class="emoji" draggable="false" alt="🍎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f34e.svg" data-marp-twemoji=""/> iOS — Xcode → <em>General</em></h3>
+<ul>
+<li><strong>Version</strong> (<code>CFBundleShortVersionString</code>): <code>1.4.0</code></li>
+<li><strong>Build</strong> (<code>CFBundleVersion</code>): <code>12</code></li>
+</ul>
+</div>
+<div>
+<ul>
+<li>Hay <strong>dos</strong> números: uno <strong>para personas</strong> (SemVer) y uno <strong>interno</strong> que la tienda usa para ordenar</li>
+<li><code>versionCode</code> / <em>Build</em> debe <strong>aumentar</strong> en cada subida, aunque solo cambie un texto</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> La tienda <strong>rechaza</strong> un archivo con un número que ya usaste</li>
+<li>Automatizar: el número de <em>build</em> puede ser el número de ejecución de CI</li>
+<li>Mantener la misma <code>versionName</code> en web, Android e iOS facilita el soporte</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="41" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="firma-de-la-aplicaci%C3%B3n">Firma de la aplicación</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%A4%96-android-1"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f916.svg" data-marp-twemoji=""/> Android</h3>
+<pre><code class="language-bash">keytool -genkey -v -keystore release.jks \
+  -<span class="hljs-built_in">alias</span> upload -keyalg RSA -keysize 2048 \
+  -validity 10000
+</code></pre>
+<ul>
+<li>Con <strong>Play App Signing</strong>, Google guarda la <strong>clave de la app</strong> y tú firmas con una <strong>clave de subida</strong></li>
+<li>Si pierdes la clave de subida, Google puede <strong>restablecerla</strong>; sin Play App Signing, perderla significa no poder actualizar <strong>nunca</strong></li>
+<li><code>release.jks</code> y su contraseña: <strong>fuera del repositorio</strong>, en un gestor de secretos</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%8D%8E-ios-1"><img class="emoji" draggable="false" alt="🍎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f34e.svg" data-marp-twemoji=""/> iOS</h3>
+<ul>
+<li><strong>Certificado</strong> de distribución: identifica al desarrollador</li>
+<li><strong>Perfil de aprovisionamiento</strong>: une certificado + <em>App ID</em> + capacidades (push, Apple Pay…)</li>
+<li>Xcode con <em>Automatically manage signing</em> los crea y renueva por ti</li>
+<li>En CI se usan claves de la <strong>API de App Store Connect</strong> (Fastlane <code>match</code>)</li>
+</ul>
+<h3 id="%F0%9F%94%81-de-seguridad"><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> De <em>Seguridad</em></h3>
+<p>La firma garantiza que la actualización viene <strong>del mismo autor</strong>: es un control de integridad</p>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="42" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="google-play-requisitos">Google Play: requisitos</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.83rem;">
+<div>
+<h3 id="%F0%9F%91%A4-cuenta-de-desarrollador"><img class="emoji" draggable="false" alt="👤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f464.svg" data-marp-twemoji=""/> Cuenta de desarrollador</h3>
+<ul>
+<li><strong>Play Console</strong>: pago único de <strong>USD 25</strong></li>
+<li><strong>Verificación de identidad</strong> obligatoria (documento; dirección y D-U-N-S en cuentas de organización)</li>
+<li><strong>Cuentas personales nuevas</strong>: prueba cerrada con al menos <strong>12 testers</strong> durante <strong>14 días seguidos</strong> antes de pedir acceso a producción</li>
+<li>Las cuentas de <strong>organización</strong> no tienen ese requisito</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%93%8B-requisitos-t%C3%A9cnicos-2026"><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Requisitos técnicos (2026)</h3>
+<ul>
+<li>Formato <strong>AAB</strong></li>
+<li>Desde el 31 de agosto de 2026, apps nuevas y actualizaciones deben apuntar a <strong>Android 16 (API 36)</strong></li>
+<li>Las apps existentes deben apuntar al menos a <strong>API 35</strong> para seguir visibles a usuarios nuevos</li>
+<li>Firmado con Play App Signing</li>
+<li><img class="emoji" draggable="false" alt="🆕" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f195.svg" data-marp-twemoji=""/> <strong>Verificación de desarrolladores de Android</strong>: Google la exige también para apps distribuidas <strong>fuera</strong> de Play (primero en algunos países desde septiembre de 2026, global desde 2027)</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="43" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="google-play-la-ficha-y-las-declaraciones">Google Play: la ficha y las declaraciones</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-ficha-de-la-tienda"><img class="emoji" draggable="false" alt="🖼️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5bc.svg" data-marp-twemoji=""/> Ficha de la tienda</h3>
+<p>Nombre (30 car.), descripción corta y larga, ícono 512×512, gráfico destacado 1024×500 y capturas</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%90-seguridad-de-los-datos"><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> Seguridad de los datos</h3>
+<p>Qué datos recolecta y comparte la app, y si viajan <strong>cifrados</strong>. Debe coincidir con la realidad</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%9C-pol%C3%ADtica-de-privacidad"><img class="emoji" draggable="false" alt="📜" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4dc.svg" data-marp-twemoji=""/> Política de privacidad</h3>
+<p>URL pública <strong>obligatoria</strong>. En Costa Rica, acorde con la <strong>Ley 8968</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%94%9E-clasificaci%C3%B3n-de-contenido"><img class="emoji" draggable="false" alt="🔞" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f51e.svg" data-marp-twemoji=""/> Clasificación de contenido</h3>
+<p>Cuestionario IARC: violencia, compras, interacción entre usuarios</p>
+</div>
+<div>
+<h3 id="%F0%9F%8E%AF-p%C3%BAblico-objetivo"><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3af.svg" data-marp-twemoji=""/> Público objetivo</h3>
+<p>Si incluye niños, se aplican las políticas de <strong>Familias</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%94%91-acceso-para-revisores"><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f511.svg" data-marp-twemoji=""/> Acceso para revisores</h3>
+<p>Si hay login, credenciales de <strong>prueba</strong> para que Google pueda revisar la app</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="🗑️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5d1.svg" data-marp-twemoji=""/> Si la app permite crear cuentas, debe ofrecer <strong>eliminarlas</strong> desde la app y desde la web</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="44" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="google-play-tracks-de-prueba-y-lanzamiento">Google Play: tracks de prueba y lanzamiento</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.84rem;">
+<div>
+<pre><code class="language-text"> Prueba interna  ──►  Prueba cerrada  ──►  Prueba abierta  ──►  Producción
+  hasta 100            listas de             cualquiera           todos
+  personas, sin        correos o grupos      puede unirse         (o un %)
+  revisión larga       de Google
+</code></pre>
+</div>
+<div>
+<ul>
+<li><strong>Interna</strong>: el equipo, en minutos. Ideal para cada <em>sprint</em></li>
+<li><strong>Cerrada</strong>: clientes o el profesor; aquí se cumplen los 12 testers × 14 días</li>
+<li><strong>Abierta</strong>: beta pública desde la ficha de la tienda</li>
+<li><strong>Producción</strong> con <strong>lanzamiento por etapas</strong>: 5 % → 20 % → 50 % → 100 %, y se puede <strong>detener</strong> si aparecen fallos</li>
+<li><img class="emoji" draggable="false" alt="📊" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4ca.svg" data-marp-twemoji=""/> Revisar <em>Android vitals</em>: <em>crashes</em> y ANR (app que no responde)</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="45" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="app-store-requisitos">App Store: requisitos</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.83rem;">
+<div>
+<h3 id="%F0%9F%91%A4-cuenta"><img class="emoji" draggable="false" alt="👤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f464.svg" data-marp-twemoji=""/> Cuenta</h3>
+<ul>
+<li><strong>Apple Developer Program</strong>: <strong>USD 99 al año</strong> (organizaciones necesitan número D-U-N-S)</li>
+<li>Si la membresía vence, las apps <strong>salen</strong> de la tienda</li>
+<li>Programa de exención de cuota para instituciones educativas y ONG</li>
+</ul>
+<h3 id="%F0%9F%9B%A0%EF%B8%8F-requisitos-t%C3%A9cnicos-2026"><img class="emoji" draggable="false" alt="🛠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6e0.svg" data-marp-twemoji=""/> Requisitos técnicos (2026)</h3>
+<ul>
+<li>Desde el 28 de abril de 2026, compilar con <strong>Xcode 26</strong> y el <strong>SDK de iOS 26</strong></li>
+<li>Requiere una <strong>Mac</strong> (o un servicio de compilación en la nube)</li>
+<li><em>Privacy manifest</em> (<code>PrivacyInfo.xcprivacy</code>) en la app y en los SDK de terceros que lo exigen</li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%A7%AD-flujo"><img class="emoji" draggable="false" alt="🧭" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ed.svg" data-marp-twemoji=""/> Flujo</h3>
+<ol>
+<li>Crear la app en <strong>App Store Connect</strong> con el <em>Bundle ID</em></li>
+<li>Xcode → <em>Archive</em> → <em>Distribute App</em> → subir el <em>build</em></li>
+<li>Probar con <strong>TestFlight</strong>: hasta 100 testers internos y 10 000 externos (los externos pasan una revisión breve)</li>
+<li>Completar ficha, capturas, <strong>etiquetas de privacidad</strong> y clasificación por edad</li>
+<li>Enviar a <strong>revisión</strong> (normalmente 24–48 h)</li>
+<li>Publicar manual, automática o <strong>por fases</strong> en 7 días</li>
+</ol>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="46" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="la-revisi%C3%B3n-de-apple-motivos-de-rechazo-frecuentes">La revisión de Apple: motivos de rechazo frecuentes</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%8C%90-solo-un-sitio-web"><img class="emoji" draggable="false" alt="🌐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f310.svg" data-marp-twemoji=""/> &quot;Solo un sitio web&quot;</h3>
+<p>Guía <strong>4.2</strong>: una app que solo envuelve una web sin valor nativo se rechaza. Usa capacidades del dispositivo</p>
+</div>
+<div>
+<h3 id="%F0%9F%90%9E-fallos-y-enlaces-rotos"><img class="emoji" draggable="false" alt="🐞" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f41e.svg" data-marp-twemoji=""/> Fallos y enlaces rotos</h3>
+<p>La app se cae, hay pantallas vacías o botones que no hacen nada</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%91-sin-cuenta-de-prueba"><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f511.svg" data-marp-twemoji=""/> Sin cuenta de prueba</h3>
+<p>El revisor no puede entrar: siempre dar usuario y contraseña de demostración</p>
+</div>
+<div>
+<h3 id="%F0%9F%94%90-permisos-sin-justificar"><img class="emoji" draggable="false" alt="🔐" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f510.svg" data-marp-twemoji=""/> Permisos sin justificar</h3>
+<p>Cada <code>NS…UsageDescription</code> debe explicar <strong>para qué</strong> se usa la cámara o la ubicación</p>
+</div>
+<div>
+<h3 id="%F0%9F%97%91%EF%B8%8F-sin-borrar-la-cuenta"><img class="emoji" draggable="false" alt="🗑️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f5d1.svg" data-marp-twemoji=""/> Sin borrar la cuenta</h3>
+<p>Si se puede crear una cuenta, debe poder <strong>eliminarse</strong> dentro de la app</p>
+</div>
+<div>
+<h3 id="%F0%9F%92%B3-pagos-externos"><img class="emoji" draggable="false" alt="💳" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4b3.svg" data-marp-twemoji=""/> Pagos externos</h3>
+<p>Bienes digitales se cobran con compras dentro de la app, salvo las excepciones por región</p>
+</div>
+</div>
+<ul>
+<li><img class="emoji" draggable="false" alt="📖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4d6.svg" data-marp-twemoji=""/> Leer las <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a> <strong>antes</strong> de diseñar, no antes de publicar</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-marpit-scope-odDO7eOE="" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="47" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="google-play-vs-app-store">Google Play vs. App Store</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"><img class="emoji" draggable="false" alt="🤖" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f916.svg" data-marp-twemoji=""/> Google Play</th>
+<th style="text-align:left"><img class="emoji" draggable="false" alt="🍎" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f34e.svg" data-marp-twemoji=""/> App Store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Costo de la cuenta</strong></td>
+<td style="text-align:left">USD 25, pago único</td>
+<td style="text-align:left">USD 99 al año</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Artefacto</strong></td>
+<td style="text-align:left">AAB</td>
+<td style="text-align:left">IPA (vía Xcode)</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Herramienta de compilación</strong></td>
+<td style="text-align:left">Android Studio en cualquier SO</td>
+<td style="text-align:left">Xcode, <strong>solo macOS</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Consola</strong></td>
+<td style="text-align:left">Play Console</td>
+<td style="text-align:left">App Store Connect</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Pruebas</strong></td>
+<td style="text-align:left">Interna, cerrada, abierta</td>
+<td style="text-align:left">TestFlight interno y externo</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Requisito 2026</strong></td>
+<td style="text-align:left">Apuntar a API 36</td>
+<td style="text-align:left">SDK de iOS 26</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Revisión</strong></td>
+<td style="text-align:left">Automatizada + humana; horas a días</td>
+<td style="text-align:left">Humana; normalmente 24–48 h</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Lanzamiento gradual</strong></td>
+<td style="text-align:left">Por porcentaje, se puede detener</td>
+<td style="text-align:left">Por fases en 7 días</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Comisión</strong></td>
+<td style="text-align:left">15 % el primer millón al año, 30 % después</td>
+<td style="text-align:left">15 % (Small Business Program) / 30 %</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Fuera de la tienda</strong></td>
+<td style="text-align:left">Permitido, con verificación del desarrollador</td>
+<td style="text-align:left">Solo en la UE (mercados alternativos)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="48" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="actualizaciones-despu%C3%A9s-de-publicar">Actualizaciones después de publicar</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.84rem;">
+<div>
+<h3 id="%F0%9F%8F%AA-por-la-tienda"><img class="emoji" draggable="false" alt="🏪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3ea.svg" data-marp-twemoji=""/> Por la tienda</h3>
+<ul>
+<li>Necesarias si cambia <strong>código nativo</strong>: plugins, permisos, versión de Capacitor, íconos</li>
+<li>Pasan otra vez por <strong>revisión</strong></li>
+<li>Recordatorio dentro de la app: plugin de <em>in-app updates</em> de Android o aviso propio que consulta la versión mínima a la API</li>
+</ul>
+</div>
+<div>
+<h3 id="%E2%9A%A1-en-vivo-live-updates-ota"><img class="emoji" draggable="false" alt="⚡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/26a1.svg" data-marp-twemoji=""/> En vivo (<em>live updates</em>, OTA)</h3>
+<ul>
+<li>Como la UI de Ionic es <strong>web</strong>, se puede descargar un nuevo <code>dist/</code> sin pasar por la tienda (Capgo, Capawesome Cloud)</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Permitido para <strong>correcciones</strong> de HTML/CSS/JS</li>
+<li><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <strong>No</strong> se permite cambiar el propósito de la app ni agregar funciones que eludan la revisión</li>
+<li>Firmar los paquetes y poder <strong>revertir</strong></li>
+</ul>
+</div>
+</split-slide>
+<ul>
+<li><img class="emoji" draggable="false" alt="🔁" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f501.svg" data-marp-twemoji=""/> La API debe ser <strong>compatible hacia atrás</strong>: siempre habrá usuarios con versiones viejas de la app</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="49" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="otras-formas-de-distribuir">Otras formas de distribuir</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%93%B2-pwa"><img class="emoji" draggable="false" alt="📲" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4f2.svg" data-marp-twemoji=""/> PWA</h3>
+<p>Se &quot;publica&quot; <strong>desplegando</strong> la web con HTTPS y un <em>manifest</em>. Se instala desde el navegador, sin tienda ni comisiones</p>
+</div>
+<div>
+<h3 id="%F0%9F%93%A6-pwa-en-tiendas"><img class="emoji" draggable="false" alt="📦" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4e6.svg" data-marp-twemoji=""/> PWA en tiendas</h3>
+<p>Con <strong>Bubblewrap</strong> / <strong>PWABuilder</strong> se empaqueta como TWA para Google Play o para Microsoft Store</p>
+</div>
+<div>
+<h3 id="%F0%9F%8F%A2-distribuci%C3%B3n-empresarial"><img class="emoji" draggable="false" alt="🏢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3e2.svg" data-marp-twemoji=""/> Distribución empresarial</h3>
+<p><strong>Managed Google Play</strong> y <strong>Apple Business Manager</strong> para apps internas de una organización</p>
+</div>
+<div>
+<h3 id="%F0%9F%8C%8F-tiendas-alternativas"><img class="emoji" draggable="false" alt="🌏" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f30f.svg" data-marp-twemoji=""/> Tiendas alternativas</h3>
+<p>Huawei AppGallery, Samsung Galaxy Store, F-Droid (código abierto), Amazon Appstore</p>
+</div>
+<div>
+<h3 id="%F0%9F%A7%AA-para-pruebas"><img class="emoji" draggable="false" alt="🧪" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f9ea.svg" data-marp-twemoji=""/> Para pruebas</h3>
+<p><strong>Firebase App Distribution</strong> o un APK directo para el equipo (Android)</p>
+</div>
+<div>
+<h3 id="%F0%9F%87%AA%F0%9F%87%BA-uni%C3%B3n-europea"><img class="emoji" draggable="false" alt="🇪🇺" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f1ea-1f1fa.svg" data-marp-twemoji=""/> Unión Europea</h3>
+<p>La Ley de Mercados Digitales permite mercados alternativos en iOS</p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="50" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="lista-de-verificaci%C3%B3n-de-publicaci%C3%B3n-m%C3%B3vil">Lista de verificación de publicación móvil</h2>
+<split-slide style="--left: 50%; --right: 50%; --font-size: 0.82rem;">
+<div>
+<h3 id="%F0%9F%94%A7-t%C3%A9cnico"><img class="emoji" draggable="false" alt="🔧" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f527.svg" data-marp-twemoji=""/> Técnico</h3>
+<ul>
+<li>[ ] <code>server.url</code> eliminado de <code>capacitor.config.ts</code></li>
+<li>[ ] API de producción con HTTPS y CORS para <code>capacitor://localhost</code> y <code>https://localhost</code></li>
+<li>[ ] <code>versionCode</code> / <em>Build</em> incrementado</li>
+<li>[ ] <code>targetSdkVersion 36</code> · Xcode 26</li>
+<li>[ ] Firmado con la clave de subida; clave <strong>fuera</strong> del repo</li>
+<li>[ ] Probado en un Android de gama baja y en un iPhone reales</li>
+<li>[ ] Ningún secreto en el <em>bundle</em></li>
+</ul>
+</div>
+<div>
+<h3 id="%F0%9F%93%8B-tienda"><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> Tienda</h3>
+<ul>
+<li>[ ] Ícono, capturas y textos</li>
+<li>[ ] Política de privacidad publicada</li>
+<li>[ ] Seguridad de los datos / etiquetas de privacidad</li>
+<li>[ ] Clasificación de contenido</li>
+<li>[ ] Cuenta de prueba para los revisores</li>
+<li>[ ] Opción para eliminar la cuenta</li>
+<li>[ ] Justificación de cada permiso</li>
+<li>[ ] Prueba cerrada / TestFlight completada</li>
+</ul>
+</div>
+</split-slide>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="51" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="errores-m%C3%A1s-frecuentes">Errores más frecuentes</h2>
+<div class="grid">
+<div>
+<h3 id="%F0%9F%9A%A9-404-al-recargar"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> 404 al recargar</h3>
+<p>Falta <code>try_files</code> o la regla de reescritura para la SPA</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-pantalla-en-blanco"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Pantalla en blanco</h3>
+<p><code>base</code> incorrecta en Vite: los JS se piden en la ruta equivocada</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-la-api-no-responde"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> La API &quot;no responde&quot;</h3>
+<p><code>VITE_API_URL</code> apunta a <code>localhost</code> en producción o CORS no incluye el dominio real</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-contenido-mixto"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Contenido mixto</h3>
+<p>Página HTTPS que llama a una API HTTP: el navegador lo <strong>bloquea</strong></p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-env-cacheado"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> <code>.env</code> cacheado</h3>
+<p>Cambiaste <code>.env</code> pero no ejecutaste <code>php artisan optimize</code> de nuevo</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-clave-de-firma-perdida"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Clave de firma perdida</h3>
+<p>Sin Play App Signing, la app ya <strong>no</strong> se puede actualizar</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-dominio-vencido"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Dominio vencido</h3>
+<p>Nadie activó la renovación automática</p>
+</div>
+<div>
+<h3 id="%F0%9F%9A%A9-desplegar-el-viernes-a-las-5-p-m"><img class="emoji" draggable="false" alt="🚩" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f6a9.svg" data-marp-twemoji=""/> Desplegar el viernes a las 5 p. m.</h3>
+<p>Sin monitoreo ni plan de reversión <img class="emoji" draggable="false" alt="😅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f605.svg" data-marp-twemoji=""/></p>
+</div>
+</div>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="52" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="actividad-de-cierre">Actividad de cierre</h2>
+<steps>
+<step>
+<div class="grid">
+<div>
+<h3 id="1%EF%B8%8F%E2%83%A3-front-end"><img class="emoji" draggable="false" alt="1️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/31-20e3.svg" data-marp-twemoji=""/> Front-end</h3>
+<p>Desplegar la SPA del proyecto con <strong>GitHub Actions</strong> y verificar que recargar una ruta interna funciona</p>
+</div>
+<div>
+<h3 id="2%EF%B8%8F%E2%83%A3-api"><img class="emoji" draggable="false" alt="2️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/32-20e3.svg" data-marp-twemoji=""/> API</h3>
+<p>Desplegar la API Laravel en un PaaS o VPS con HTTPS, <code>APP_DEBUG=false</code> y <code>/up</code> respondiendo 200</p>
+</div>
+<div>
+<h3 id="3%EF%B8%8F%E2%83%A3-dns"><img class="emoji" draggable="false" alt="3️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/33-20e3.svg" data-marp-twemoji=""/> DNS</h3>
+<p>Con <code>dig</code>, documentar los registros <strong>A / CNAME</strong> del front y la API (dominio propio o subdominio del proveedor)</p>
+</div>
+<div>
+<h3 id="4%EF%B8%8F%E2%83%A3-m%C3%B3vil"><img class="emoji" draggable="false" alt="4️⃣" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/34-20e3.svg" data-marp-twemoji=""/> Móvil</h3>
+<p>Generar un <strong>AAB firmado</strong> y subirlo a la <strong>prueba interna</strong> de Play (o un <em>build</em> a TestFlight)</p>
+</div>
+</div>
+</step>
+<step>
+<ul>
+<li><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f4cb.svg" data-marp-twemoji=""/> <strong>Entregable</strong>: URL pública del front y de la API, captura del <em>pipeline</em> en verde, salida de <code>dig</code> y captura del <em>track</em> de prueba</li>
+<li><img class="emoji" draggable="false" alt="🎯" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/1f3af.svg" data-marp-twemoji=""/> Bonus: un <strong>segundo despliegue</strong> que cambie algo visible, y una <strong>reversión</strong> a la versión anterior documentada</li>
+</ul>
+</step>
+</steps>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-theme="alo" lang="en-US" data-marpit-pagination="53" style="--paginate:true;--theme:alo;" data-marpit-pagination-total="53">
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://vite.dev/guide/build">Vite — Building for Production</a> · <a href="https://vite.dev/guide/static-deploy">Deploying a Static Site</a></li>
+<li><a href="https://laravel.com/docs/13.x/deployment">Laravel 13 — Deployment</a> · <a href="https://cloud.laravel.com">Laravel Cloud</a> · <a href="https://forge.laravel.com">Laravel Forge</a></li>
+<li><a href="https://nginx.org/en/docs/">Nginx — Documentación</a> · <a href="https://caddyserver.com/docs/">Caddy — Documentación</a> · <a href="https://frankenphp.dev">FrankenPHP</a></li>
+<li><a href="https://letsencrypt.org/es/how-it-works/">Let's Encrypt — Cómo funciona</a> · <a href="https://certbot.eff.org">Certbot</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name">MDN — ¿Qué es un nombre de dominio?</a> · <a href="https://www.cloudflare.com/es-es/learning/dns/what-is-dns/">Cloudflare — ¿Qué es DNS?</a></li>
+<li><a href="https://www.nic.cr">NIC Costa Rica</a> · <a href="https://12factor.net/es/">The Twelve-Factor App</a></li>
+<li><a href="https://docs.github.com/es/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages">GitHub Actions — Publicar en GitHub Pages</a></li>
+<li><a href="https://capacitorjs.com/docs/android/deploying-to-google-play">Capacitor — Publicar en Google Play</a> · <a href="https://capacitorjs.com/docs/ios/deploying-to-app-store">Publicar en la App Store</a></li>
+<li><a href="https://developer.android.com/google/play/requirements/target-sdk">Google Play — Requisito de nivel de API objetivo</a> · <a href="https://support.google.com/googleplay/android-developer/answer/14151465">Requisitos de prueba para cuentas personales</a></li>
+<li><a href="https://developer.apple.com/news/upcoming-requirements/">Apple — Requisitos próximos</a> · <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a> · <a href="https://developer.apple.com/testflight/">TestFlight</a></li>
+<li><a href="../seguridad-web-movil/">Seguridad web y móvil</a> · <a href="../desarrollo-movil/">Desarrollo Móvil</a> · <a href="../backend/">Desarrollo Backend</a> — temas del curso relacionados</li>
+</ul>
+<script src="../assets/steps.js"></script>
+<script src="../assets/image-modal.js"></script>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o),l=Symbol();let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[l];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();a()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[l]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.5.1/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),i={},a=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){i[e]=(i[e]||[]).filter(function(e){return e!==t})},l=function(e,t){return(i[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},c=function(e,t){o[e]&&(n&&l("deactivate",a(n,t)),n=o[e],l("activate",a(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:s,on:function(e,t){return(i[e]||(i[e]=[])).push(t),s.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return o.indexOf(n);l("slide",a(o[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){l("destroy",a(n,e)),i={}}};return(t||[]).forEach(function(e){e(u)}),n||c(0),u}}),t),o=e(r);const i=document.body,a=(...e)=>history.replaceState(...e),s="",l="presenter",c="next",d="overview",u=["",l,d,c],f="bespoke-marp-",m=`data-${f}`,g=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},p=()=>i.dataset.bespokeView,v=e=>new URLSearchParams(location.search).get(e),h=(e,t={})=>{const n={location,setter:a,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",g(r,n.location))}catch(e){console.error(e)}},w=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},k=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},E=e=>{e.parent.classList.add(`${f}parent`),e.slides.forEach(e=>e.classList.add(`${f}slide`)),e.on("activate",t=>{const n=`${f}active`,r=t.slide,o=r.classList,i=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),i){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${m}fragment`,(i?"":"in")+"active");const a=`${m}current-fragment`;t===r&&n===o?e.setAttribute(a,"current"):e.removeAttribute(a)})}),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}}),e.on("prev",({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},L=document,S=()=>!(!L.fullscreenEnabled&&!L.webkitFullscreenEnabled),P=()=>!(!L.fullscreenElement&&!L.webkitFullscreenElement),_=e=>{e.fullscreen=()=>{S()&&(async()=>{P()?(L.exitFullscreen||L.webkitExitFullscreen)?.call(L):((e=L.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!S()||(e.fullscreen(),t.preventDefault())})},O=`${f}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout(()=>{r.add(O),o()},e),r.contains(O)&&(r.remove(O),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},A=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${m}load`,e?"":"hideable")}})},C=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const c=Date.now()-o<e,d=l<=n;if(n=l,c||d)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},D=(e=`.${f}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${m}osc=${JSON.stringify(e)}]`).forEach(n)};if(S()||n("fullscreen",e=>e.style.display="none"),!w){const e=(e,t)=>{e.disabled=!0,e.title=`${t} is disabled due to restricted localStorage.`};n("presenter",t=>e(t,"Presenter view")),n("overview",t=>e(t,"Overview view"))}return e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n?e.openPresenterView():"overview"===n&&e.toggleOverviewView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),S()&&(e=>{for(const t of["","webkit"])L.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",S()&&P())))}},N=e=>{if(e.syncKey&&"string"==typeof e.syncKey)return!0;throw new Error("The current instance of Bespoke.js is incompatible with Marp bespoke sync plugin.")},B=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},h({},{setter:(e,...t)=>a({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},i=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),i(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&i(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const a=()=>{const{reference:e}=o();void 0===e||e<=1?k(n):i(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),a()}),e.on("destroy",a)}},K=e=>{w&&document.addEventListener("keydown",t=>{("o"!==t.key||t.altKey||t.ctrlKey||t.metaKey)&&"Escape"!==t.key||(t.preventDefault(),e())})};let q=null;const V=({closeOnSelect:e=!0}={})=>t=>{N(t);const n=n=>{const r=(()=>{if(!q||!q.isConnected){q=document.createElement("div"),q.className=`${f}overview`,q.inert=!0;const n=document.createElement("iframe");n.src=(()=>{const n=new URLSearchParams(location.search);return n.set("view","overview"),n.set("sync",t.syncKey),e&&n.set("closeOnSelect","1"),g(n)})(),q.append(n),document.body.append(q)}return q})(),o=n??!r.dataset.open;setTimeout(()=>{if(r.dataset.open=o?"1":"",r.inert=!o,t.skipTransition=o,o){const e=r.querySelector("iframe");try{e?.contentWindow?.focus()}catch{e?.focus()}}else window.focus()},0)};Object.defineProperties(t,{toggleOverviewView:{enumerable:!0,value:n}}),window.addEventListener("message",e=>{e.origin===window.origin&&"closeOverview"===e.data&&n(!1)}),K(n)},j=e=>{const{title:t}=document;document.title="[Overview]"+(t?` - ${t}`:"");const n=!!v("closeOnSelect"),r=()=>{window.parent.postMessage("closeOverview","null"===window.origin?"*":window.origin)};if(e.slides.forEach((t,o)=>{t.tabIndex=0;const i=()=>{e.slide(o,{fragment:-1}),n&&r()};t.addEventListener("click",i),t.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),i())})}),window.addEventListener("keydown",t=>{const n=e.slide(),r=t=>{const r=t=>{const n=e.slides[t].getBoundingClientRect();return[Math.round((n.left+n.right)/2),Math.round((n.top+n.bottom)/2)]};let o=null,i=n;do{const e=r(i);if(o){if(Math.abs(e[0]-o[0])<2)return i}else o=e;i+=t}while(i>=0&&i<e.slides.length);return n};if("ArrowLeft"===t.key)e.slide(Math.max(n-1,0),{fragment:-1});else if("ArrowRight"===t.key)e.slide(Math.min(n+1,e.slides.length-1),{fragment:-1});else if("ArrowUp"===t.key)e.slide(r(-1),{fragment:-1});else if("ArrowDown"===t.key)e.slide(r(1),{fragment:-1});else if("End"===t.key)e.slide(e.slides.length-1,{fragment:-1});else{if("Home"!==t.key)return;e.slide(0,{fragment:-1})}t.preventDefault();const o=e.slide();e.slides[o]?.focus?.(),e.slides[o]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),e.on("slide",({index:t})=>{e.slides[t]?.scrollIntoView?.({behavior:"smooth",block:"nearest"})}),window.parent!==window){K(r);const e=document.createElement("header");e.className=`${f}overview-header`;const t=document.createElement("button");t.className=`${f}overview-close`,t.type="button",t.title="Close overview",t.textContent=t.title,t.addEventListener("click",r),e.append(t),document.body.prepend(e)}},F=()=>{const e=p();return{[s]:V(),[l]:V({closeOnSelect:!1}),[d]:j}[e]},U=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}})};var R,X,H,W,J,Y,z,G={exports:{}},Q=(R||(R=1,G.exports=(X=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],H=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+W[e]+";"})},W={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},J="dangerouslySetInnerHTML",Y={className:"class",htmlFor:"for"},z={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var i in t)!1!==t[i]&&null!=t[i]&&i!==J&&(r+=" "+(Y[i]?Y[i]:H(i))+'="'+H(t[i])+'"');r+=">"}if(-1===X.indexOf(e)){if(t[J])r+=t[J].__html;else for(;n.length;){var a=n.pop();if(a)if(a.pop)for(var s=a.length;s--;)n.push(a[s]);else r+=!0===z[a]?a:H(a)}r+=e?"</"+e+">":""}return z[r]=!0,r})),G.exports),Z=e(Q);const ee=({children:e})=>Z(null,null,...e),te=`${f}presenter-`,ne={container:`${te}container`,dragbar:`${te}dragbar-container`,next:`${te}next`,nextContainer:`${te}next-container`,noteContainer:`${te}note-container`,noteWrapper:`${te}note-wrapper`,noteButtons:`${te}note-buttons`,infoContainer:`${te}info-container`,infoPageArea:`${te}info-page-area`,infoPage:`${te}info-page`,infoPagePrev:`${te}info-page-prev`,infoPageNext:`${te}info-page-next`,noteButtonsBigger:`${te}note-bigger`,noteButtonsSmaller:`${te}note-smaller`,infoTime:`${te}info-time`,infoTimer:`${te}info-timer`},re=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=ne.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",Z(ee,null,Z("div",{class:ne.nextContainer},Z("iframe",{class:ne.next,src:"?view=next"})),Z("div",{class:ne.dragbar}),Z("div",{class:ne.noteContainer},Z("div",{class:ne.noteWrapper}),Z("div",{class:ne.noteButtons},Z("button",{class:ne.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),Z("button",{class:ne.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),Z("div",{class:ne.infoContainer},Z("div",{class:ne.infoPageArea},Z("button",{class:ne.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),Z("button",{class:ne.infoPage}),Z("button",{class:ne.infoPageNext,tabindex:"-1",title:"Next"},"Next")),Z("time",{class:ne.infoTime,title:"Current time"}),Z("time",{class:ne.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(ne.dragbar).addEventListener("mousedown",()=>{t=!0,r(ne.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(ne.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(ne.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(ne.nextContainer).addEventListener("click",()=>e.next());const n=r(ne.next),o=(i=n,(e,t)=>i.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var i;n.addEventListener("load",()=>{r(ne.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const a=document.querySelectorAll(".bespoke-marp-note");a.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(ne.noteWrapper).appendChild(e)}),e.on("activate",()=>a.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const l=e=>{s=Math.max(-5,s+e),r(ne.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},c=()=>l(1),d=()=>l(-1),u=r(ne.noteButtonsBigger),f=r(ne.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),c()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&c(),"-"===e.key&&d()},!0);const m=r(ne.infoPage);e.on("activate",({index:t})=>{m.textContent=`${t+1} / ${e.slides.length}`}),m.addEventListener("click",()=>{m.blur(),e.toggleOverviewView()});const g=r(ne.infoPagePrev),p=r(ne.infoPageNext);g.addEventListener("click",t=>{g.blur(),e.prev({fragment:!t.shiftKey})}),p.addEventListener("click",t=>{p.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{g.disabled=0===t&&0===r,p.disabled=t===e.slides.length-1&&r===n.length-1});let v=new Date;const h=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-v.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(ne.infoTime).textContent=e.toLocaleTimeString(),r(ne.infoTimer).textContent=`${a}:${i}:${o}`};h(),setInterval(h,250),r(ne.infoTimer).addEventListener("click",()=>{v=new Date})})(e)},oe=e=>{N(e),Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:ie},presenterUrl:{enumerable:!0,get:ae}}),w&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function ie(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,te+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function ae(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),g(e)}const se=e=>{const t=p();return t===c&&e.appendChild(document.createElement("span")),{[s]:oe,[l]:re,[c]:U}[t]},le=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},ce=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},de=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?ce(v("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(ce(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],i=r.closest("[data-marpit-fragment]");if(t&&i){const e=t.indexOf(i);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||h({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),h({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},{PI:ue,abs:fe,sqrt:me,atan2:ge}=Math,pe={passive:!0},ve=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?i(e[0]):void 0},pe),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=me(fe(n)**2+fe(o)**2),r.radian=ge(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+ue)%(2*ue)-ue;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},pe)},he=new Map;he.clear(),he.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const we={both:"",outgoing:"outgoing-",incoming:"incoming-"},ye={forward:"",backward:"-backward"},be=e=>`--marp-bespoke-transition-animation-${e}`,ke=e=>`--marp-transition-${e}`,xe=be("name"),Ee=be("duration"),$e=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ke("duration"));i&&Number.parseFloat(i)>=0&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),Le=async e=>he.has(e)?he.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(we))for(const[i,a]of Object.entries(ye)){const s=`marp-${o}transition${a}-${e}`;n.push($e(s).then(e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(he.set(e,t),t)),Se=e=>Object.values(e).flatMap(Object.values).every(e=>!e),Pe=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[xe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[be("direction")]="reverse"),e}})();return!o&&n?Pe(e,{type:t,backward:!1}):o||{[xe]:"__bespoke_marp_transition_no_animation__"}},_e=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},Oe="_tSId",Te="_tA",Ie="bespoke-marp-transition-warming-up",Me=window.matchMedia("(prefers-reduced-motion: reduce)"),Ae="__bespoke_marp_transition_reduced_outgoing__",Ce="__bespoke_marp_transition_reduced_incoming__",De={forward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}},backward:{both:void 0,incoming:{name:Ce},outgoing:{name:Ae}}},Ne=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ke("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>Le(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=_e(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>i=>{const a=t();if(a)return!!i[Te]||!("object"!=typeof a||(a.skipTransition(),!i.forSync));if(e.skipTransition)return!0;if(!o(i))return!0;const s=e.slides[e.slide()],l=()=>i.back??r,c="data-transition"+(l()?"-back":""),d=s.querySelector(`section[${c}]`);if(!d)return!0;const u=_e(d.getAttribute(c)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await Le(e);if(Se(n)){if(!t)return;return n=await Le(`__builtin__${e}`),Se(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;Me.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=De);const o=document.getElementById(Oe);o&&o.remove();const a=document.createElement("style");a.id=Oe,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ke("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${Ee}:${o};}`);const i=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${i(Pe(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(Pe(e,{...t,type:"incoming"}))}}`),n})(r,{backward:l(),duration:u.duration}).forEach(e=>a.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ie);let c=!1;const d=()=>{c||(n(i),c=!0,s.remove(Ie))},f=()=>{t(!1),a.remove(),s.remove(Ie)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[Te]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[Te]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[Te]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Be;const Ke=()=>(void 0===Be&&(Be="wakeLock"in navigator&&navigator.wakeLock),Be),qe=async()=>{const e=Ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ve=async()=>{if(!Ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&qe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await qe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=v("view");i.dataset.bespokeView=u.some(t=>t&&t===e)?e:""})();const t=(e=>{const t=v(e);return h({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=u.findIndex(e=>p()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,1,0],B({key:t})],[[1,1,0,1],se(e)],[[1,1,0,0],M],[[1,1,1,1],E],[[1,0,0,0],T()],[[1,1,1,1],A],[[1,1,1,1],de({history:!1})],[[1,1,0,0],C()],[[1,1,1,0],_],[[1,0,0,0],le],[[1,1,0,0],ve()],[[1,0,0,0],D()],[[1,1,1,0],F()],[[1,0,0,0],Ne],[[1,1,1,1],$],[[1,1,1,0],Ve]))})()}();</script></body></html>
